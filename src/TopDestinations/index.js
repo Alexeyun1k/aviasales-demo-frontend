@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card from "./Card";
 
 import anywhere from "./types/anywhere.svg";
+import compass from "./compass.svg";
 
 import krasnodar from "./cards/1Krasnodar.png";
 import sochi from "./cards/2Sochi.jpeg";
@@ -30,17 +31,22 @@ const TopDestinations = styled.section`
   background: #f8fcff;
 `;
 
-const SectionImg = styled.img`
+const SectionImg = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: #e2f8ff;
+  background-color: #e2f8ff;
+  background-image: url(${compass});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const SectionHeader = styled.h2`
+  margin-top: 24px;
+  margin-bottom: 32px;
   font-weight: 500;
   line-height: 24px;
   font-size: 18px;
@@ -56,7 +62,7 @@ const TabText = styled.h3`
   font-size: 12px;
   text-align: center;
 
-  color: #5c5c5c;
+  color: #00ace2;
 `;
 
 const TabImg = styled.img`
