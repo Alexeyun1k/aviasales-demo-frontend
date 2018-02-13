@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 16px;
 `;
 
 const Line = styled.a`
-  margin-top: 16px;
+  padding: 8px 0;
   display: flex;
+  cursor: pointer;
 `;
 
 const From = styled.p`
