@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Subheader from "./Subheader";
+import PriceSection from "./PriceSection";
 
 import ru from "./Flags/ru.png";
 import am from "./Flags/am.png";
 import md from "./Flags/md.png";
-import PriceSection from "./PriceSection";
+import calendar from "./calendar.svg";
 
 const prices = [
   {
@@ -98,21 +98,26 @@ const prices = [
 ];
 
 const Container = styled.section`
-  padding-top: 40px;
+  padding-top: 32px;
   background: #f8fcff;
 `;
 
-const SectionImg = styled.img`
+const SectionImg = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: #e2f8ff;
+  background-color: #e2f8ff;
+  background-image: url(${calendar});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
-const SectionHeader = styled.h2`
+const Head = styled.h2`
+  margin-top: 20px;
+  margin-bottom: 40px;
   font-weight: 500;
   line-height: 24px;
   font-size: 18px;
@@ -130,10 +135,8 @@ export default () => {
   return (
     <Container>
       <div className="container">
-        <SectionImg src="" />
-        <SectionHeader>
-          Лучшие цены на авиабилеты за последний месяц
-        </SectionHeader>
+        <SectionImg />
+        <Head>Лучшие цены на авиабилеты за последний месяц</Head>
         <PriceSection data={prices[0]} />
         <Divider />
         <PriceSection data={prices[1]} />
