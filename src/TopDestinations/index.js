@@ -1,18 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Card,
-  CityImg,
-  City,
-  Price,
-  Country,
-  Departure,
-  InfoGroup,
-  Line
-} from "./Card";
+import Card from "./Card";
 
 import anywhere from "./types/anywhere.svg";
-import saintP from "./cards/3SaintP.jpeg";
+
+import krasnodar from "./cards/1Krasnodar.png";
+import sochi from "./cards/2Sochi.jpeg";
+
+const cards = [
+  {
+    img: krasnodar,
+    city: "Краснодар",
+    price: "Найти от 1 212 ₽",
+    country: "РОССИЯ",
+    departure: "18 марта"
+  },
+  {
+    img: sochi,
+    city: "Сочи (Адлер)",
+    price: "Найти от 1 334 ₽",
+    country: "РОССИЯ",
+    departure: "27 марта"
+  }
+];
 
 const TopDestinations = styled.section`
   padding-top: 40px;
@@ -97,19 +107,10 @@ export default () => {
 
         <div className="row">
           <div className="col-xs-12 col-lg-6">
-            <Card>
-              <CityImg src={saintP} />
-              <InfoGroup>
-                <Line>
-                  <City>Санкт-Петербург</City>
-                  <Price>от 2 340 Р</Price>
-                </Line>
-                <Line>
-                  <Country>Россия</Country>
-                  <Departure>12 фев</Departure>
-                </Line>
-              </InfoGroup>
-            </Card>
+            <Card card={cards[0]} />
+          </div>
+          <div className="col-xs-12 col-lg-6">
+            <Card card={cards[1]} />
           </div>
         </div>
       </div>

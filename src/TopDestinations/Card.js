@@ -1,13 +1,15 @@
+import React from "react";
 import styled from "styled-components";
 
-export const Card = styled.a`
+const CardWrap = styled.a`
+  margin-top: 12px;
   display: block;
   background-color: #fff;
   box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
   border-radius: 8px;
 `;
 
-export const CityImg = styled.img`
+const CityImg = styled.img`
   display: block;
   height: 128px;
   width: 100%;
@@ -17,17 +19,17 @@ export const CityImg = styled.img`
   object-fit: cover;
 `;
 
-export const InfoGroup = styled.div`
+const InfoGroup = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column;
 `;
 
-export const Line = styled.div`
+const Line = styled.div`
   display: flex;
 `;
 
-export const City = styled.h4`
+const City = styled.h4`
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -42,7 +44,7 @@ export const City = styled.h4`
   color: #5b5b5c;
 `;
 
-export const Price = styled.p`
+const Price = styled.p`
   white-space: nowrap;
   margin: 0 0 4px;
   line-height: 20px;
@@ -51,7 +53,7 @@ export const Price = styled.p`
   color: #00bae8;
 `;
 
-export const Country = styled.p`
+const Country = styled.p`
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -64,7 +66,7 @@ export const Country = styled.p`
   color: #a0b0b9;
 `;
 
-export const Departure = styled.p`
+const Departure = styled.p`
   white-space: nowrap;
   margin: 0;
   line-height: 20px;
@@ -73,3 +75,23 @@ export const Departure = styled.p`
   text-align: right;
   color: #a0b0b9;
 `;
+
+const Card = props => {
+  return (
+    <CardWrap>
+      <CityImg src={props.card.img} />
+      <InfoGroup>
+        <Line>
+          <City>{props.card.city}</City>
+          <Price>{props.card.price}</Price>
+        </Line>
+        <Line>
+          <Country>{props.card.country}</Country>
+          <Departure>{props.card.departure}</Departure>
+        </Line>
+      </InfoGroup>
+    </CardWrap>
+  );
+};
+
+export default Card;
