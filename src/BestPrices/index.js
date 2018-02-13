@@ -99,6 +99,7 @@ const prices = [
 
 const Container = styled.section`
   padding-top: 32px;
+  padding-bottom: 40px;
   background: #f8fcff;
 `;
 
@@ -131,6 +132,23 @@ const Divider = styled.hr`
   margin: 24px 0;
 `;
 
+const Info = styled.p`
+  margin-top: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  text-align: center;
+  color: #4a4a4a;
+`;
+
+const SecondaryInfo = styled.p`
+  margin-top: 24px;
+  margin-bottom: 0px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #a0b0b9;
+`;
+
 export default () => {
   return (
     <Container>
@@ -142,6 +160,15 @@ export default () => {
         <PriceSection data={prices[1]} />
         <Divider />
         <PriceSection data={prices[2]} />
+        <Info>
+          Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220 стран
+          мира. Поиск и сравнение цен на авиабилеты среди 100 агентств и 728
+          авиакомпаний.
+        </Info>
+        <SecondaryInfo>
+          Цены, найденные пользователями за последние 48 часов, не являются
+          офертой.
+        </SecondaryInfo>
       </div>
     </Container>
   );
