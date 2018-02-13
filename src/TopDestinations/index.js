@@ -26,6 +26,7 @@ const cards = [
 
 const TopDestinations = styled.section`
   padding-top: 40px;
+  padding-bottom: 40px;
   background: #f8fcff;
 `;
 
