@@ -1,7 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Img, City, Price, County, Departure } from "./Card";
+import {
+  Card,
+  CityImg,
+  City,
+  Price,
+  Country,
+  Departure,
+  InfoGroup,
+  Line
+} from "./Card";
+
 import anywhere from "./types/anywhere.svg";
+import saintP from "./cards/3SaintP.jpeg";
 
 const TopDestinations = styled.section`
   padding-top: 40px;
@@ -41,6 +52,7 @@ const TabImg = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 13px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -86,7 +98,17 @@ export default () => {
         <div className="row">
           <div className="col-xs-12 col-lg-6">
             <Card>
-              <Img />
+              <CityImg src={saintP} />
+              <InfoGroup>
+                <Line>
+                  <City>Санкт-Петербург</City>
+                  <Price>от 2 340 Р</Price>
+                </Line>
+                <Line>
+                  <Country>Россия</Country>
+                  <Departure>12 фев</Departure>
+                </Line>
+              </InfoGroup>
             </Card>
           </div>
         </div>
