@@ -3,10 +3,17 @@ import styled from "styled-components";
 import Card from "./Card";
 
 import anywhere from "./types/anywhere.svg";
+import beach from "./types/beach.svg";
+import city from "./types/city.svg";
+import culture from "./types/culture.svg";
+import nightlife from "./types/nightlife.svg";
+import withBaby from "./types/withBaby.svg";
+
 import compass from "./compass.svg";
 
 import krasnodar from "./cards/1Krasnodar.png";
 import sochi from "./cards/2Sochi.jpeg";
+import Tab from "./Tab";
 
 const cards = [
   {
@@ -22,6 +29,33 @@ const cards = [
     price: "Найти от 1 334 ₽",
     country: "РОССИЯ",
     departure: "27 марта"
+  }
+];
+
+const destinations = [
+  {
+    icon: anywhere,
+    name: "КУДА УГОДНО"
+  },
+  {
+    icon: beach,
+    name: "CОЛНЦЕ И МОРЕ"
+  },
+  {
+    icon: city,
+    name: "ШОПИНГ, ГОРОД"
+  },
+  {
+    icon: culture,
+    name: "КУЛЬТУРА И ИСТОРИЯ"
+  },
+  {
+    icon: nightlife,
+    name: "НОЧНАЯ ЖИЗНЬ"
+  },
+  {
+    icon: withBaby,
+    name: "ОТДЫХ С ДЕТЬМИ"
   }
 ];
 
@@ -55,28 +89,6 @@ const SectionHeader = styled.h2`
   color: #4a4a4a;
 `;
 
-const TabText = styled.h3`
-  font-style: normal;
-  font-weight: normal;
-  line-height: 20px;
-  font-size: 12px;
-  text-align: center;
-
-  color: #00ace2;
-`;
-
-const TabImg = styled.img`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 13px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0px 2px 4px rgba(74, 74, 74, 0.1);
-`;
-
 export default () => {
   return (
     <TopDestinations>
@@ -87,28 +99,22 @@ export default () => {
         </SectionHeader>
         <div className="row">
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg src={anywhere} />
-            <TabText>КУДА УГОДНО</TabText>
+            <Tab data={destinations[0]} />
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg />
-            <TabText>CОЛНЦЕ И МОРЕ</TabText>
+            <Tab data={destinations[1]} />
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg />
-            <TabText>ШОПИНГ, ГОРОД</TabText>
+            <Tab data={destinations[2]} />
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg />
-            <TabText>КУЛЬТУРА И ИСТОРИЯ</TabText>
+            <Tab data={destinations[3]} />
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg />
-            <TabText>НОЧНАЯ ЖИЗНЬ</TabText>
+            <Tab data={destinations[4]} />
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <TabImg />
-            <TabText>ОТДЫХ С ДЕТЬМИ</TabText>
+            <Tab data={destinations[5]} />
           </div>
         </div>
 
