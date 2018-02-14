@@ -5,6 +5,7 @@ import Header from "./Header/index";
 import TopDestinations from "./TopDestinations/index";
 import BestPrices from "./BestPrices/index";
 import Offers from "./Offers/index";
+import Articles from "./Articles/index";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <TopDestinations />
         <BestPrices />
         <Offers />
+        <Articles />
       </div>
     );
   }
