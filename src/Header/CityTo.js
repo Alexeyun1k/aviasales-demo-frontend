@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import arrows from "./img/arrows.svg";
-
 const Container = styled.article`
   display: flex;
   background: #ffffff;
