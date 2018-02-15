@@ -11,13 +11,7 @@ const Container = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
-`;
 
-const Text = styled.div`
-  display: block;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   font-style: normal;
   font-weight: normal;
   line-height: 20px;
@@ -42,8 +36,8 @@ const Img = styled.div`
 const Tab = props => {
   return (
     <Container>
-      <Img icon={props.data.icon} />
-      <Text>{props.data.name}</Text>
+      <Img icon={props.img} />
+      {props.children}
     </Container>
   );
 };

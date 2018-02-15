@@ -32,33 +32,6 @@ const cards = [
   }
 ];
 
-const destinations = [
-  {
-    icon: anywhere,
-    name: "КУДА УГОДНО"
-  },
-  {
-    icon: beach,
-    name: "CОЛНЦЕ И МОРЕ"
-  },
-  {
-    icon: city,
-    name: "ШОПИНГ, ГОРОД"
-  },
-  {
-    icon: culture,
-    name: "КУЛЬТУРА И ИСТОРИЯ"
-  },
-  {
-    icon: nightlife,
-    name: "НОЧНАЯ ЖИЗНЬ"
-  },
-  {
-    icon: withBaby,
-    name: "ОТДЫХ С ДЕТЬМИ"
-  }
-];
-
 const TopDestinations = styled.section`
   padding-top: 40px;
   padding-bottom: 40px;
@@ -97,32 +70,50 @@ export default () => {
         <SectionHeader>
           Популярные направления перелетов из города Москва
         </SectionHeader>
-        <div className="row">
+        <div className="row center-md">
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[0]} />
+            <Tab img={anywhere}>
+              КУДА<br />УГОДНО
+            </Tab>
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[1]} />
+            <Tab img={beach}>
+              CОЛНЦЕ<br />И МОРЕ
+            </Tab>
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[2]} />
+            <Tab img={city}>
+              ШОПИНГ,<br />ГОРОД
+            </Tab>
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[3]} />
+            <Tab img={culture}>
+              КУЛЬТУРА<br />И ИСТОРИЯ
+            </Tab>
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[4]} />
+            <Tab img={nightlife}>
+              НОЧНАЯ<br />ЖИЗНЬ
+            </Tab>
           </div>
           <div className="col-xs-4 col-md-2 col-lg-1">
-            <Tab data={destinations[5]} />
+            <Tab img={withBaby}>
+              ОТДЫХ<br />С ДЕТЬМИ
+            </Tab>
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-xs-12 col-lg-6">
+        <div className="row center-md">
+          <div className="col-xs-12 col-md-5">
             <Card card={cards[0]} />
           </div>
-          <div className="col-xs-12 col-lg-6">
+          <div className="col-xs-12 col-md-5">
+            <Card card={cards[1]} />
+          </div>
+          <div className="col-xs-12 col-md-5">
+            <Card card={cards[0]} />
+          </div>
+          <div className="col-xs-12 col-md-5">
             <Card card={cards[1]} />
           </div>
         </div>
