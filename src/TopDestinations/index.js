@@ -64,7 +64,6 @@ const SectionHeader = styled.h2`
   line-height: 24px;
   font-size: 18px;
   text-align: center;
-
   color: #4a4a4a;
 `;
 
@@ -110,16 +109,16 @@ export default () => {
         </div>
 
         <div className="row center-md">
-          <div className="col-xs-12 col-md-5">
+          <div className="col-xs-12 col-lg-5">
             <Card card={cards[0]} />
           </div>
-          <div className="col-xs-12 col-md-5">
+          <div className="col-xs-12 col-lg-5">
             <Card card={cards[1]} />
           </div>
-          <div className="col-xs-12 col-md-5">
+          <div className="col-xs-12 col-lg-5">
             <Card card={cards[0]} />
           </div>
-          <div className="col-xs-12 col-md-5">
+          <div className="col-xs-12 col-lg-5">
             <Card card={cards[1]} />
           </div>
         </div>
