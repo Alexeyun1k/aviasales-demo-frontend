@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 // import styled, { css } from "styled-components";
 // import styled from "styled-components";
-import Header from "./Header/index";
-import TopDestinations from "./TopDestinations/index";
-import BestPrices from "./BestPrices/index";
-import Offers from "./Offers/index";
-import Articles from "./Articles/index";
+import Header from "./Header/";
+import TopDestinations from "./TopDestinations/";
+import BestPrices from "./BestPrices/";
+import Offers from "./Offers/";
+import Articles from "./Articles/";
+import AppPromo from "./AppPromo/";
+import Footer from "./Footer/";
 
 class App extends Component {
   render() {
@@ -16,6 +18,8 @@ class App extends Component {
         <BestPrices />
         <Offers />
         <Articles />
+        <AppPromo />
+        <Footer />
       </div>
     );
   }
