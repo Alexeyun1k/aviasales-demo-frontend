@@ -85,6 +85,10 @@ const SearchLink = Link.extend`
 `;
 
 const SocialLinks = styled.div`
+  margin-left: -8px;
+  margin-right: -8px;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 16px;
 `;
 
@@ -231,23 +235,21 @@ export default () => {
               <AdditionalLink>White Label авиабилеты</AdditionalLink>
             </div>
             <SocialLinks>
-              <div className="row">
-                <Social>
-                  <Icon src={vk} />Вконтакте
-                </Social>
-                <Social>
-                  <Icon src={fb} />Фейсбук
-                </Social>
-                <Social>
-                  <Icon src={instagram} />Инстаграм
-                </Social>
-                <Social>
-                  <Icon src={twitter} />Твиттер
-                </Social>
-                <Social>
-                  <Icon src={viber} />Вайбер
-                </Social>
-              </div>
+              <Social>
+                <Icon src={vk} />Вконтакте
+              </Social>
+              <Social>
+                <Icon src={fb} />Фейсбук
+              </Social>
+              <Social>
+                <Icon src={instagram} />Инстаграм
+              </Social>
+              <Social>
+                <Icon src={twitter} />Твиттер
+              </Social>
+              <Social>
+                <Icon src={viber} />Вайбер
+              </Social>
             </SocialLinks>
             <SearchLink>Поиск и бронирование отелей</SearchLink>
           </div>
