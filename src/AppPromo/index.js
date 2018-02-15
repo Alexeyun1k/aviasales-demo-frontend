@@ -9,12 +9,18 @@ import phoneXS from "./img/phone-xs.png";
 import phoneMD from "./img/phone-md.png";
 
 const Container = styled.section`
+  position: relative;
   padding-top: 16px;
   padding-bottom: 24px;
   background: linear-gradient(137.4deg, #00b0de 4.18%, #196ebd 104.18%);
 `;
 
-const Phone = styled.img``;
+const Phone = styled.img`
+  height: 213px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
 
 const Head = styled.h2`
   margin-top: 0;
@@ -67,11 +73,7 @@ export default () => {
   return (
     <Container>
       <div className="container">
-        <div className="row">
-          <div class="hidden-xs">
-            <Phone />
-          </div>
-        </div>
+        <Phone src={phoneXS} />
         <Head>Скачай мобильное приложение Aviasales.ru</Head>
         <Rating>
           <Stars src={stars} />
