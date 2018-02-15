@@ -6,9 +6,7 @@ import aviasales from "./img/aviasales.svg";
 import SearchForm from "./SearchForm";
 
 const Container = styled.header`
-  padding-top: 12px;
-  padding-bottom: 88px;
-  min-height: 234px;
+  min-height: 100vh;
   background: linear-gradient(
     148.48deg,
     #00b0de 22.46%,
@@ -20,7 +18,17 @@ const Container = styled.header`
   );
 `;
 
+const FormContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 88px 0;
+`;
+
 const Logo = styled.a`
+  position: absolute;
+  top: 12px;
   display: block;
   background: url(${aviasales}) no-repeat;
   width: 30px;
@@ -28,7 +36,7 @@ const Logo = styled.a`
 `;
 
 const Head = styled.h1`
-  margin-top: 48px;
+  margin-top: 0px;
   margin-bottom: 16px;
   font-style: normal;
   font-weight: 500;
@@ -66,13 +74,15 @@ export default () => {
     <Container>
       <div className="container">
         <Logo />
-        <div className="row center-md">
-          <div className="col-xs-12 col-md-10">
-            <Head>Поиск дешевых авиабилетов</Head>
-            <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
-            <SearchForm />
+        <FormContainer>
+          <div className="row center-md middle-xs">
+            <div className="col-xs-12 col-md-10">
+              <Head>Поиск дешевых авиабилетов</Head>
+              <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
+              <SearchForm />
+            </div>
           </div>
-        </div>
+        </FormContainer>
       </div>
     </Container>
   );
