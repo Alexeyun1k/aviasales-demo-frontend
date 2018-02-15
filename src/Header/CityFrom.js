@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import queries from "../queries";
 
 import arrows from "./img/arrows.svg";
 
@@ -7,11 +8,17 @@ const Container = styled.article`
   display: flex;
   background: #ffffff;
   border-radius: 4px 4px 0 0;
-  margin-bottom: 2px;
+  @media (min-width: ${queries.md}px) {
+    border-radius: 4px 0 0 0;
+  }
+  @media (min-width: ${queries.xl}px) {
+    border-radius: 4px 0 0 4px;
+  }
 `;
 
 const Input = styled.input`
   flex-grow: 1;
+  min-width: 0;
   background-color: transparent;
   border: none;
   padding: 18px 0 18px 16px;

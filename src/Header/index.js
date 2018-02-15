@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import CityFrom from "./CityFrom";
-import CityTo from "./CityTo";
-import DateBlock from "./DateBlock";
-import Passangers from "./Passangers";
+import queries from "../queries";
 
-import plane from "./img/plane.svg";
 import aviasales from "./img/aviasales.svg";
+import SearchForm from "./SearchForm";
 
 const Container = styled.header`
   padding-top: 12px;
@@ -30,7 +27,7 @@ const Logo = styled.a`
   height: 30px;
 `;
 
-const H1 = styled.h1`
+const Head = styled.h1`
   margin-top: 48px;
   margin-bottom: 16px;
   font-style: normal;
@@ -38,31 +35,29 @@ const H1 = styled.h1`
   line-height: normal;
   font-size: 20px;
   text-align: center;
-
   color: #ffffff;
+  @media (min-width: ${queries.md}px) {
+    margin-bottom: 8px;
+    line-height: 48px;
+    font-size: 32px;
+  }
+  @media (min-width: ${queries.xl}px) {
+    font-size: 40px;
+  }
 `;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Cta = styled.button`
-  margin-top: 16px;
-  padding: 14px 0;
-  font-weight: 900;
-  line-height: normal;
-  font-size: 24px;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  background-color: #ff9241;
-
-  &:after {
-    content: url(${plane});
-    margin-left: 16px;
-    position: relative;
-    top: 3px;
+const Paragraph = styled.p`
+  display: none;
+  @media (min-width: ${queries.md}px) {
+    margin-top: 8px;
+    display: block;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+  @media (min-width: ${queries.xl}px) {
+    font-size: 24px;
   }
 `;
 
@@ -71,14 +66,13 @@ export default () => {
     <Container>
       <div className="container">
         <Logo />
-        <H1>Поиск дешевых авиабилетов</H1>
-        <Form>
-          <CityFrom />
-          <CityTo />
-          <DateBlock />
-          <Passangers />
-          <Cta>Найти билеты</Cta>
-        </Form>
+        <div className="row center-md">
+          <div className="col-xs-12 col-md-10">
+            <Head>Поиск дешевых авиабилетов</Head>
+            <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
+            <SearchForm />
+          </div>
+        </div>
       </div>
     </Container>
   );
