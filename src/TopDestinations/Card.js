@@ -3,18 +3,23 @@ import styled from "styled-components";
 import queries from "../queries";
 
 const Container = styled.a`
+  display: block;
   margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
   background-color: #fff;
   box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
   border-radius: 8px;
+  @media (min-width: ${queries.md}px) {
+    margin-top: 24px;
+  }
+  @media (min-width: ${queries.xl}px) {
+    margin-top: 32px;
+  }
 `;
 
 const CityImg = styled.img`
   display: block;
   height: 128px;
-  flex-basis: 100%;
+  width: 100%;
   border: none;
   border-radius: 8px 8px 0 0;
   background-color: #eee;
@@ -26,11 +31,8 @@ const CityImg = styled.img`
 `;
 
 const Info = styled.div`
-  flex-grow: 1;
-  min-width: 0;
-  padding: 16px;
   display: flex;
-  flex-direction: column;
+  padding: 16px;
   @media (min-width: ${queries.md}px) {
     padding-top: 12px;
   }
@@ -39,12 +41,15 @@ const Info = styled.div`
   }
 `;
 
-const Line = styled.div`
-  display: flex;
+const Place = styled.div`
+  flex-grow: 1;
+  min-width: 0;
+`;
+const PriceAndDate = styled.div`
+  margin-left: 8px;
 `;
 
 const City = styled.h4`
-  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,7 +63,6 @@ const City = styled.h4`
   color: #5b5b5c;
 
   @media (min-width: ${queries.md}px) {
-    font-weight: bold;
     line-height: 32px;
     font-size: 22px;
   }
@@ -103,12 +107,11 @@ const Departure = styled.p`
 
 const Flag = styled.img`
   display: none;
-
   @media (min-width: ${queries.md}px) {
     align-self: center;
     display: block;
-    margin-left: 24px;
-    margin-right: 0;
+    margin-left: 8px;
+    margin-right: 16px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -121,16 +124,16 @@ const Card = props => {
   return (
     <Container>
       <CityImg src={props.card.img} />
-      <Flag src={props.card.flag} />
       <Info>
-        <Line>
+        <Flag src={props.card.flag} />
+        <Place>
           <City>{props.card.city}</City>
-          <Price>{props.card.price}</Price>
-        </Line>
-        <Line>
           <Country>{props.card.country}</Country>
+        </Place>
+        <PriceAndDate>
+          <Price>{props.card.price}</Price>
           <Departure>{props.card.departure}</Departure>
-        </Line>
+        </PriceAndDate>
       </Info>
     </Container>
   );
