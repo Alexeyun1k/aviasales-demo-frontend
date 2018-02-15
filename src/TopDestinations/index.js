@@ -9,6 +9,10 @@ import culture from "./types/culture.svg";
 import nightlife from "./types/nightlife.svg";
 import withBaby from "./types/withBaby.svg";
 
+import ru from "./Flags/ru.png";
+import am from "./Flags/am.png";
+import md from "./Flags/md.png";
+
 import compass from "./compass.svg";
 
 import krasnodar from "./cards/1Krasnodar.png";
@@ -18,6 +22,7 @@ import Tab from "./Tab";
 const cards = [
   {
     img: krasnodar,
+    flag: ru,
     city: "Краснодар",
     price: "Найти от 1 212 ₽",
     country: "РОССИЯ",
@@ -25,6 +30,7 @@ const cards = [
   },
   {
     img: sochi,
+    flag: ru,
     city: "Сочи (Адлер)",
     price: "Найти от 1 334 ₽",
     country: "РОССИЯ",
