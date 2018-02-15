@@ -33,22 +33,25 @@ const HeadLogo = styled.img`
 const Infoblock = styled.div`
   display: flex;
   flex-direction: column;
-  height: 208px;
+  min-height: 208px;
   background-color: #fff;
   padding: 16px 8px;
 `;
 
-const InfoblockTop = styled.div`
+const PriceAndLogo = styled.div`
   display: flex;
 `;
 
 const Logo = styled.img`
-  height: 30px;
+  max-width: 100%;
   align-self: center;
+  object-fit: contain;
+  min-width: 0;
 `;
 
 const PriceBlock = styled.div`
-  margin-left: auto;
+  flex-grow: 1;
+  margin-left: 8px;
   margin-right: 8px;
 `;
 
@@ -70,6 +73,7 @@ const Price = styled.p`
 `;
 
 const DaysLeft = styled.p`
+  white-space: nowrap;
   margin: 0;
   line-height: 15px;
   font-size: 12px;
@@ -104,13 +108,13 @@ const Offer = props => {
         <HeadLogo src={props.data.headLogo} />
       </Head>
       <Infoblock>
-        <InfoblockTop>
+        <PriceAndLogo>
           <Logo src={props.data.airLogo} />
           <PriceBlock>
             <Price>{props.data.price}</Price>
             <DaysLeft>{props.data.daysLeft}</DaysLeft>
           </PriceBlock>
-        </InfoblockTop>
+        </PriceAndLogo>
         <Info>{props.data.info}</Info>
         <Button>Узнать подробности</Button>
       </Infoblock>

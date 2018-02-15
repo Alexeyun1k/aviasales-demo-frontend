@@ -5,6 +5,7 @@ import pobeda from "./img/pobeda.png";
 import lufthansa from "./img/lufthansa.png";
 import tour from "./img/tour.png";
 import Offer from "./Offer";
+import queries from "../queries";
 
 const offersData = [
   {
@@ -69,24 +70,37 @@ const Link = styled.a`
   color: #ffffff;
 `;
 
+const LinkInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ${queries.md}px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+`;
+
 export default () => {
   return (
     <Container>
       <div className="container">
         <Head>Спецпредложения на&nbsp;авиабилеты</Head>
-        <div className="row">
-          <div className="col-xs-12 col-md-4">
+        <div className="row between-xl">
+          <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[0]} />
           </div>
-          <div className="col-xs-12 col-md-4">
+          <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[1]} />
           </div>
-          <div className="col-xs-12 col-md-4">
+          <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[2]} />
           </div>
         </div>
-        <Link>Смотреть все спецпредложения</Link>
-        <Info>* средняя цена по направлению</Info>
+        <LinkInfoContainer>
+          <Link>Смотреть все спецпредложения</Link>
+          <Info>* средняя цена по направлению</Info>
+        </LinkInfoContainer>
       </div>
     </Container>
   );
