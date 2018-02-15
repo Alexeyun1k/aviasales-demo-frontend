@@ -56,6 +56,7 @@ const PriceBlock = styled.div`
 `;
 
 const Price = styled.p`
+  white-space: nowrap;
   line-height: 16px;
   font-size: 20px;
   text-align: right;
