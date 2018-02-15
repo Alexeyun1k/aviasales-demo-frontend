@@ -50,6 +50,8 @@ const PassangersContainer = CityContainer.extend`
 
 const Cta = styled.button`
   flex-basis: 100%;
+  margin-left: 1px;
+  margin-right: 1px;
   margin-top: 16px;
   padding: 14px 48px;
   font-weight: 900;
