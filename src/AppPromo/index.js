@@ -7,7 +7,6 @@ import windowsPhone from "./img/windows-phone.svg";
 import apple from "./img/apple.svg";
 import stars from "./img/rating.svg";
 import phone_xs from "./img/phone-xs.png";
-import phone_md from "./img/phone-md.png";
 
 const AppPromo = styled.section`
   background: linear-gradient(137.4deg, #00b0de 4.18%, #196ebd 104.18%);
