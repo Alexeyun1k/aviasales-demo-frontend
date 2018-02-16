@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import queries from "../queries";
 
 import plane from "./img/plane.png";
 import email from "./img/email.png";
@@ -9,6 +10,12 @@ const Container = styled.section`
   padding-top: 4px;
   padding-bottom: 24px;
   background: #fff;
+  @media (min-width: ${queries.md}px) {
+    padding-bottom: 48px;
+  }
+  @media (min-width: ${queries.xl}px) {
+    padding-bottom: 40px;
+  }
 `;
 
 const HeadWrapper = styled.div`
