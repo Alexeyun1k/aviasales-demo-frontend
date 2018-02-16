@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.article`
+const Container = styled.article`
   margin-top: 12px;
 `;
 
@@ -103,7 +103,7 @@ const Button = styled.a`
 
 const Offer = props => {
   return (
-    <Wrapper>
+    <Container>
       <Head>
         <HeadText>{props.data.head}</HeadText>
         <HeadLogo src={props.data.headLogo} />
@@ -119,7 +119,7 @@ const Offer = props => {
         <Info>{props.data.info}</Info>
         <Button>Узнать подробности</Button>
       </Infoblock>
-    </Wrapper>
+    </Container>
   );
 };
 
