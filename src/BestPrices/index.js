@@ -70,8 +70,8 @@ const prices = [
   {
     head: {
       flag: md,
-      city: "Симферополь (Крым)",
-      direction: "КРЫМ"
+      city: "Кишинёв",
+      direction: "МОЛДАВИЯ"
     },
     prices: [
       {

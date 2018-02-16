@@ -15,8 +15,12 @@ import md from "./Flags/md.png";
 
 import compass from "./compass.svg";
 
-import krasnodar from "./cards/1Krasnodar.png";
-import sochi from "./cards/2Sochi.jpeg";
+import krasnodar from "./cards/krasnodar.png";
+import sochi from "./cards/sochi.jpeg";
+import saintP from "./cards/saint-p.jpeg";
+import minVod from "./cards/min-vod.jpeg";
+import simf from "./cards/simf.jpeg";
+import bcn from "./cards/bcn.jpeg";
 import Tab from "./Tab";
 
 const cards = [
@@ -35,6 +39,38 @@ const cards = [
     price: "Найти от 1 334 ₽",
     country: "РОССИЯ",
     departure: "27 марта"
+  },
+  {
+    img: saintP,
+    flag: ru,
+    city: "Санкт-Петербург",
+    price: "Найти от 1 508 ₽",
+    country: "РОССИЯ",
+    departure: "19 февраля"
+  },
+  {
+    img: minVod,
+    flag: ru,
+    city: "Минеральные Воды",
+    price: "Найти от 2 074 ₽",
+    country: "РОССИЯ",
+    departure: "10 февраля"
+  },
+  {
+    img: simf,
+    flag: ru,
+    city: "Симферополь (Крым)",
+    price: "Найти от 2 074 ₽",
+    country: "КРЫМ",
+    departure: "10 февраля"
+  },
+  {
+    img: bcn,
+    flag: am,
+    city: "Барселона",
+    price: "Найти от 4 247 ₽",
+    country: "ИСПАНИЯ",
+    departure: "24 марта"
   }
 ];
 
@@ -116,10 +152,16 @@ export default () => {
             <Card card={cards[1]} />
           </div>
           <div className="col-xs-12 col-lg-5">
-            <Card card={cards[0]} />
+            <Card card={cards[2]} />
           </div>
           <div className="col-xs-12 col-lg-5">
-            <Card card={cards[1]} />
+            <Card card={cards[3]} />
+          </div>
+          <div className="col-xs-12 col-lg-5">
+            <Card card={cards[4]} />
+          </div>
+          <div className="col-xs-12 col-lg-5">
+            <Card card={cards[5]} />
           </div>
         </div>
       </div>
