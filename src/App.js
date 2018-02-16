@@ -8,6 +8,8 @@ import Offers from "./Offers/";
 import Articles from "./Articles/";
 import AppPromo from "./AppPromo/";
 import Footer from "./Footer/";
+import CompanySlider from "./CompanySlider/";
+import EmailSubscription from "./EmailSubscription/";
 
 class App extends Component {
   render() {
@@ -16,6 +18,10 @@ class App extends Component {
         <Header />
         <TopDestinations />
         <BestPrices />
+        <div className="hidden-xs hidden-sm">
+          <CompanySlider />
+          <EmailSubscription />
+        </div>
         <Offers />
         <Articles />
         <AppPromo />
