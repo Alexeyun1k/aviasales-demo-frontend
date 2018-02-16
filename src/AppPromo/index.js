@@ -33,6 +33,9 @@ const Phone = styled.img`
   @media (min-width: ${queries.md}px) {
     height: 312px;
   }
+  @media (min-width: ${queries.xl}px) {
+    left: 9%;
+  }
 `;
 
 const Head = styled.h2`
