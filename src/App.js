@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import styled, { css } from "styled-components";
-// import styled from "styled-components";
 import Header from "./Header/";
 import TopDestinations from "./TopDestinations/";
 import BestPrices from "./BestPrices/";
