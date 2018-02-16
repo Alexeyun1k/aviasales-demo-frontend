@@ -30,6 +30,7 @@ const Phone = styled.img`
   height: 213px;
   position: absolute;
   bottom: 0;
+  left: 0;
   @media (min-width: ${queries.md}px) {
     height: 312px;
   }
