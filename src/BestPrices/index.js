@@ -101,7 +101,7 @@ const prices = [
 const Container = styled.section`
   padding-top: 32px;
   padding-bottom: 40px;
-  background: #f8fcff;
+  background: linear-gradient(180deg, #f8fcff 0%, #ffffff 100%);
 `;
 
 const SectionImg = styled.div`
