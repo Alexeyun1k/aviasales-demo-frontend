@@ -6,8 +6,8 @@ import android from "./img/android.svg";
 import windowsPhone from "./img/windows-phone.svg";
 import apple from "./img/apple.svg";
 import stars from "./img/rating.svg";
-import phoneXS from "./img/phone-xs.png";
-import phoneMD from "./img/phone-md.png";
+import phone_xs from "./img/phone-xs.png";
+import phone_md from "./img/phone-md.png";
 
 const AppPromo = styled.section`
   background: linear-gradient(137.4deg, #00b0de 4.18%, #196ebd 104.18%);
@@ -110,7 +110,7 @@ export default () => {
     <AppPromo>
       <div className="container">
         <Promo>
-          <Phone src={phoneXS} />
+          <Phone src={phone_xs} />
           <div className="row">
             <div className="col-xs-12
                             col-md-offset-4 col-md-8">
