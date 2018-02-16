@@ -6,37 +6,42 @@ import plane from "./img/plane.png";
 import email from "./img/email.png";
 import list from "./img/list.png";
 
-const Container = styled.section`
+const Articles = styled.section`
   padding-top: 4px;
   padding-bottom: 24px;
   background: #fff;
+
   @media (min-width: ${queries.md}px) {
     padding-bottom: 48px;
   }
+
   @media (min-width: ${queries.xl}px) {
     padding-bottom: 40px;
   }
 `;
 
-const HeadWrapper = styled.div`
-  display: flex;
-  margin-top: 16px;
-  margin-bottom: 12px;
-`;
-
-const Icon = styled.div`
-  width: 26px;
-  background: ${props => `url(${props.background}) no-repeat center left`};
+const Icon = styled.img`
+  width: 16px;
+  margin-right: 8px;
+  vertical-align: -2px;
 `;
 
 const Head = styled.h2`
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 16px;
+  margin-bottom: 12px;
   font-weight: bold;
   line-height: 18px;
   text-align: left;
   font-size: 13px;
   color: #4a4a4a;
+
+  @media (min-width: ${queries.md}px) {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: ${queries.xl}px) {
+    margin-top: 24px;
+  }
 `;
 
 const Article = styled.p`
@@ -54,18 +59,23 @@ const Link = styled.a`
   font-size: 14px;
   color: #00ace2;
   cursor: pointer;
+  transition: 0.3s;
+
+  :hover {
+    color: #ff9d1b;
+    text-decoration: underline;
+  }
 `;
 
 export default () => {
   return (
-    <Container>
+    <Articles>
       <div className="container">
         <div className="row center-lg">
           <div className="col-xs-12 col-lg-10">
-            <HeadWrapper>
-              <Icon background={plane} />
-              <Head>КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?</Head>
-            </HeadWrapper>
+            <Head>
+              <Icon src={plane} /> КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?
+            </Head>
             <Article>
               Aviasales.ru — это метапоисковик авиабилетов. Мы ищем билеты на
               самолет по сотням авиакомпаний и находим за считанные минуты самые
@@ -77,13 +87,12 @@ export default () => {
               дешевые билеты на самолет в Европу, Азию и на другие континенты.
               Мы написали для вас простую инструкцию о том, как пользоваться
               поиском и экономить на перелетах от 1000 до 20&nbsp;000 руб в год.{" "}
-              <Link>Подробнее</Link>
+              <Link href="#">Подробнее</Link>
             </Article>
 
-            <HeadWrapper>
-              <Icon background={email} />
-              <Head>ЭЛЕКТРОННЫЙ АВИАБИЛЕТ</Head>
-            </HeadWrapper>
+            <Head>
+              <Icon src={email} /> ЭЛЕКТРОННЫЙ АВИАБИЛЕТ
+            </Head>
             <Article>
               Электронный авиабилет — это, по сути, обычный билет на самолет, но
               только в менее привычном для путешественника виде. Вся информация
@@ -98,23 +107,23 @@ export default () => {
               вместе с удостоверением личности точно так же, как предъявляют
               обыкновенный бумажный билет. Следует отметить, что электронный
               билет, приобретенный онлайн, стоит дешевле своего бумажного
-              аналога. <Link>Подробнее</Link>
+              аналога. <Link href="#">Подробнее</Link>
             </Article>
 
-            <HeadWrapper>
-              <Icon background={list} />
-              <Head>20 СОВЕТОВ АВИАПУТЕШЕСТВЕННИКАМ</Head>
-            </HeadWrapper>
+            <Head>
+              <Icon src={list} /> 20 СОВЕТОВ АВИАПУТЕШЕСТВЕННИКАМ
+            </Head>
             <Article>
               Есть масса путеводителей по странам, но ни одного о том, как
               провести время в самолете. Для того, чтобы сделать ваш перелет
               максимально комфортным, мы написали 20 советов о подготовке к
               путешествию. Ведь настоящее путешествие начинается со слов «Добро
-              пожаловать на борт нашего самолета»! <Link>Подробнее</Link>
+              пожаловать на борт нашего самолета»!{" "}
+              <Link href="#">Подробнее</Link>
             </Article>
           </div>
         </div>
       </div>
-    </Container>
+    </Articles>
   );
 };
