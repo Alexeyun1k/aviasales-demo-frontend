@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
+import Tab from "./Tab";
 
 import anywhere from "./types/anywhere.svg";
 import beach from "./types/beach.svg";
@@ -10,18 +11,16 @@ import nightlife from "./types/nightlife.svg";
 import withBaby from "./types/withBaby.svg";
 
 import ru from "./Flags/ru.png";
-import am from "./Flags/am.png";
-import md from "./Flags/md.png";
-
+import es from "./Flags/es.png";
 import compass from "./compass.svg";
+import edit from "./edit.svg";
 
 import krasnodar from "./cards/krasnodar.png";
 import sochi from "./cards/sochi.jpeg";
-import saintP from "./cards/saint-p.jpeg";
-import minVod from "./cards/min-vod.jpeg";
+import saint_p from "./cards/saint-p.jpeg";
+import min_vod from "./cards/min-vod.jpeg";
 import simf from "./cards/simf.jpeg";
 import bcn from "./cards/bcn.jpeg";
-import Tab from "./Tab";
 
 const cards = [
   {
@@ -41,7 +40,7 @@ const cards = [
     departure: "27 марта"
   },
   {
-    img: saintP,
+    img: saint_p,
     flag: ru,
     city: "Санкт-Петербург",
     price: "Найти от 1 508 ₽",
@@ -49,7 +48,7 @@ const cards = [
     departure: "19 февраля"
   },
   {
-    img: minVod,
+    img: min_vod,
     flag: ru,
     city: "Минеральные Воды",
     price: "Найти от 2 074 ₽",
@@ -66,7 +65,7 @@ const cards = [
   },
   {
     img: bcn,
-    flag: am,
+    flag: es,
     city: "Барселона",
     price: "Найти от 4 247 ₽",
     country: "ИСПАНИЯ",
@@ -74,26 +73,21 @@ const cards = [
   }
 ];
 
-const TopDestinations = styled.section`
+const Section = styled.section`
   padding-top: 40px;
   padding-bottom: 40px;
   background: #f8fcff;
 `;
 
-const SectionImg = styled.div`
+const Icon = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #e2f8ff;
-  background-image: url(${compass});
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
 `;
 
-const SectionHeader = styled.h2`
+const Head = styled.h2`
   margin-top: 24px;
   margin-bottom: 32px;
   font-weight: 500;
@@ -103,14 +97,24 @@ const SectionHeader = styled.h2`
   color: #4a4a4a;
 `;
 
+const CitySearch = styled.button`
+  display: inline;
+  border: none;
+  background: transparent;
+  color: #00ace2;
+`;
+
 export default () => {
   return (
-    <TopDestinations>
+    <Section>
       <div className="container">
-        <SectionImg src="" />
-        <SectionHeader>
-          Популярные направления перелетов из города Москва
-        </SectionHeader>
+        <Icon src={compass} />
+        <Head>
+          Популярные направления перелетов из города
+          <CitySearch>
+            Москва <img src={edit} alt="Изменить город" />
+          </CitySearch>
+        </Head>
         <div className="row center-md">
           <div className="col-xs-4 col-md-2 col-lg-1">
             <Tab img={anywhere}>
@@ -145,26 +149,26 @@ export default () => {
         </div>
 
         <div className="row center-md">
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[0]} />
           </div>
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[1]} />
           </div>
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[2]} />
           </div>
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[3]} />
           </div>
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[4]} />
           </div>
-          <div className="col-xs-12 col-lg-5">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <Card card={cards[5]} />
           </div>
         </div>
       </div>
-    </TopDestinations>
+    </Section>
   );
 };

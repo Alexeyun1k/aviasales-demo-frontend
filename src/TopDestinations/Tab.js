@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.button`
+const Button = styled.button`
   width: 100%;
   margin-top: 24px;
   padding: 0;
@@ -33,13 +33,11 @@ const Img = styled.div`
   box-shadow: 0px 2px 4px rgba(74, 74, 74, 0.1);
 `;
 
-const Tab = props => {
+export default props => {
   return (
-    <Container>
+    <Button>
       <Img icon={props.img} />
       {props.children}
-    </Container>
+    </Button>
   );
 };
-
-export default Tab;
