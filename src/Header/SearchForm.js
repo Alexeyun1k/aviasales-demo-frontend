@@ -5,16 +5,13 @@ import CityTo from "./CityTo";
 import DateFrom from "./DateFrom";
 import DateTo from "./DateTo";
 import Passangers from "./Passangers";
-
 import queries from "../queries";
-
 import plane from "./img/plane.svg";
 
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   margin-left: -1px;
   margin-right: -1px;
   margin-top: -2px;
@@ -24,9 +21,11 @@ const CityContainer = styled.div`
   min-width: 0;
   padding: 2px 1px 0;
   flex-basis: 100%;
+
   @media (min-width: ${queries.md}px) {
     flex-basis: 50%;
   }
+
   @media (min-width: ${queries.xl}px) {
     flex-basis: 24%;
   }
@@ -34,9 +33,11 @@ const CityContainer = styled.div`
 
 const DateContainer = CityContainer.extend`
   flex-basis: 50%;
+
   @media (min-width: ${queries.md}px) {
     flex-basis: 25%;
   }
+
   @media (min-width: ${queries.xl}px) {
     flex-basis: 16%;
   }
@@ -61,6 +62,7 @@ const Cta = styled.button`
   border: none;
   border-radius: 4px;
   background-color: #ff9241;
+
   @media (min-width: ${queries.md}px) {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -69,10 +71,12 @@ const Cta = styled.button`
     flex-basis: auto;
     margin-top: 32px;
   }
+
   @media (min-width: ${queries.xl}px) {
     margin-top: 48px;
   }
-  &:after {
+
+  :after {
     content: url(${plane});
     margin-left: 16px;
     position: relative;
@@ -86,18 +90,23 @@ export default () => {
       <CityContainer>
         <CityFrom />
       </CityContainer>
+
       <CityContainer>
         <CityTo />
       </CityContainer>
+
       <DateContainer>
         <DateFrom />
       </DateContainer>
+
       <DateContainer>
         <DateTo />
       </DateContainer>
+
       <PassangersContainer>
         <Passangers />
       </PassangersContainer>
+
       <Cta>Найти билеты</Cta>
     </Form>
   );

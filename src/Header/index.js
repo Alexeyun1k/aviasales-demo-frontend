@@ -26,13 +26,26 @@ const FormContainer = styled.div`
   padding: 88px 0;
 `;
 
-const Logo = styled.a`
+const Aviasales = styled.a`
   position: absolute;
   top: 12px;
   display: block;
-  background: url(${aviasales}) no-repeat;
-  width: 30px;
-  height: 30px;
+  line-height: 24px;
+  font-size: 20px;
+  color: #ffffff;
+`;
+
+const Logo = styled.img`
+  margin-right: 12px;
+  vertical-align: -8px;
+`;
+
+const Name = styled.span`
+  display: none;
+
+  @media (min-width: ${queries.md}px) {
+    display: inline;
+  }
 `;
 
 const Head = styled.h1`
@@ -73,7 +86,10 @@ export default () => {
   return (
     <Container>
       <div className="container">
-        <Logo />
+        <Aviasales>
+          <Logo src={aviasales} />
+          <Name>aviasales</Name>
+        </Aviasales>
         <FormContainer>
           <div className="row center-md middle-xs">
             <div className="col-xs-12 col-md-10">

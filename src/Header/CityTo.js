@@ -2,12 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import queries from "../queries";
 
-const Container = styled.article`
+const CityTo = styled.div`
   display: flex;
   background: #ffffff;
+  position: relative;
+
   @media (min-width: ${queries.md}px) {
     border-radius: 0 4px 0 0;
   }
+
   @media (min-width: ${queries.xl}px) {
     border-radius: 0;
   }
@@ -22,12 +25,19 @@ const Input = styled.input`
   font-size: 16px;
   color: #4a4a4a;
 
-  &::placeholder {
+  ::placeholder {
     color: #a0b0b9;
+  }
+
+  :focus {
+    outline: 2px solid #fd8a27;
+    outline-offset: 0px;
   }
 `;
 
 const Name = styled.div`
+  position: absolute;
+  right: 0;
   padding: 18px 16px 18px 0;
   line-height: 20px;
   font-size: 16px;
@@ -35,13 +45,11 @@ const Name = styled.div`
   color: #a0b0b9;
 `;
 
-const CityTo = props => {
+export default props => {
   return (
-    <Container>
+    <CityTo>
       <Input placeholder="Город прибытия" />
       <Name />
-    </Container>
+    </CityTo>
   );
 };
-
-export default CityTo;

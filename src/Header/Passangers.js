@@ -18,9 +18,16 @@ const Button = styled.button`
   border-radius: 0 0 4px 4px;
   background: url(${dropdown}) no-repeat center right 16px;
   background-color: #ffffff;
+
+  :focus {
+    outline: 2px solid #fd8a27;
+    outline-offset: 0px;
+  }
+
   @media (min-width: ${queries.md}px) {
     border-radius: 0 0 4px 0;
   }
+
   @media (min-width: ${queries.xl}px) {
     border-radius: 0 4px 4px 0;
   }
@@ -30,12 +37,10 @@ const Additional = styled.span`
   color: #a0b0b9;
 `;
 
-const Passangers = props => {
+export default props => {
   return (
     <Button>
       1 пассажир, <Additional>эконом</Additional>
     </Button>
   );
 };
-
-export default Passangers;

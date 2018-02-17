@@ -14,9 +14,16 @@ const DatePicker = styled.button`
   border: none;
   background: url(${calendar}) no-repeat center right 16px;
   background-color: #ffffff;
+
+  :focus {
+    outline: 2px solid #fd8a27;
+    outline-offset: 0px;
+  }
+
   @media (min-width: ${queries.md}px) {
     border-radius: 0 0 0 4px;
   }
+
   @media (min-width: ${queries.xl}px) {
     border-radius: 0;
   }

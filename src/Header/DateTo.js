@@ -13,6 +13,11 @@ const DatePicker = styled.button`
   border: none;
   background: url(${calendar}) no-repeat center right 16px;
   background-color: #ffffff;
+
+  :focus {
+    outline: 2px solid #fd8a27;
+    outline-offset: 0px;
+  }
 `;
 
 export default props => {
