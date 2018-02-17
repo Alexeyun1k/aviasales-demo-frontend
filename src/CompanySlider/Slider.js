@@ -36,6 +36,7 @@ const Pagination = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const Indicator = styled.button`
   width: 10px;
   height: 10px;
