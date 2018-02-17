@@ -11,7 +11,6 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
-
   font-style: normal;
   font-weight: normal;
   line-height: 20px;
@@ -20,23 +19,24 @@ const Button = styled.button`
   color: #00ace2;
 `;
 
-const Img = styled.div`
+const Icon = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 12px;
-  width: 56px;
-  height: 56px;
+  padding: 13px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: ${props => `url(${props.icon}) no-repeat center`};
-  background-color: #fff;
   box-shadow: 0px 2px 4px rgba(74, 74, 74, 0.1);
 `;
 
 export default props => {
   return (
     <Button>
-      <Img icon={props.img} />
+      <Icon>
+        <img src={props.img} alt="Иконка" />
+      </Icon>
       {props.children}
     </Button>
   );
