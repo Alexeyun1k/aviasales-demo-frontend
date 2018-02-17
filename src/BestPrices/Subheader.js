@@ -6,6 +6,7 @@ const City = styled.h3`
   font-weight: bold;
   line-height: 32px;
   font-size: 22px;
+  text-align: left;
   color: #5b5b5c;
 `;
 
@@ -15,6 +16,7 @@ const Direction = styled.p`
   font-weight: 500;
   line-height: 20px;
   font-size: 12px;
+  text-align: left;
   color: #a0b0b9;
 `;
 
@@ -28,20 +30,18 @@ const Flag = styled.img`
   box-shadow: 0px 0px 8px rgba(38, 38, 38, 0.1);
 `;
 
-const Wrapper = styled.div`
+const SubHeader = styled.div`
   display: flex;
 `;
 
-const Subheader = props => {
+export default props => {
   return (
-    <Wrapper>
+    <SubHeader>
       <Flag src={props.data.flag} />
       <div>
         <City>{props.data.city}</City>
         <Direction>{props.data.direction}</Direction>
       </div>
-    </Wrapper>
+    </SubHeader>
   );
 };
-
-export default Subheader;

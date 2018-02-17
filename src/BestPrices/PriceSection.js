@@ -2,7 +2,7 @@ import React from "react";
 import Subheader from "./Subheader";
 import Prices from "./Prices";
 
-const PriceSection = props => {
+export default props => {
   return (
     <div>
       <Subheader data={props.data.head} />
@@ -10,5 +10,3 @@ const PriceSection = props => {
     </div>
   );
 };
-
-export default PriceSection;

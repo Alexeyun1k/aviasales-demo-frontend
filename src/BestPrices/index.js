@@ -4,7 +4,7 @@ import PriceSection from "./PriceSection";
 
 import ru from "./Flags/ru.png";
 import am from "./Flags/am.png";
-import md from "./Flags/md.png";
+import es from "./Flags/es.png";
 import calendar from "./calendar.svg";
 import queries from "../queries";
 
@@ -69,7 +69,7 @@ const prices = [
   },
   {
     head: {
-      flag: md,
+      flag: es,
       city: "Кишинёв",
       direction: "МОЛДАВИЯ"
     },
@@ -98,23 +98,18 @@ const prices = [
   }
 ];
 
-const Container = styled.section`
+const Section = styled.section`
   padding-top: 32px;
   padding-bottom: 40px;
   background: linear-gradient(180deg, #f8fcff 0%, #ffffff 100%);
 `;
 
-const SectionImg = styled.div`
+const Icon = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background-color: #e2f8ff;
-  background-image: url(${calendar});
-  background-position: center;
-  background-repeat: no-repeat;
 `;
 
 const Head = styled.h2`
@@ -166,29 +161,30 @@ const SecondaryInfo = styled.p`
 
 export default () => {
   return (
-    <Container>
+    <Section>
       <div className="container">
-        <SectionImg />
+        <Icon src={calendar} />
         <Head>Лучшие цены на авиабилеты за последний месяц</Head>
-        <div className="row between-xl">
-          <div className="col-xs-12 col-md-offset-1 col-md-10  col-xl-3">
+
+        <div class="row center-xs">
+          <div class="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+          <div class="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[0]} />
           </div>
-          <div className="col-xs-12 col-md-offset-1 col-md-10 col-xl-offset-0 col-xl">
+          <div class="col-xs-12 col-md-10 col-xl">
             <Divider />
           </div>
-          <div className="col-xs-12 col-md-offset-1 col-md-10 col-xl-offset-0 col-xl-3">
+          <div class="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[1]} />
           </div>
-          <div className="col-xs-12 col-md-offset-1 col-md-10 col-xl-offset-0 col-xl">
+          <div class="col-xs-12 col-md-10 col-xl">
             <Divider />
           </div>
-          <div className="col-xs-12 col-md-offset-1 col-md-10 col-xl-offset-0 col-xl-3">
+          <div class="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[2]} />
           </div>
-          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
-        </div>
-        <div className="row center-xs">
+          <div class="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+
           <div className="col-xs-12 col-md-10 col-xl-6">
             <Info>
               Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220
@@ -202,6 +198,6 @@ export default () => {
           </div>
         </div>
       </div>
-    </Container>
+    </Section>
   );
 };

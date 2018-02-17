@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Prices = styled.div`
   margin-top: 16px;
 `;
 
 const Line = styled.a`
   padding: 8px 0;
   display: flex;
-  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+
+  :hover {
+    background-color: #f1fcff;
+  }
 `;
 
 const From = styled.p`
@@ -20,7 +26,14 @@ const From = styled.p`
   margin: 0;
   line-height: 20px;
   font-size: 16px;
+  text-align: left;
+  text-decoration: none;
   color: #4a4a4a;
+
+  :hover {
+    color: #ff9d1b;
+    text-decoration: underline;
+  }
 `;
 
 const Price = styled.p`
@@ -28,38 +41,42 @@ const Price = styled.p`
   margin: 0;
   line-height: 20px;
   font-size: 16px;
+  text-align: right;
+  text-decoration: none;
   color: #00bae8;
+
+  :hover {
+    color: #ff9d1b;
+  }
 `;
 
-const Prices = props => {
+export default props => {
   return (
-    <Wrapper>
-      <Line>
+    <Prices>
+      <Line href="#">
         <From>{props.data[0].from}</From>
         <Price>{props.data[0].price}</Price>
       </Line>
 
-      <Line>
+      <Line href="#">
         <From>{props.data[1].from}</From>
         <Price>{props.data[1].price}</Price>
       </Line>
 
-      <Line>
+      <Line href="#">
         <From>{props.data[2].from}</From>
         <Price>{props.data[2].price}</Price>
       </Line>
 
-      <Line>
+      <Line href="#">
         <From>{props.data[3].from}</From>
         <Price>{props.data[3].price}</Price>
       </Line>
 
-      <Line>
+      <Line href="#">
         <From>{props.data[4].from}</From>
         <Price>{props.data[4].price}</Price>
       </Line>
-    </Wrapper>
+    </Prices>
   );
 };
-
-export default Prices;
