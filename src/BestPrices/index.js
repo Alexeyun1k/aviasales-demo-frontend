@@ -166,24 +166,24 @@ export default () => {
         <Icon src={calendar} />
         <Head>Лучшие цены на авиабилеты за последний месяц</Head>
 
-        <div class="row center-xs">
-          <div class="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
-          <div class="col-xs-12 col-md-10 col-xl-3">
+        <div className="row center-xs">
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+          <div className="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[0]} />
           </div>
-          <div class="col-xs-12 col-md-10 col-xl">
+          <div className="col-xs-12 col-md-10 col-xl">
             <Divider />
           </div>
-          <div class="col-xs-12 col-md-10 col-xl-3">
+          <div className="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[1]} />
           </div>
-          <div class="col-xs-12 col-md-10 col-xl">
+          <div className="col-xs-12 col-md-10 col-xl">
             <Divider />
           </div>
-          <div class="col-xs-12 col-md-10 col-xl-3">
+          <div className="col-xs-12 col-md-10 col-xl-3">
             <PriceSection data={prices[2]} />
           </div>
-          <div class="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
 
           <div className="col-xs-12 col-md-10 col-xl-6">
             <Info>
