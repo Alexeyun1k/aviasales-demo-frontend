@@ -8,7 +8,7 @@ import apple from "./img/apple.svg";
 import stars from "./img/rating.svg";
 import phone_xs from "./img/phone-xs.png";
 
-const AppPromo = styled.section`
+const Section = styled.section`
   background: linear-gradient(137.4deg, #00b0de 4.18%, #196ebd 104.18%);
 `;
 
@@ -106,7 +106,7 @@ const Platform = styled.img`
 
 export default () => {
   return (
-    <AppPromo>
+    <Section>
       <div className="container">
         <Promo>
           <Phone src={phone_xs} />
@@ -135,6 +135,6 @@ export default () => {
           </div>
         </Promo>
       </div>
-    </AppPromo>
+    </Section>
   );
 };

@@ -6,7 +6,7 @@ import plane from "./img/plane.png";
 import email from "./img/email.png";
 import list from "./img/list.png";
 
-const Articles = styled.section`
+const Section = styled.section`
   padding-top: 4px;
   padding-bottom: 24px;
   background: #fff;
@@ -69,7 +69,7 @@ const Link = styled.a`
 
 export default () => {
   return (
-    <Articles>
+    <Section>
       <div className="container">
         <div className="row center-lg">
           <div className="col-xs-12 col-lg-10">
@@ -124,6 +124,6 @@ export default () => {
           </div>
         </div>
       </div>
-    </Articles>
+    </Section>
   );
 };
