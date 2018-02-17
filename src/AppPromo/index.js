@@ -111,15 +111,13 @@ export default () => {
         <Promo>
           <Phone src={phone_xs} />
           <div className="row">
-            <div className="col-xs-12
-                            col-md-offset-4 col-md-8">
+            <div className="col-xs-12 col-md-offset-4 col-md-8">
               <Head>Скачай мобильное приложение Aviasales.ru</Head>
               <Rating>
                 <Stars src={stars} />Более 103 000 оценок
               </Rating>
             </div>
-            <div className="col-xs-offset-6 col-xs-6
-                            col-md-offset-4 col-md-8">
+            <div className="col-xs-offset-6 col-xs-6 col-md-offset-4 col-md-8">
               <Links>
                 <AppLink href="#">
                   <Platform src={apple} />iPhone или iPad
