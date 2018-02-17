@@ -6,12 +6,12 @@ import vk from "./img/vk.svg";
 import viber from "./img/viber.svg";
 import twitter from "./img/twitter.svg";
 import instagram from "./img/instagram.svg";
-import appStore from "./img/app-store.svg";
-import winStore from "./img/win-store.svg";
-import googlePlay from "./img/google-play.svg";
+import app_store from "./img/app-store.svg";
+import win_store from "./img/win-store.svg";
+import google_play from "./img/google-play.svg";
 import queries from "../queries";
 
-const Container = styled.section`
+const Footer = styled.footer`
   padding-top: 16px;
   padding-bottom: 8px;
   background: #ffffff;
@@ -33,22 +33,18 @@ const Link = styled.a`
   line-height: 16px;
   font-size: 12px;
   color: #5b5b5c;
-  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: #fd8a27;
   }
 `;
 
-const LinkMore = styled.a`
-  display: block;
+const LinkMore = Link.extend`
   margin-top: 16px;
-  margin-bottom: 0;
   font-weight: 500;
-  line-height: 16px;
-  font-size: 12px;
   color: #4a4a4a;
-  cursor: pointer;
 
   &::after {
     position: absolute;
@@ -92,23 +88,16 @@ const SocialLinks = styled.div`
   margin-top: 16px;
 `;
 
-const Social = styled.a`
+const Social = Link.extend`
   padding: 0 8px;
   flex-basis: 33.3333%;
   margin-top: 0px;
   margin-bottom: 12px;
-  line-height: 16px;
-  font-size: 12px;
   color: #4a4a4a;
-  cursor: pointer;
 
   @media (min-width: 768px) {
     flex-basis: auto;
     margin-right: 8px;
-  }
-
-  &:hover {
-    text-decoration: underline;
   }
 `;
 
@@ -140,7 +129,7 @@ const Badge = styled.a`
 `;
 
 const Legal = styled.p`
-  margin: 12px 0 16px;
+  margin: 14px 0 16px;
   line-height: 16px;
   font-size: 12px;
   text-align: center;
@@ -157,67 +146,67 @@ const Legal = styled.p`
 
 export default () => {
   return (
-    <Container>
+    <Footer>
       <div className="container">
         <div className="row">
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>СТРАНЫ</Head>
-            <Link>Россия</Link>
-            <Link>Таиланд</Link>
-            <Link>Черногория</Link>
-            <Link>Кипр</Link>
-            <Link>Болгария</Link>
-            <Link>Грузия</Link>
-            <LinkMore>Все страны</LinkMore>
+            <Link href="#">Россия</Link>
+            <Link href="#">Таиланд</Link>
+            <Link href="#">Черногория</Link>
+            <Link href="#">Кипр</Link>
+            <Link href="#">Болгария</Link>
+            <Link href="#">Грузия</Link>
+            <LinkMore href="#">Все страны</LinkMore>
           </div>
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>ГОРОДА</Head>
-            <Link>Москва</Link>
-            <Link>Санкт-Петербург</Link>
-            <Link>Симферополь</Link>
-            <Link>Адлер</Link>
-            <Link>Екатеринбург</Link>
-            <Link>Лондон</Link>
+            <Link href="#">Москва</Link>
+            <Link href="#">Санкт-Петербург</Link>
+            <Link href="#">Симферополь</Link>
+            <Link href="#">Адлер</Link>
+            <Link href="#">Екатеринбург</Link>
+            <Link href="#">Лондон</Link>
             <LinkMore>Все города</LinkMore>
           </div>
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>АВИАКОМПАНИИ</Head>
-            <Link>Air Berlin</Link>
-            <Link>Air France</Link>
-            <Link>Alitalia</Link>
-            <Link>Air Baltic</Link>
-            <Link>Emirates</Link>
-            <Link>KLM</Link>
-            <LinkMore>Все авиакомпании</LinkMore>
+            <Link href="#">Air Berlin</Link>
+            <Link href="#">Air France</Link>
+            <Link href="#">Alitalia</Link>
+            <Link href="#">Air Baltic</Link>
+            <Link href="#">Emirates</Link>
+            <Link href="#">KLM</Link>
+            <LinkMore href="#">Все авиакомпании</LinkMore>
           </div>
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>АЭРОПОРТЫ</Head>
-            <Link>Шереметьево</Link>
-            <Link>Курумоч</Link>
-            <Link>Домодедово</Link>
-            <Link>Толмачево</Link>
-            <Link>Владивосток</Link>
-            <Link>Гамбург</Link>
-            <LinkMore>Все аэропорты</LinkMore>
+            <Link href="#">Шереметьево</Link>
+            <Link href="#">Курумоч</Link>
+            <Link href="#">Домодедово</Link>
+            <Link href="#">Толмачево</Link>
+            <Link href="#">Владивосток</Link>
+            <Link href="#">Гамбург</Link>
+            <LinkMore href="#">Все аэропорты</LinkMore>
           </div>
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>НАПРАВЛЕНИЯ</Head>
-            <Link>MOW – SIP</Link>
-            <Link>MOW – AER</Link>
-            <Link>MOW – TIV</Link>
-            <Link>MOW – MRV</Link>
-            <Link>LED – MOW</Link>
-            <Link>MOW – BKK</Link>
+            <Link href="#">MOW – SIP</Link>
+            <Link href="#">MOW – AER</Link>
+            <Link href="#">MOW – TIV</Link>
+            <Link href="#">MOW – MRV</Link>
+            <Link href="#">LED – MOW</Link>
+            <Link href="#">MOW – BKK</Link>
           </div>
           <div class="col-xs-6 col-md-3 col-lg-2">
             <Head>СЕРВИСЫ</Head>
-            <Link>Горящие авиабилеты</Link>
-            <Link>Календарь низких цен</Link>
-            <Link>Карта низких цен</Link>
-            <Link>Спецпредложения</Link>
-            <Link>Таблица цен</Link>
-            <Link>Блог</Link>
-            <Link>Помощь</Link>
+            <Link href="#">Горящие авиабилеты</Link>
+            <Link href="#">Календарь низких цен</Link>
+            <Link href="#">Карта низких цен</Link>
+            <Link href="#">Спецпредложения</Link>
+            <Link href="#">Таблица цен</Link>
+            <Link href="#">Блог</Link>
+            <Link href="#">Помощь</Link>
           </div>
         </div>
       </div>
@@ -226,49 +215,49 @@ export default () => {
         <div className="row">
           <div className="col-xs-12 col-xl-7">
             <div>
-              <AdditionalLink>О компании</AdditionalLink>
-              <AdditionalLink>Партнёрская программа</AdditionalLink>
-              <AdditionalLink>Реклама</AdditionalLink>
-              <AdditionalLink>Вакансии</AdditionalLink>
-              <AdditionalLink>Помощь</AdditionalLink>
-              <AdditionalLink>Правила</AdditionalLink>
-              <AdditionalLink>White Label авиабилеты</AdditionalLink>
+              <AdditionalLink href="#">О компании</AdditionalLink>
+              <AdditionalLink href="#">Партнёрская программа</AdditionalLink>
+              <AdditionalLink href="#">Реклама</AdditionalLink>
+              <AdditionalLink href="#">Вакансии</AdditionalLink>
+              <AdditionalLink href="#">Помощь</AdditionalLink>
+              <AdditionalLink href="#">Правила</AdditionalLink>
+              <AdditionalLink href="#">White Label авиабилеты</AdditionalLink>
             </div>
             <SocialLinks>
-              <Social>
+              <Social href="#">
                 <Icon src={vk} />Вконтакте
               </Social>
-              <Social>
+              <Social href="#">
                 <Icon src={fb} />Фейсбук
               </Social>
-              <Social>
+              <Social href="#">
                 <Icon src={instagram} />Инстаграм
               </Social>
-              <Social>
+              <Social href="#">
                 <Icon src={twitter} />Твиттер
               </Social>
-              <Social>
+              <Social href="#">
                 <Icon src={viber} />Вайбер
               </Social>
             </SocialLinks>
-            <SearchLink>Поиск и бронирование отелей</SearchLink>
+            <SearchLink href="#">Поиск и бронирование отелей</SearchLink>
           </div>
           <div className="col-xs-12 col-xl-5">
             <Badges>
-              <Badge>
-                <img src={appStore} alt="Download from App Store" />
+              <Badge href="#">
+                <img src={app_store} alt="Download from App Store" />
               </Badge>
-              <Badge>
-                <img src={googlePlay} alt="Download from Google Play" />
+              <Badge href="#">
+                <img src={google_play} alt="Download from Google Play" />
               </Badge>
-              <Badge>
-                <img src={winStore} alt="Download from Windows Store" />
+              <Badge href="#">
+                <img src={win_store} alt="Download from Windows Store" />
               </Badge>
             </Badges>
             <Legal>© 2007–2018, Aviasales — дешевые авиабилеты</Legal>
           </div>
         </div>
       </div>
-    </Container>
+    </Footer>
   );
 };
