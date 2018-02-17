@@ -18,9 +18,10 @@ const Container = styled.header`
   );
 `;
 
-const FormContainer = styled.div`
+const FormAndHeadings = styled.div`
   min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 88px 0;
@@ -57,17 +58,21 @@ const Head = styled.h1`
   font-size: 20px;
   text-align: center;
   color: #ffffff;
+
   @media (min-width: ${queries.md}px) {
     margin-bottom: 8px;
     line-height: 48px;
     font-size: 32px;
   }
+
   @media (min-width: ${queries.xl}px) {
     font-size: 40px;
   }
 `;
+
 const Paragraph = styled.p`
   display: none;
+
   @media (min-width: ${queries.md}px) {
     margin-top: 8px;
     display: block;
@@ -77,6 +82,7 @@ const Paragraph = styled.p`
     text-align: center;
     color: #ffffff;
   }
+
   @media (min-width: ${queries.xl}px) {
     font-size: 24px;
   }
@@ -90,7 +96,7 @@ export default () => {
           <Logo src={aviasales} />
           <Name>aviasales</Name>
         </Aviasales>
-        <FormContainer>
+        <FormAndHeadings>
           <div className="row center-md middle-xs">
             <div className="col-xs-12 col-md-10">
               <Head>Поиск дешевых авиабилетов</Head>
@@ -98,7 +104,7 @@ export default () => {
               <SearchForm />
             </div>
           </div>
-        </FormContainer>
+        </FormAndHeadings>
       </div>
     </Container>
   );
