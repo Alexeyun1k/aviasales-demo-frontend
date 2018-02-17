@@ -9,22 +9,22 @@ import s7 from "./img/s7.png";
 import arrowLeft from "./img/arrow-left.svg";
 import arrowRight from "./img/arrow-right.svg";
 
-const Container = styled.div``;
-
 const Slider = styled.div`
   display: flex;
   margin: 0;
-  padding: 12px 16px;
 `;
 
-const Prev = styled.button``;
-const Next = styled.button``;
+const Button = styled.button`
+  border: none;
+  background: transparent;
+`;
 
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-grow: 1;
+  padding: 12px 0;
 `;
 
 const Logo = styled.img`
@@ -32,7 +32,7 @@ const Logo = styled.img`
   margin: 16px 10px;
 `;
 
-const Indication = styled.div`
+const Pagination = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -46,13 +46,13 @@ const Indicator = styled.button`
   margin: 0 4px;
 `;
 
-const Offer = props => {
+export default props => {
   return (
-    <Container>
+    <div>
       <Slider>
-        <Prev>
+        <Button>
           <img src={arrowLeft} alt="Назад" />
-        </Prev>
+        </Button>
         <Content>
           <Logo src={aeroflot} />
           <Logo src={elivaline} />
@@ -60,17 +60,15 @@ const Offer = props => {
           <Logo src={oneTwoTrip} />
           <Logo src={s7} />
         </Content>
-        <Next>
+        <Button>
           <img src={arrowRight} alt="Вперёд" />
-        </Next>
+        </Button>
       </Slider>
-      <Indication>
+      <Pagination>
         <Indicator active />
         <Indicator />
         <Indicator />
-      </Indication>
-    </Container>
+      </Pagination>
+    </div>
   );
 };
-
-export default Offer;

@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import Slider from "./Slider";
-import queries from "../queries";
 
-const Container = styled.section`
+const Section = styled.section`
   padding-top: 24px;
   padding-bottom: 32px;
   background: #ffffff;
@@ -22,7 +21,7 @@ const Head = styled.h2`
 
 export default () => {
   return (
-    <Container>
+    <Section>
       <div className="container">
         <div className="row center-md">
           <div className="col-md-10">
@@ -33,6 +32,6 @@ export default () => {
           </div>
         </div>
       </div>
-    </Container>
+    </Section>
   );
 };
