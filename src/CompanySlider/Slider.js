@@ -35,6 +35,7 @@ const Logo = styled.img`
 const Pagination = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 32px;
 `;
 
 const Indicator = styled.button`

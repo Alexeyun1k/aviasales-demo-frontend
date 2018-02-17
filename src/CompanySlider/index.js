@@ -1,16 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-
 import Slider from "./Slider";
 
-const Section = styled.section`
-  padding-top: 24px;
-  padding-bottom: 32px;
-  background: #ffffff;
-`;
-
 const Head = styled.h2`
-  margin-top: 0;
+  margin-top: 24px;
   margin-bottom: 8px;
   font-weight: 500;
   line-height: 40px;
@@ -21,17 +14,13 @@ const Head = styled.h2`
 
 export default () => {
   return (
-    <Section>
-      <div className="container">
-        <div className="row center-md">
-          <div className="col-md-10">
-            <Head>
-              Дешевые авиабилеты от крупнейших авиакомпаний и агентств
-            </Head>
-            <Slider />
-          </div>
+    <section className="container">
+      <div className="row center-md">
+        <div className="col-md-10">
+          <Head>Дешевые авиабилеты от крупнейших авиакомпаний и агентств</Head>
+          <Slider />
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
