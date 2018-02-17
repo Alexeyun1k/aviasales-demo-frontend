@@ -63,7 +63,7 @@ export default props => {
       <Input placeholder="Город вылета" />
       <Name>MOW</Name>
       <ChangeCities>
-        <img src={arrows} />
+        <img src={arrows} alt="Поменять города местами" />
       </ChangeCities>
     </CityFrom>
   );
