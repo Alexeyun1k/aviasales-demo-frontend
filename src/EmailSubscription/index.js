@@ -9,7 +9,7 @@ import rss from "./img/rss.svg";
 
 import queries from "../queries";
 
-const Container = styled.section`
+const Section = styled.section`
   padding-top: 0;
   padding-bottom: 24px;
   background: #ffffff;
@@ -21,6 +21,7 @@ const Divider = styled.hr`
   background: url(${divider}) repeat-x;
   height: 7px;
   margin-bottom: 24px;
+
   @media (min-width: ${queries.xl}px) {
     margin-bottom: 32px;
   }
@@ -34,6 +35,7 @@ const Head = styled.h2`
   font-size: 16px;
   text-align: center;
   color: #5c5c5c;
+
   @media (min-width: ${queries.xl}px) {
     text-align: left;
   }
@@ -46,6 +48,7 @@ const Paragraph = styled.p`
   font-size: 16px;
   text-align: center;
   color: #5c5c5c;
+
   @media (min-width: ${queries.xl}px) {
     text-align: left;
   }
@@ -55,6 +58,7 @@ const SocialsAndForm = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+
   @media (min-width: ${queries.xl}px) {
     margin-top: 0;
     flex-direction: row;
@@ -64,6 +68,7 @@ const Socials = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 -4px;
+
   @media (min-width: ${queries.xl}px) {
     display: inline-flex;
   }
@@ -75,9 +80,11 @@ const Social = styled.a`
 `;
 
 const Form = styled.form`
+  min-width: 0;
   margin-top: 24px;
   display: flex;
   justify-content: center;
+
   @media (min-width: ${queries.xl}px) {
     margin-top: 0;
     margin-left: 16px;
@@ -96,10 +103,18 @@ const Input = styled.input`
   border-right: none;
   border-radius: 2px 0 0 2px;
   min-width: 0;
+  transition: 0.3s ease-in-out;
 
-  &::placeholder {
+  :focus {
+    border: 1px solid #ff8e41;
+    border-right: none;
+    outline: none;
+  }
+
+  ::placeholder {
     color: #a0b0b9;
   }
+
   @media (min-width: ${queries.xl}px) {
     display: inline-flex;
   }
@@ -113,18 +128,12 @@ const Button = styled.button`
   font-size: 16px;
   text-align: center;
   color: #ffffff;
-  padding: 8px 20px;
+  padding: 8px 16px;
 `;
-
-// const LinkInfoContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-
-// `;
 
 export default () => {
   return (
-    <Container>
+    <Section>
       <Divider />
       <div className="container">
         <div className="row ">
@@ -139,16 +148,16 @@ export default () => {
             <SocialsAndForm>
               <Socials>
                 <Social href="#">
-                  <img src={twitter} />
+                  <img src={twitter} alt="Твиттер" />
                 </Social>
                 <Social href="#">
-                  <img src={fb} />
+                  <img src={fb} alt="Фейсбук" />
                 </Social>
                 <Social href="#">
-                  <img src={vk} />
+                  <img src={vk} alt="Вконтакте" />
                 </Social>
                 <Social href="#">
-                  <img src={rss} />
+                  <img src={rss} alt="РСС" />
                 </Social>
               </Socials>
               <Form>
@@ -159,6 +168,6 @@ export default () => {
           </div>
         </div>
       </div>
-    </Container>
+    </Section>
   );
 };
