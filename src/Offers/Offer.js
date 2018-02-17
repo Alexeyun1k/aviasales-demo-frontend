@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.article`
+const Offer = styled.article`
   margin-top: 12px;
 `;
 
-const Head = styled.div`
+const MainInfo = styled.div`
   display: flex;
   margin: 0;
   padding: 12px 16px;
   background-color: #cd2027;
 `;
 
-const HeadText = styled.h3`
+const Head = styled.h3`
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -23,6 +23,7 @@ const HeadText = styled.h3`
   font-weight: normal;
   line-height: 20px;
   font-size: 16px;
+  text-align: left;
   color: #ffffff;
 `;
 
@@ -30,7 +31,7 @@ const HeadLogo = styled.img`
   margin-left: 16px;
 `;
 
-const Infoblock = styled.div`
+const Details = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 208px;
@@ -49,7 +50,7 @@ const Logo = styled.img`
   min-width: 0;
 `;
 
-const PriceBlock = styled.div`
+const PriceAndDays = styled.div`
   flex-grow: 1;
   margin-left: 8px;
   margin-right: 8px;
@@ -63,14 +64,13 @@ const Price = styled.p`
   color: #5c5c5c;
   margin-top: 0;
   margin-bottom: 10px;
+`;
 
-  &:before {
-    content: "от";
-    line-height: 16px;
-    font-size: 12px;
-    color: #5c5c5c;
-    margin-right: 4px;
-  }
+const Small = styled.span`
+  line-height: 16px;
+  font-size: 12px;
+  color: #5c5c5c;
+  margin-right: 4px;
 `;
 
 const DaysLeft = styled.p`
@@ -86,41 +86,49 @@ const Info = styled.p`
   margin-top: 16px;
   line-height: 16px;
   font-size: 12px;
+  text-align: left;
   color: #242424;
 `;
 
-const Button = styled.a`
+const Link = styled.a`
   display: block;
   margin-top: auto;
   padding: 10px 14px;
   line-height: 20px;
   font-size: 16px;
+  text-decoration: none;
   text-align: center;
   color: #d93533;
   border: 2px solid #cd1f27;
   border-radius: 3px;
+  transition: 0.3s ease-in-out;
+
+  :hover {
+    background-color: #d93533;
+    color: #ffffff;
+  }
 `;
 
-const Offer = props => {
+export default props => {
   return (
-    <Container>
-      <Head>
-        <HeadText>{props.data.head}</HeadText>
+    <Offer>
+      <MainInfo>
+        <Head>{props.data.head}</Head>
         <HeadLogo src={props.data.headLogo} />
-      </Head>
-      <Infoblock>
+      </MainInfo>
+      <Details>
         <PriceAndLogo>
           <Logo src={props.data.airLogo} />
-          <PriceBlock>
-            <Price>{props.data.price}</Price>
+          <PriceAndDays>
+            <Price>
+              <Small>от</Small> {props.data.price}
+            </Price>
             <DaysLeft>{props.data.daysLeft}</DaysLeft>
-          </PriceBlock>
+          </PriceAndDays>
         </PriceAndLogo>
         <Info>{props.data.info}</Info>
-        <Button>Узнать подробности</Button>
-      </Infoblock>
-    </Container>
+        <Link href="#">Узнать подробности</Link>
+      </Details>
+    </Offer>
   );
 };
-
-export default Offer;

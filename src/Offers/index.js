@@ -36,7 +36,7 @@ const offersData = [
   }
 ];
 
-const Container = styled.section`
+const Section = styled.section`
   padding-top: 16px;
   padding-bottom: 24px;
   background: linear-gradient(162.96deg, #00b0de 41.41%, #196ebd 141.41%);
@@ -48,6 +48,7 @@ const Head = styled.h2`
   font-weight: 500;
   line-height: normal;
   font-size: 28px;
+  text-align: left;
   color: #ffffff;
 `;
 
@@ -70,7 +71,7 @@ const Link = styled.a`
   color: #ffffff;
 `;
 
-const LinkInfoContainer = styled.div`
+const LinkAndInfo = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -83,25 +84,37 @@ const LinkInfoContainer = styled.div`
 
 export default () => {
   return (
-    <Container>
+    <Section>
       <div className="container">
-        <Head>Спецпредложения на&nbsp;авиабилеты</Head>
-        <div className="row between-xl">
+        <div className="row center-xs">
+          <div className="col-xs-12 col-xl-10">
+            <Head>Спецпредложения на&nbsp;авиабилеты</Head>
+          </div>
+        </div>
+
+        <div className="row center-xs">
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
           <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[0]} />
           </div>
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl" />
           <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[1]} />
           </div>
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl" />
           <div className="col-xs-12 col-md-4 col-xl-3">
             <Offer data={offersData[2]} />
           </div>
+          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+
+          <div className="col-xs-12 col-xl-10">
+            <LinkAndInfo>
+              <Link href="#">Смотреть все спецпредложения</Link>
+              <Info>* средняя цена по направлению</Info>
+            </LinkAndInfo>
+          </div>
         </div>
-        <LinkInfoContainer>
-          <Link>Смотреть все спецпредложения</Link>
-          <Info>* средняя цена по направлению</Info>
-        </LinkInfoContainer>
       </div>
-    </Container>
+    </Section>
   );
 };
