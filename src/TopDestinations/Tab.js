@@ -19,7 +19,7 @@ const Button = styled.button`
   color: #00ace2;
 `;
 
-const Icon = styled.div`
+const Circle = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -34,9 +34,9 @@ const Icon = styled.div`
 export default props => {
   return (
     <Button>
-      <Icon>
+      <Circle>
         <img src={props.img} alt="Иконка" />
-      </Icon>
+      </Circle>
       {props.children}
     </Button>
   );
