@@ -8,6 +8,7 @@ import AppPromo from "./AppPromo/";
 import Footer from "./Footer/";
 import CompanySlider from "./CompanySlider/";
 import EmailSubscription from "./EmailSubscription/";
+import Results from "./Results/";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
         <Articles />
         <AppPromo />
         <Footer />
+        <Results />
       </div>
     );
   }
