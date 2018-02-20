@@ -81,7 +81,12 @@ export default function MobileCard() {
   return (
     <Card>
       <BadgeCheap>
-        <div className="container">Самый дешевый 🤑</div>
+        <div className="container">
+          Самый дешевый{" "}
+          <span role="img" aria-label="emoji">
+            🤑
+          </span>
+        </div>
       </BadgeCheap>
       <div className="container">
         <PriceAndCompany>
