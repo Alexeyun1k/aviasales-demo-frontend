@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import queries from "../queries";
 
-import aviasales from "./img/aviasales.svg";
+import Logo from "../UI/Logo/index";
 import SearchForm from "./SearchForm";
 
 const Container = styled.header`
@@ -25,28 +25,6 @@ const FormAndHeadings = styled.div`
   align-items: center;
   min-height: 100vh;
   padding: 88px 0;
-`;
-
-const Aviasales = styled.a`
-  position: absolute;
-  top: 12px;
-  display: block;
-  line-height: 24px;
-  font-size: 20px;
-  color: #ffffff;
-`;
-
-const Logo = styled.img`
-  margin-right: 12px;
-  vertical-align: -8px;
-`;
-
-const Name = styled.span`
-  display: none;
-
-  @media (min-width: ${queries.md}px) {
-    display: inline;
-  }
 `;
 
 const Head = styled.h1`
@@ -92,10 +70,7 @@ export default () => {
   return (
     <Container>
       <div className="container">
-        <Aviasales>
-          <Logo src={aviasales} />
-          <Name>aviasales</Name>
-        </Aviasales>
+        <Logo />
         <FormAndHeadings>
           <div className="row center-md middle-xs">
             <div className="col-xs-12 col-md-10">
