@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 import CityFrom from "./CityFrom";
 import CityTo from "./CityTo";
 import DateFrom from "./DateFrom";
@@ -49,7 +51,7 @@ const PassangersContainer = CityContainer.extend`
   }
 `;
 
-const Cta = styled.button`
+const Cta = styled(Link)`
   flex-basis: 100%;
   margin-left: 1px;
   margin-right: 1px;
@@ -62,6 +64,8 @@ const Cta = styled.button`
   border: none;
   border-radius: 4px;
   background-color: #ff9241;
+  text-decoration: none;
+  text-align: center;
 
   @media (min-width: ${queries.md}px) {
     padding-top: 16px;
@@ -107,7 +111,7 @@ export default () => {
         <Passangers />
       </PassangersContainer>
 
-      <Cta>Найти билеты</Cta>
+      <Cta to="/results">Найти билеты</Cta>
     </Form>
   );
 };
