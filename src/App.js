@@ -1,32 +1,21 @@
 import React, { Component } from "react";
-import Header from "./Header/";
-import TopDestinations from "./TopDestinations/";
-import BestPrices from "./BestPrices/";
-import Offers from "./Offers/";
-import Articles from "./Articles/";
-import AppPromo from "./AppPromo/";
-import Footer from "./Footer/";
-import CompanySlider from "./CompanySlider/";
-import EmailSubscription from "./EmailSubscription/";
+import { BrowserRouter, Route } from "react-router-dom";
+
 import Results from "./Results/";
+import MainPage from "./MainPage/";
+import Footer from "./Footer/";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <TopDestinations />
-        <BestPrices />
-        <div className="hidden-xs hidden-sm">
-          <CompanySlider />
-          <EmailSubscription />
+      <BrowserRouter>
+        <div className="App">
+          <Route path="/" exact component={MainPage} />
+          <Route path="/results" component={Results} />
+
+          <Footer />
         </div>
-        <Offers />
-        <Articles />
-        <AppPromo />
-        <Footer />
-        <Results />
-      </div>
+      </BrowserRouter>
     );
   }
 }
