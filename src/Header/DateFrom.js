@@ -45,17 +45,6 @@ const Dropdown = styled.div`
   border-radius: 2px;
 `;
 
-// export default props => {
-//   return (
-//     <DatePicker>
-//       <Button>Туда</Button>
-//       <Dropdown>
-//         <Calendar />
-//       </Dropdown>
-//     </DatePicker>
-//   );
-// };
-
 export default class DateFrom extends React.Component {
   state = {
     isOpen: false
