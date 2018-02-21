@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { media } from "../../queries";
+import Logo from "../../UI/Logo";
 
 import back from "./back.svg";
 
@@ -19,6 +21,24 @@ const Header = styled.header`
 const Nav = styled.nav`
   display: flex;
   align-items: center;
+
+  ${media.md`
+    padding-top: 8px;
+    padding-bottom: 8px;
+  `};
+
+  ${media.lg`
+    padding-top: 10px;
+    padding-bottom: 10px;
+  `};
+`;
+
+const Aviasales = styled(Logo)`
+  display: none;
+
+  ${media.md`
+    display: block;
+  `};
 `;
 
 const LinkBack = styled(Link)`
@@ -29,6 +49,10 @@ const LinkBack = styled(Link)`
   vertical-align: center;
   border: none;
   background: transparent;
+
+  ${media.md`
+    display: none;
+  `};
 `;
 
 const Currency = styled.button`
@@ -41,12 +65,22 @@ const Currency = styled.button`
   font-size: 14px;
   text-align: center;
   color: #ffffff;
+
+  ${media.md`
+    font-size: 16px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  `};
 `;
 
 const AppliedFilter = styled.div`
   margin-left: 8px;
   magrin-right: 16px;
   flex-grow: 1;
+
+  ${media.md`
+    display: none;
+  `};
 `;
 
 const FromTo = styled.h1`
@@ -76,6 +110,7 @@ export default () => {
     <Header>
       <div className="container">
         <Nav>
+          <Aviasales />
           <LinkBack to="/">
             <img src={back} alt="Вернуться назад" />
           </LinkBack>
