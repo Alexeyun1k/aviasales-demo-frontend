@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import aviasales from "./aviasales.svg";
 import { media } from "../../queries";
 
-const Aviasales = styled.a`
-  position: absolute;
-  top: 12px;
+const Aviasales = styled(Link)`
   display: block;
+  text-decoration: none;
   line-height: 24px;
   font-size: 20px;
   color: #ffffff;
@@ -20,14 +20,12 @@ const Logo = styled.img`
 const Name = styled.span`
   display: none;
 
-  ${media.md`
-    display: inline;
-  `};
+  ${media.md`display: inline;`};
 `;
 
 export default ({ className }) => {
   return (
-    <Aviasales className={className}>
+    <Aviasales className={className} to="/">
       <Logo src={aviasales} />
       <Name>aviasales</Name>
     </Aviasales>

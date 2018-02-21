@@ -18,6 +18,11 @@ const Container = styled.header`
   );
 `;
 
+const Aviasales = styled(Logo)`
+  position: absolute;
+  top: 12px;
+`;
+
 const FormAndHeadings = styled.div`
   min-height: 100vh;
   display: flex;
@@ -70,7 +75,7 @@ export default () => {
   return (
     <Container>
       <div className="container">
-        <Logo />
+        <Aviasales />
         <FormAndHeadings>
           <div className="row center-md middle-xs">
             <div className="col-xs-12 col-md-10">
