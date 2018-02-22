@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "./Card/";
-import Header from "./Header/";
+import Header from "../Header/";
 import Filter from "./Filter/";
 import { results } from "../FakeData";
 import { media } from "../queries";
@@ -49,18 +49,19 @@ const ToTop = styled.button`
 export default function Results() {
   return (
     <Page>
-      <Header />
+      <Header compact />
 
       <ToTop>Наверх</ToTop>
-      <div class="container">
-        <div class="row">
-          <div class="hidden-xs hidden-sm hidden-md col-lg-4 col-xl-3">
+      <div className="container">
+        <div className="row">
+          <div className="hidden-xs hidden-sm hidden-md col-lg-4 col-xl-3">
             <Filter />
           </div>
 
-          <div class="col-sm-12 col-lg-8 col-xl-7">
-            {results.map(card => (
+          <div className="col-sm-12 col-lg-8 col-xl-7">
+            {results.map((card, index) => (
               <Card
+                key={index}
                 badge={card.badge}
                 terms={card.terms}
                 flight={card.flight}
