@@ -25,7 +25,7 @@ const Button = styled.button`
   }
 
   @media (min-width: ${queries.md}px) {
-    border-radius: 0 0 4px 0;
+    border-radius: ${props => (props.compact ? "0" : "0 0 4px 0")};
   }
 
   @media (min-width: ${queries.xl}px) {
@@ -37,9 +37,9 @@ const Additional = styled.span`
   color: #a0b0b9;
 `;
 
-export default props => {
+export default ({ compact }) => {
   return (
-    <Button>
+    <Button compact={compact}>
       1 пассажир, <Additional>эконом</Additional>
     </Button>
   );

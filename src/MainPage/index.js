@@ -6,12 +6,11 @@ import BestPrices from "../BestPrices/";
 import Offers from "../Offers/";
 import Articles from "../Articles/";
 import AppPromo from "../AppPromo/";
-import Footer from "../Footer/";
 import CompanySlider from "../CompanySlider/";
 import EmailSubscription from "../EmailSubscription/";
 
 const MainPage = () => (
-  <div className="App">
+  <div>
     <Header />
     <TopDestinations />
     <BestPrices />
