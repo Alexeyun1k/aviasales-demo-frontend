@@ -16,7 +16,7 @@ export const results = [
         prices: [
           {
             company: "Clickavia",
-            price: "7 712"
+            price: 7712
           }
         ]
       }
@@ -28,11 +28,16 @@ export const results = [
           name: "Россия",
           logo: rossia_full,
           shortLogo: rossia_short
+        },
+        {
+          name: "Россия",
+          logo: rossia_full,
+          shortLogo: rossia_short
         }
       ],
       segments: [
         {
-          type: "to",
+          wayBack: false,
           departure: {
             city: "Москва",
             airport: "VKO",
@@ -48,7 +53,7 @@ export const results = [
           duration: "5ч"
         },
         {
-          type: "back",
+          wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
@@ -91,7 +96,7 @@ export const results = [
       ],
       segments: [
         {
-          type: "to",
+          wayBack: false,
           departure: {
             city: "Москва",
             airport: "VKO",
@@ -107,7 +112,7 @@ export const results = [
           duration: "4ч 55м"
         },
         {
-          type: "back",
+          wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
@@ -160,7 +165,7 @@ export const results = [
       ],
       segments: [
         {
-          type: "to",
+          wayBack: false,
           departure: {
             city: "Москва",
             airport: "VKO",
@@ -176,7 +181,7 @@ export const results = [
           duration: "4ч 55м"
         },
         {
-          type: "back",
+          wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
@@ -245,7 +250,7 @@ export const results = [
       ],
       segments: [
         {
-          type: "to",
+          wayBack: false,
           departure: {
             city: "Москва",
             airport: "VKO",
@@ -261,7 +266,7 @@ export const results = [
           duration: "4ч 30м"
         },
         {
-          type: "back",
+          wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
