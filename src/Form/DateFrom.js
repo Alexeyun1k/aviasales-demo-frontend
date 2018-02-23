@@ -35,11 +35,12 @@ const Button = styled.button`
   }
 `;
 
-const Dropdown = styled.div`
+const DropdownContent = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   background: #ffffff;
+  z-index: 100;
   box-shadow: 0px 0px 8px rgba(74, 74, 74, 0.2),
     0px 2px 4px rgba(74, 74, 74, 0.2);
   border-radius: 2px;
@@ -69,9 +70,9 @@ export default class DateFrom extends React.Component {
           Туда
         </Button>
         {this.state.isOpen && (
-          <Dropdown>
+          <DropdownContent>
             <Calendar />
-          </Dropdown>
+          </DropdownContent>
         )}
       </DatePicker>
     );
