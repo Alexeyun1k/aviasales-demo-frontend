@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FormattedNumber } from "react-intl";
 
 const BestOffer = styled.div``;
 
@@ -34,7 +35,14 @@ export default ({ company, price }) => {
     <BestOffer>
       <Buy>
         <Accent>Купить</Accent>
-        <br />за {price} ₽
+        <br />за&nbsp;
+        <FormattedNumber
+          value={price}
+          style="currency"
+          currency="rub"
+          minimumFractionDigits="0"
+          maximumFractionDigits="2"
+        />
       </Buy>
       <Company>на {company}</Company>
     </BestOffer>

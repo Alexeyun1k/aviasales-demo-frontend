@@ -28,7 +28,7 @@ const Card = styled.a`
     margin-top: 20px;
     flex-direction: row;
     border-radius: 4px;
-    
+
     :first-child {
       margin-top: 0px;
     }
@@ -62,7 +62,7 @@ export default ({ terms, flight, badge }) => {
         segments={flight.segments}
       />
       <More>
-        <img src={dropdown} />
+        <img src={dropdown} alt="Развернуть" />
       </More>
     </Card>
   );

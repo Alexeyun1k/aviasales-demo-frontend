@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FormattedDate } from "react-intl";
 
 import { media } from "../../../queries";
 import clock from "./img/clock.svg";
@@ -147,6 +148,12 @@ const Airport = styled.p`
 `;
 
 export default ({ wayBack, departure, arrival, duration }) => {
+  const hours = Math.floor(duration / 60);
+  const minutes = duration % 60;
+  const formattedDuration =
+    (hours ? `${hours}ч` : "") + (minutes ? ` ${minutes}м` : "");
+
+  console.log(duration, "=>", formattedDuration);
   return (
     <Segment>
       <Compact>
@@ -156,7 +163,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
         </FromTo>
         <Length>
           <Icon src={clock} />
-          {duration}
+          {formattedDuration}
         </Length>
         <Type>Прямой</Type>
       </Compact>
@@ -168,12 +175,20 @@ export default ({ wayBack, departure, arrival, duration }) => {
             {arrival.time}
           </Time>
           <City>{arrival.city}</City>
-          <Day>{arrival.date}</Day>
+          <Day>
+            <FormattedDate
+              value={Date(arrival.date)}
+              month="short"
+              year="numeric"
+              day="numeric"
+            />,&nbsp;
+            <FormattedDate value={Date(arrival.date)} weekday="short" />
+          </Day>
         </Arrival>
         <Flight>
           <DurationAndIcons>
             <img src={take_off} alt="Взлёт" />
-            <Duration>{duration}</Duration>
+            <Duration>{formattedDuration}</Duration>
             <img src={landing} alt="Посадка" />
           </DurationAndIcons>
           <Scheme>
@@ -189,7 +204,15 @@ export default ({ wayBack, departure, arrival, duration }) => {
         <Departure>
           <Time>{departure.time}</Time>
           <City>{departure.city}</City>
-          <Day>{departure.date}</Day>
+          <Day>
+            <FormattedDate
+              value={Date(departure.date)}
+              month="short"
+              year="numeric"
+              day="numeric"
+            />,&nbsp;
+            <FormattedDate value={Date(departure.date)} weekday="short" />
+          </Day>
         </Departure>
       </Full>
     </Segment>

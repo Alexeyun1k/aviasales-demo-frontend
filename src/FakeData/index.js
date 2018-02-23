@@ -57,32 +57,32 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "24 фев 2018, Сб ",
+            date: "2018-02-24",
             time: "00:05"
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "24 фев 2018, Сб",
+            date: "2018-02-24",
             time: "03:05"
           },
-          duration: "5ч"
+          duration: 300
         },
         {
           wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "10:35"
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "17:10"
           },
-          duration: "4ч 35м"
+          duration: 275
         }
       ]
     }
@@ -96,7 +96,7 @@ export const results = [
         prices: [
           {
             company: "Билетик Аэро",
-            price: "8 029"
+            price: 8029
           },
           {
             company: "Компания",
@@ -120,32 +120,32 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "24 фев 2018, Сб ",
+            date: "2018-02-28",
             time: "00:15"
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "24 фев 2018, Сб",
+            date: "2018-02-28",
             time: "03:10"
           },
-          duration: "4ч 55м"
+          duration: 295
         },
         {
           wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "10:45"
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "17:15"
           },
-          duration: "4ч 30м"
+          duration: 270
         }
       ]
     }
@@ -159,7 +159,7 @@ export const results = [
         prices: [
           {
             company: "Билетик Аэро",
-            price: "8 300"
+            price: 8300
           }
         ]
       },
@@ -169,7 +169,7 @@ export const results = [
         prices: [
           {
             company: "Aviakassa",
-            price: "8 164"
+            price: 8164
           }
         ]
       }
@@ -189,32 +189,32 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "24 фев 2018, Сб ",
+            date: "2018-02-28",
             time: "00:15"
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "24 фев 2018, Сб",
+            date: "2018-02-28",
             time: "03:10"
           },
-          duration: "4ч 55м"
+          duration: 295
         },
         {
           wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "10:45"
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "17:15"
           },
-          duration: "4ч 30м"
+          duration: 270
         }
       ]
     }
@@ -228,7 +228,7 @@ export const results = [
         prices: [
           {
             company: "Билетик Аэро",
-            price: "8 530"
+            price: 8530
           }
         ]
       },
@@ -238,23 +238,23 @@ export const results = [
         prices: [
           {
             company: "Билетик Аэро",
-            price: "8 240"
+            price: 8240
           },
           {
             company: "Clickavia",
-            price: "8 302"
+            price: 8302
           },
           {
             company: "Aviakassa",
-            price: "8 376"
+            price: 8376
           },
           {
             company: "Aviakassa",
-            price: "8 376"
+            price: 8376
           },
           {
             company: "Aviakassa",
-            price: "8 376"
+            price: 8376
           }
         ]
       }
@@ -274,32 +274,32 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "24 фев 2018, Сб ",
+            date: "2018-02-28",
             time: "07:00"
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "24 фев 2018, Сб",
+            date: "2018-02-28",
             time: "09:30"
           },
-          duration: "4ч 30м"
+          duration: 270
         },
         {
           wayBack: true,
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "10:45"
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "3 мар 2018, Сб",
+            date: "2018-03-03",
             time: "17:15"
           },
-          duration: "4ч 30м"
+          duration: 270
         }
       ]
     }

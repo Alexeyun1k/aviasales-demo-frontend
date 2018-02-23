@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FormattedNumber } from "react-intl";
 
 const Other = styled.div`
   margin-top: 16px;
@@ -47,7 +48,15 @@ export default ({ prices }) => {
       {shown.map((offer, key) => (
         <Line key={key}>
           <Company>{offer.company}</Company>
-          <Price>{offer.price}</Price>
+          <Price>
+            <FormattedNumber
+              value={offer.price}
+              style="currency"
+              currency="rub"
+              minimumFractionDigits="0"
+              maximumFractionDigits="2"
+            />
+          </Price>
         </Line>
       ))}
       {hidden.length > 0 && <Expand>+ Еще {hidden.length} предложения</Expand>}

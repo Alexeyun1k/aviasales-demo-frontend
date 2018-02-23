@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FormattedNumber, FormattedDate } from "react-intl";
 
 import { media } from "../../../queries";
 
@@ -77,7 +78,15 @@ export default ({ charter, airlines, segments, bestPrice }) => {
   return (
     <Info>
       <PriceAndCompany>
-        <Price>{bestPrice} ₽</Price>
+        <Price>
+          <FormattedNumber
+            value={bestPrice}
+            style="currency"
+            currency="rub"
+            minimumFractionDigits="0"
+            maximumFractionDigits="2"
+          />
+        </Price>
         <div>
           {airlines.map(airline => (
             <Logo
