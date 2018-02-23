@@ -15,8 +15,24 @@ export const results = [
         baggage: 15,
         prices: [
           {
+            company: "Билетик",
+            price: 7812
+          },
+          {
+            company: "Компания",
+            price: 7916
+          },
+          {
             company: "Clickavia",
-            price: 7712
+            price: 8000
+          },
+          {
+            company: "Clickavia",
+            price: 8000
+          },
+          {
+            company: "Clickavia",
+            price: 8000
           }
         ]
       }
@@ -81,6 +97,10 @@ export const results = [
           {
             company: "Билетик Аэро",
             price: "8 029"
+          },
+          {
+            company: "Компания",
+            price: 7916
           }
         ]
       }
@@ -204,7 +224,7 @@ export const results = [
     terms: [
       {
         handbag: 10,
-        baggage: 0,
+        baggage: -1,
         prices: [
           {
             company: "Билетик Аэро",
