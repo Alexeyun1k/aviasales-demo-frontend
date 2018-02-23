@@ -1,68 +1,61 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "../../queries";
 
 import Badge from "./Badge";
-import Segment from "./Segment";
+import Info from "./Info/";
+import Terms from "./Terms/";
+
+import dropdown from "./dropdown.svg";
 
 const Card = styled.a`
   margin-left: -8px;
   margin-right: -8px;
-  display: block;
-  text-decoration: none;
   margin-top: 8px;
-  background: #fff;
-`;
-
-const Info = styled.div`
-  padding: 12px 8px 16px;
-`;
-
-const PriceAndCompany = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-decoration: none;
+  background: #fff;
+
+  ${media.sm`
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    flex-direction: row;
+    border-radius: 4px;
+  `};
 `;
 
-const Price = styled.h2`
-  margin: 0;
-  font-weight: bold;
-  line-height: normal;
-  font-size: 22px;
-  color: #ff9241;
-`;
+const More = styled.button`
+  display: none;
 
-const Logo = styled.img`
-  height: 36px;
-  min-width: 104px;
-  border: none;
-`;
-
-const Text = styled.p`
-  margin: 0;
-  line-height: 18px;
-  font-size: 14px;
-  color: #4a4a4a;
+  ${media.sm`
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #EDF5F7;
+    border: none;
+    border-radius: 0 4px 4px 0;
+  `};
 `;
 
 export default ({ terms, flight, badge }) => {
+  const bestOffer = terms[0].prices[0];
+
   return (
     <Card>
       {badge && <Badge badgeType={badge} />}
-      <Info>
-        <PriceAndCompany>
-          <Price>{terms[0].prices[0].price} ₽</Price>
-          <Logo src={flight.airlines[0].logo} />
-        </PriceAndCompany>
-
-        {flight.segments.map(segment => (
-          <Segment
-            type={segment.type}
-            departure={segment.departure}
-            arrival={segment.arrival}
-            duration={segment.duration}
-          />
-        ))}
-      </Info>
+      <Terms terms={terms} />
+      <Info
+        bestPrice={bestOffer.price}
+        charter={flight.charter}
+        airlines={flight.airlines}
+        segments={flight.segments}
+      />
+      <More>
+        <img src={dropdown} />
+      </More>
     </Card>
   );
 };

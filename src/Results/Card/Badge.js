@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "../../queries";
 
 const Badge = styled.aside`
+  flex-basis: 100%;
   margin: 0;
   padding: 8px;
   font-weight: 900;
@@ -9,6 +11,10 @@ const Badge = styled.aside`
   font-size: 14px;
   color: #ffffff;
   background: ${props => props.color};
+
+  ${media.sm`
+    display: none;
+  `};
 `;
 
 const Emoji = styled.span`
