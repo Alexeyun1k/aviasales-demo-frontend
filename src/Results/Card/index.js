@@ -18,12 +18,20 @@ const Card = styled.a`
   text-decoration: none;
   background: #fff;
 
+  :first-child {
+    margin-top: 0px;
+  }
+
   ${media.md`
     margin-left: 0;
     margin-right: 0;
     margin-top: 20px;
     flex-direction: row;
     border-radius: 4px;
+    
+    :first-child {
+      margin-top: 0px;
+    }
   `};
 `;
 

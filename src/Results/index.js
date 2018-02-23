@@ -12,6 +12,18 @@ const Page = styled.div`
   background: #eaeaea;
 `;
 
+const Cards = styled.section`
+  margin-top: 8px;
+
+  ${media.md`
+    margin-top: 16px;
+  `};
+
+  ${media.lg`
+    margin-top: 56px;
+  `};
+`;
+
 const FilterButton = styled.button`
   position: fixed;
   bottom: 8px;
@@ -59,14 +71,16 @@ export default function Results() {
           </div>
 
           <div className="col-sm-12 col-lg-8 col-xl-7">
-            {results.map((card, index) => (
-              <Card
-                key={index}
-                badge={card.badge}
-                terms={card.terms}
-                flight={card.flight}
-              />
-            ))}
+            <Cards>
+              {results.map((card, index) => (
+                <Card
+                  key={index}
+                  badge={card.badge}
+                  terms={card.terms}
+                  flight={card.flight}
+                />
+              ))}
+            </Cards>
           </div>
         </div>
         <FilterButton>Фильтровать</FilterButton>
