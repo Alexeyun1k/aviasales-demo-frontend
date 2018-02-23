@@ -13,7 +13,7 @@ const Segment = styled.div`
   border-bottom: none;
   padding-bottom: 0;
 
-  ${media.sm`
+  ${media.md`
     border-bottom: 1px dashed #dddddd;
     padding-bottom: 12px;
   `};
@@ -30,7 +30,7 @@ const Compact = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${media.sm`
+  ${media.md`
     display: none;
   `};
 `;
@@ -39,7 +39,7 @@ const Full = styled.div`
   margin-top: 12px;
   display: none;
 
-  ${media.sm`
+  ${media.md`
     justify-content: space-between;
     align-items: center;
     display: flex;

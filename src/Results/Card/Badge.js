@@ -12,7 +12,7 @@ const Badge = styled.aside`
   color: #ffffff;
   background: ${props => props.color};
 
-  ${media.sm`
+  ${media.md`
     display: none;
   `};
 `;

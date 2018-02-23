@@ -10,7 +10,7 @@ const Info = styled.div`
   padding: 12px 8px 16px;
   flex-grow: 1;
 
-  ${media.sm`
+  ${media.md`
     padding: 16px;
   `};
 `;
@@ -28,7 +28,7 @@ const Price = styled.h2`
   font-size: 22px;
   color: #ff9241;
 
-  ${media.sm`
+  ${media.md`
     display: none;
   `};
 `;
@@ -48,7 +48,7 @@ const Logo = styled.img`
 const Labels = styled.div`
   display: none;
 
-  ${media.sm`
+  ${media.md`
     display: flex;
     align-items: center;
   `};

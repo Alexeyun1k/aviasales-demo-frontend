@@ -18,7 +18,7 @@ const Card = styled.a`
   text-decoration: none;
   background: #fff;
 
-  ${media.sm`
+  ${media.md`
     margin-left: 0;
     margin-right: 0;
     margin-top: 20px;
@@ -30,7 +30,7 @@ const Card = styled.a`
 const More = styled.button`
   display: none;
 
-  ${media.sm`
+  ${media.md`
     display: block;
     padding-left: 5px;
     padding-right: 5px;
