@@ -5,25 +5,26 @@ import { FormattedNumber } from "react-intl";
 import checked from "./img/checked.svg";
 import unchecked from "./img/unchecked.svg";
 
-const Label = styled.label`
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-`;
-
 const HiddenCheck = styled.input`
   opacity: 0;
   position: absolute;
 `;
 
+const Label = styled.label`
+  padding: 0 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  :hover {
+    background-color: #f1fcff;
+  }
+`;
+
 const Checkbox = styled.img`
   display: block;
   margin-right: 8px;
-
-  ${HiddenCheck}:focus + & {
-    transform: scale(1.2);
-  }
 `;
 
 const Title = styled.p`

@@ -3,15 +3,18 @@ import styled from "styled-components";
 import clear from "./img/clear.svg";
 import dropdown from "./img/dropdown.svg";
 
-const Background = styled.div`
-  margin-bottom: 1px;
-  background: #ffffff;
+const Accordion = styled.div`
+  border-bottom: 1px solid #ddd;
 `;
 
 const Head = styled.div`
   padding: 16px;
   display: flex;
   align-items: center;
+
+  :hover {
+    background: #f1fcff;
+  }
 `;
 
 const Icon = styled.img`
@@ -46,10 +49,10 @@ const Reset = styled.button`
 `;
 
 const Content = styled.div`
-  padding: 0 16px 16px;
+  padding: 0 0 16px;
 `;
 
-class Segment extends React.Component {
+export default class extends React.Component {
   state = {
     expanded: false,
     changed: false
@@ -71,7 +74,7 @@ class Segment extends React.Component {
 
   render() {
     return (
-      <Background>
+      <Accordion>
         <Head>
           <Title onClick={this.toggle}>
             <Icon src={dropdown} expanded={this.state.expanded} />
@@ -84,9 +87,7 @@ class Segment extends React.Component {
           )}
         </Head>
         {this.state.expanded && <Content>{this.props.children}</Content>}
-      </Background>
+      </Accordion>
     );
   }
 }
-
-export default Segment;
