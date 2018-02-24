@@ -5,17 +5,19 @@ import { FormattedNumber } from "react-intl";
 import checked from "./img/checked.svg";
 import unchecked from "./img/unchecked.svg";
 
-const Line = styled.div`
+const Checkbox = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
 `;
 
+const HiddenCheck = styled.input`
+  display: none;
+`;
+
 const Check = styled.img`
   display: block;
   margin-right: 8px;
-  transform: rotate(${props => (props.collapsed ? "-90deg" : "0deg")});
-  transition: 0.3s ease;
 `;
 
 const Title = styled.p`
@@ -33,7 +35,7 @@ const Price = styled.aside`
   color: #a0b0b9;
 `;
 
-class Checkbox extends React.Component {
+export default class extends React.Component {
   state = {
     checked: false
   };
@@ -51,7 +53,8 @@ class Checkbox extends React.Component {
 
   render() {
     return (
-      <Line onClick={this.toggle}>
+      <Checkbox onClick={this.toggle}>
+        <HiddenCheck type="checkbox" />
         <Check src={this.state.checked ? checked : unchecked} />
         <Title>{this.props.title}</Title>
         {this.props.price && (
@@ -65,9 +68,7 @@ class Checkbox extends React.Component {
             />
           </Price>
         )}
-      </Line>
+      </Checkbox>
     );
   }
 }
-
-export default Checkbox;
