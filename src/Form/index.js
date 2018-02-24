@@ -141,8 +141,8 @@ class SearchForm extends React.Component {
     }
   };
 
-  handleChanges = (id, newState) => {
-    this.setState({ [id]: newState });
+  handleChanges = elementState => {
+    this.setState({ [elementState.id]: elementState });
   };
 
   switchCities = () => {
