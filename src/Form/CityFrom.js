@@ -48,7 +48,7 @@ const Name = styled.div`
   color: #a0b0b9;
 `;
 
-const ChangeCities = styled.button`
+const SwitchCities = styled.button`
   position: absolute;
   right: 0;
   width: 44px;
@@ -60,11 +60,11 @@ const ChangeCities = styled.button`
 export default props => {
   return (
     <CityFrom>
-      <Input placeholder="Город вылета" />
-      <Name>MOW</Name>
-      <ChangeCities>
+      <Input placeholder="Город вылета" value={props.data.cityName} />
+      <Name>{props.data.code}</Name>
+      <SwitchCities onClick={props.switchCities} type="button">
         <img src={arrows} alt="Поменять города местами" />
-      </ChangeCities>
+      </SwitchCities>
     </CityFrom>
   );
 };

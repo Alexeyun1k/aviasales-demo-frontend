@@ -29,7 +29,7 @@ const Column = styled.div`
   flex-basis: 100%;
 `;
 
-const CityContainer = Column.extend`
+const CityPicker = Column.extend`
   @media (min-width: ${queries.md}px) {
     flex-basis: 50%;
   }
@@ -39,7 +39,7 @@ const CityContainer = Column.extend`
   }
 `;
 
-const DateContainer = Column.extend`
+const DatePicker = Column.extend`
   flex-basis: 50%;
 
   @media (min-width: ${queries.md}px) {
@@ -51,7 +51,7 @@ const DateContainer = Column.extend`
   }
 `;
 
-const PassangersContainer = Column.extend`
+const OptionsPicker = Column.extend`
   @media (min-width: ${queries.md}px) {
     flex-basis: ${props => (props.compact ? "25%" : "50%")};
   }
@@ -61,17 +61,18 @@ const PassangersContainer = Column.extend`
   }
 `;
 
-const ButtonContainer = Column.extend`
+const ButtonSize = Column.extend`
   @media (min-width: ${queries.md}px) {
     flex-basis: ${props => (props.compact ? "25%" : "100%")};
   }
 
   @media (min-width: ${queries.xl}px) {
     flex-basis: ${props => (props.compact ? "16%" : "100%")};
+    padding-left: ${props => (props.compact ? "8px" : "")};
   }
 `;
 
-const Cta = styled(Link)`
+const Button = styled(Link)`
   display: block;
   width: 100%;
   margin-top: 16px;
@@ -103,7 +104,6 @@ const Cta = styled(Link)`
 
   @media (min-width: ${queries.xl}px) {
     margin-top: ${props => (props.compact ? "0" : "48px")};
-    margin-left: ${props => (props.compact ? "8px" : "auto")};
     border-radius: 4px;
   }
 `;
@@ -114,35 +114,94 @@ const Icon = styled.img`
   top: 3px;
 `;
 
-export default ({ compact }) => {
-  return (
-    <Form compact={compact}>
-      <CityContainer compact={compact}>
-        <CityFrom />
-      </CityContainer>
+class SearchForm extends React.Component {
+  state = {
+    cityFrom: {
+      id: "cityFrom",
+      cityName: "Москва",
+      code: "MOW"
+    },
+    cityTo: {
+      id: "cityTo",
+      cityName: "",
+      code: ""
+    },
+    dateFrom: {
+      id: "dateFrom",
+      date: Date.now()
+    },
+    dateTo: {
+      id: "dateTo",
+      date: null
+    },
+    options: {
+      id: "options",
+      passanger: 1,
+      class: "эконом"
+    }
+  };
 
-      <CityContainer compact={compact}>
-        <CityTo />
-      </CityContainer>
+  handleChanges = (id, newState) => {
+    this.setState({ [id]: newState });
+  };
 
-      <DateContainer compact={compact}>
-        <DateFrom />
-      </DateContainer>
+  switchCities = () => {
+    this.setState(prevState => ({
+      cityFrom: {
+        id: prevState.cityFrom.id,
+        cityName: prevState.cityTo.cityName,
+        code: prevState.cityTo.code
+      },
+      cityTo: {
+        id: prevState.cityTo.id,
+        cityName: prevState.cityFrom.cityName,
+        code: prevState.cityFrom.code
+      }
+    }));
+  };
 
-      <DateContainer>
-        <DateTo />
-      </DateContainer>
+  render() {
+    return (
+      <Form compact={this.props.compact}>
+        <CityPicker compact={this.props.compact}>
+          <CityFrom
+            data={this.state.cityFrom}
+            switchCities={this.switchCities}
+            handleChanges={this.handleChanges}
+          />
+        </CityPicker>
 
-      <PassangersContainer compact={compact}>
-        <Passangers />
-      </PassangersContainer>
+        <CityPicker compact={this.props.compact}>
+          <CityTo data={this.state.cityTo} handleChanges={this.handleChanges} />
+        </CityPicker>
 
-      <ButtonContainer compact={compact}>
-        <Cta to="/results" compact={compact}>
-          Найти билеты
-          {!compact && <Icon src={plane} />}
-        </Cta>
-      </ButtonContainer>
-    </Form>
-  );
-};
+        <DatePicker compact={this.props.compact}>
+          <DateFrom
+            data={this.state.dateFrom}
+            handleChanges={this.handleChanges}
+          />
+        </DatePicker>
+
+        <DatePicker>
+          <DateTo data={this.state.dateTo} handleChanges={this.handleChanges} />
+        </DatePicker>
+
+        <OptionsPicker compact={this.props.compact}>
+          <Passangers
+            data={this.state.options}
+            handleChanges={this.handleChanges}
+          />
+        </OptionsPicker>
+
+        <ButtonSize compact={this.props.compact}>
+          <Button to="/results" compact={this.props.compact}>
+            Найти билеты
+            {!this.props.compact && <Icon src={plane} />}
+          </Button>
+        </ButtonSize>
+      </Form>
+    );
+  }
+}
+
+export default SearchForm;
