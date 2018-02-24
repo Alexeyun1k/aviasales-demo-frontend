@@ -27,6 +27,7 @@ const MONTHS = [
   "Ноябрь",
   "Декабрь"
 ];
+
 const WEEKDAYS_LONG = [
   "Воскресенье",
   "Понедельник",
@@ -36,6 +37,7 @@ const WEEKDAYS_LONG = [
   "Пятница",
   "Суббота"
 ];
+
 const WEEKDAYS_SHORT = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
 const DropdownContent = styled.div`
