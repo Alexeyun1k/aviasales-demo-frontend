@@ -83,8 +83,8 @@ export default ({ charter, airlines, segments, bestPrice }) => {
             value={bestPrice}
             style="currency"
             currency="rub"
-            minimumFractionDigits="0"
-            maximumFractionDigits="2"
+            minimumFractionDigits={0}
+            maximumFractionDigits={2}
           />
         </Price>
         <div>

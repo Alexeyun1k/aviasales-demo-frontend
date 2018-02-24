@@ -70,8 +70,8 @@ export default class extends React.Component {
               value={this.props.price}
               style="currency"
               currency="rub"
-              minimumFractionDigits="0"
-              maximumFractionDigits="2"
+              minimumFractionDigits={0}
+              maximumFractionDigits={2}
             />
           </Price>
         )}

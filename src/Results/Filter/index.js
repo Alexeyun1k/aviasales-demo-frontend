@@ -38,6 +38,7 @@ const Reset = styled.button`
   text-align: left;
   text-transform: uppercase;
   color: #00bde4;
+  cursor: pointer;
 
   :hover {
     background-color: #f1fcff;

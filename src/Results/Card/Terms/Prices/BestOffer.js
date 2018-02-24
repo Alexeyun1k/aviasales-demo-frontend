@@ -40,8 +40,8 @@ export default ({ company, price }) => {
           value={price}
           style="currency"
           currency="rub"
-          minimumFractionDigits="0"
-          maximumFractionDigits="2"
+          minimumFractionDigits={0}
+          maximumFractionDigits={2}
         />
       </Buy>
       <Company>на {company}</Company>

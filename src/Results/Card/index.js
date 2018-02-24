@@ -8,7 +8,7 @@ import Terms from "./Terms/";
 
 import dropdown from "./dropdown.svg";
 
-const Card = styled.a`
+const Card = styled.article`
   margin-left: -8px;
   margin-right: -8px;
   margin-top: 8px;

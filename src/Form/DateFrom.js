@@ -99,7 +99,7 @@ export default class extends React.Component {
   render() {
     return (
       <DatePicker>
-        <Button role="button" onClick={this.toggleOpen} type="button">
+        <Button onClick={this.toggleOpen} type="button">
           {this.props.data.date
             ? format(this.props.data.date, "D MMMM, dd", {
                 locale: ruLocale
