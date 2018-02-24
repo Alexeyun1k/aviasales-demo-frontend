@@ -5,19 +5,25 @@ import { FormattedNumber } from "react-intl";
 import checked from "./img/checked.svg";
 import unchecked from "./img/unchecked.svg";
 
-const Checkbox = styled.div`
+const Label = styled.label`
+  position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
 `;
 
 const HiddenCheck = styled.input`
-  display: none;
+  opacity: 0;
+  position: absolute;
 `;
 
-const Check = styled.img`
+const Checkbox = styled.img`
   display: block;
   margin-right: 8px;
+
+  ${HiddenCheck}:focus + & {
+    transform: scale(1.2);
+  }
 `;
 
 const Title = styled.p`
@@ -40,7 +46,7 @@ export default class extends React.Component {
     checked: false
   };
 
-  toggle = e => {
+  toggleState = e => {
     this.setState(prevState => ({
       checked: !prevState.checked
     }));
@@ -53,9 +59,9 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Checkbox onClick={this.toggle}>
-        <HiddenCheck type="checkbox" />
-        <Check src={this.state.checked ? checked : unchecked} />
+      <Label>
+        <HiddenCheck type="checkbox" onChange={this.toggleState} />
+        <Checkbox src={this.state.checked ? checked : unchecked} />
         <Title>{this.props.title}</Title>
         {this.props.price && (
           <Price>
@@ -68,7 +74,7 @@ export default class extends React.Component {
             />
           </Price>
         )}
-      </Checkbox>
+      </Label>
     );
   }
 }
