@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FormattedDate } from "react-intl";
+import format from "date-fns/format";
+import ruLocale from "date-fns/locale/ru";
 
 import { media } from "../../../queries";
 import clock from "./img/clock.svg";
@@ -78,7 +79,7 @@ const Arrival = styled.div`
 `;
 
 const Departure = styled.div`
-  min-width: 96px;
+  min-width: 88px;
   text-align: right;
 `;
 
@@ -152,8 +153,12 @@ export default ({ wayBack, departure, arrival, duration }) => {
   const minutes = duration % 60;
   const formattedDuration =
     (hours ? `${hours}ч` : "") + (minutes ? ` ${minutes}м` : "");
-
-  console.log(duration, "=>", formattedDuration);
+  const formattedArrival = format(arrival.date, "D MMM YYYY, dd", {
+    locale: ruLocale
+  });
+  const formattedDeparture = format(departure.date, "D MMM YYYY, dd", {
+    locale: ruLocale
+  });
   return (
     <Segment>
       <Compact>
@@ -175,15 +180,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
             {arrival.time}
           </Time>
           <City>{arrival.city}</City>
-          <Day>
-            <FormattedDate
-              value={Date(arrival.date)}
-              month="short"
-              year="numeric"
-              day="numeric"
-            />,&nbsp;
-            <FormattedDate value={Date(arrival.date)} weekday="short" />
-          </Day>
+          <Day>{formattedArrival}</Day>
         </Arrival>
         <Flight>
           <DurationAndIcons>
@@ -204,15 +201,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
         <Departure>
           <Time>{departure.time}</Time>
           <City>{departure.city}</City>
-          <Day>
-            <FormattedDate
-              value={Date(departure.date)}
-              month="short"
-              year="numeric"
-              day="numeric"
-            />,&nbsp;
-            <FormattedDate value={Date(departure.date)} weekday="short" />
-          </Day>
+          <Day>{formattedDeparture}</Day>
         </Departure>
       </Full>
     </Segment>
