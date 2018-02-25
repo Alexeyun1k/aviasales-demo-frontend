@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import Accordion from "./Accordion/";
 import Checkbox from "./Checkbox/";
+import RangeFilter from "./RangeFilter/";
 import clear from "./clear.svg";
+import plane from "./plane.svg";
 
 const Filter = styled.section`
   margin-top: 56px;
@@ -26,6 +28,13 @@ const Text = styled.p`
   color: #4a4a4a;
 `;
 
+const Plane = styled.img`
+  position: relative;
+  margin: 0px 8px;
+  vertical-align: middle;
+  top: -1px;
+`;
+
 const Reset = styled.button`
   width: 100%;
   background-color: transparent;
@@ -45,7 +54,7 @@ const Reset = styled.button`
   }
 `;
 
-export default function Results() {
+export default () => {
   return (
     <Filter>
       <Accordion title="ПЕРЕСАДКИ" expanded>
@@ -55,9 +64,36 @@ export default function Results() {
         <Checkbox title="2 пересадки" price="21034" />
         <Checkbox title="3 пересадки" price="16030" />
       </Accordion>
-      <Accordion title="ВРЕМЯ ВЫЛЕТА И ПРИБЫТИЯ">ToDo</Accordion>
-      <Accordion title="Багаж">ToDo</Accordion>
-      <Accordion title="Время в пути">ToDo</Accordion>
+      <Accordion title="ВРЕМЯ ВЫЛЕТА И ПРИБЫТИЯ" expanded>
+        <SubTitle>
+          Москва<Plane src={plane} />Барселона
+        </SubTitle>
+        <RangeFilter
+          title="Вылет из Москвы:"
+          from="c 03:05, 24 фев"
+          to="до 13:50, 26 фев"
+        />
+        <RangeFilter
+          title="Прибытие в Барселону:"
+          from="c 03:05, 24 фев"
+          to="до 13:50, 26 фев"
+        />
+        <SubTitle>
+          Барселона<Plane src={plane} />Москва
+        </SubTitle>
+        <RangeFilter
+          title="Вылет из Барселоны:"
+          from="c 03:05, 24 фев"
+          to="до 13:50, 26 фев"
+        />
+        <RangeFilter
+          title="Прибытие в Москву:"
+          from="c 03:05, 24 фев"
+          to="до 13:50, 26 фев"
+        />
+      </Accordion>
+      <Accordion title="Багаж" />
+      <Accordion title="Время в пути" />
       <Accordion title="Авиакомпании" num="32" expanded changed>
         <Checkbox title="Несколько авиакомпаний" />
         <Text>
@@ -83,4 +119,4 @@ export default function Results() {
       <Reset>СБРОСИТЬ ВСЕ ФИЛЬТРЫ</Reset>
     </Filter>
   );
-}
+};
