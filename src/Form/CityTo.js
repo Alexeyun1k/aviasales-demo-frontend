@@ -48,8 +48,8 @@ const Name = styled.div`
 export default props => {
   return (
     <CityTo>
-      <Input placeholder="Город прибытия" />
-      <Name />
+      <Input placeholder="Город прибытия" value={props.data.cityName} />
+      <Name>{props.data.code}</Name>
     </CityTo>
   );
 };

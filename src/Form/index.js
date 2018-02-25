@@ -128,11 +128,11 @@ class SearchForm extends React.Component {
     },
     dateFrom: {
       id: "dateFrom",
-      date: Date.now()
+      date: new Date()
     },
     dateTo: {
       id: "dateTo",
-      date: null
+      date: undefined
     },
     options: {
       id: "options",
