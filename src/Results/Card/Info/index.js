@@ -73,7 +73,7 @@ const Share = styled.button`
 `;
 
 export default ({ charter, airlines, segments, bestPrice }) => {
-  const shortLogos = airlines.length > 1 ? true : false;
+  const shortLogos = airlines.length > 1;
 
   return (
     <Info>
