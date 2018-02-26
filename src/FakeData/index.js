@@ -15,7 +15,7 @@ export const results = [
         baggage: 15,
         prices: [
           {
-            company: "Билетик",
+            company: "Билетик Аэро",
             price: 7812
           },
           {
