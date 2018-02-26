@@ -83,7 +83,7 @@ const Departure = styled.div`
   text-align: right;
 `;
 
-const Time = styled.p`
+const Time = styled.time`
   margin: 0;
   line-height: 40px;
   font-size: 28px;
@@ -194,7 +194,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
 
       <Full>
         <Arrival>
-          <Time>
+          <Time datetime={localArrival.toString()}>
             <Icon src={pin} />
             {formattedArrivalTime}
           </Time>
@@ -218,7 +218,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
           </Airports>
         </Flight>
         <Departure>
-          <Time>{formattedDepartureTime}</Time>
+          <Time datetime={localDeparture.toString()>{formattedDepartureTime}</Time>
           <City>{departure.city}</City>
           <Day>{formattedDepartureDate}</Day>
         </Departure>
