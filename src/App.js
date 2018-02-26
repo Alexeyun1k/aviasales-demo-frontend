@@ -8,7 +8,7 @@ import Results from "./Results/";
 import MainPage from "./MainPage/";
 import Footer from "./Footer/";
 
-addLocaleData([...ru]);
+addLocaleData(ru);
 
 class App extends Component {
   render() {
