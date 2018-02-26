@@ -4,11 +4,9 @@ import onClickOutside from "react-onclickoutside";
 import { format } from "date-fns";
 import ru from "date-fns/locale/ru";
 import DayPicker from "react-day-picker";
-// import "react-day-picker/lib/style.css";
 import "./calendar.css";
 import Switch from "./Switch";
 import calendar from "./img/calendar.svg";
-// import DropdownContent from "./DropdownContent";
 import queries from "../queries";
 
 const DatePicker = styled.div`
