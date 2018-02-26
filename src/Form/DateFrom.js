@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 import { format } from "date-fns";
-import ruLocale from "date-fns/locale/ru";
+import ru from "date-fns/locale/ru";
 import DayPicker from "react-day-picker";
 // import "react-day-picker/lib/style.css";
 import "./calendar.css";
@@ -114,8 +114,7 @@ function renderDay(day, mod) {
 
 export default class extends React.Component {
   state = {
-    isOpen: false,
-    today: new Date()
+    isOpen: false
   };
 
   toggleOpen = () => {
@@ -127,21 +126,22 @@ export default class extends React.Component {
   };
 
   handleDateClick = (date, { disabled }) => {
-    if (disabled) return;
-    this.toggleClose();
-    this.props.handleChanges({ ...this.props.data, ...{ date: date } });
+    if (!disabled) {
+      this.toggleClose();
+      this.props.handleChanges({ ...this.props.data, ...{ date: date } });
+    }
   };
 
   render() {
     const isSet = !!this.props.data.date;
+    const buttonText = this.props.data.date
+      ? format(this.props.data.date, "D MMMM, dd", { locale: ru })
+      : "Туда";
+
     return (
       <DatePicker>
         <Button onClick={this.toggleOpen} type="button" isSet={isSet}>
-          {this.props.data.date
-            ? format(this.props.data.date, "D MMMM, dd", {
-                locale: ruLocale
-              })
-            : "Туда"}
+          {buttonText}
         </Button>
         {this.state.isOpen && (
           <DropdownContentWithOutside handleClickOutside={this.toggleClose}>
@@ -151,8 +151,8 @@ export default class extends React.Component {
               weekdaysLong={WEEKDAYS_LONG}
               weekdaysShort={WEEKDAYS_SHORT}
               firstDayOfWeek={1}
-              disabledDays={{ before: this.state.today }}
-              fromMonth={this.state.today}
+              disabledDays={{ before: new Date() }}
+              fromMonth={new Date()}
               selectedDays={this.props.data.date}
               renderDay={renderDay}
               initialMonth={this.props.data.date || this.state.today}
