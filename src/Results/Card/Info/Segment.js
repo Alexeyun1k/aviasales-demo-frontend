@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import format from "date-fns/format";
-import ruLocale from "date-fns/locale/ru";
+import ru from "date-fns/locale/ru";
 
 import { media } from "../../../queries";
 import clock from "./img/clock.svg";
@@ -148,23 +148,42 @@ const Airport = styled.p`
   color: #4a4a4a;
 `;
 
+function formatDuration(min) {
+  const hours = Math.floor(min / 60);
+  const minutes = min % 60;
+  return (hours ? `${hours}ч` : "") + (minutes ? ` ${minutes}м` : "");
+}
+
+function getLocalDate(UNIXDate, offset) {
+  const date = new Date(UNIXDate * 1000);
+  const totalOffset = (offset + date.getTimezoneOffset()) * 60 * 1000;
+  return new Date(+date + totalOffset);
+}
+
+function formatDate(date) {
+  return format(date, "D MMM YYYY, dd", { locale: ru });
+}
+
+function formatTime(date) {
+  return format(date, "HH:mm", { locale: ru });
+}
+
 export default ({ wayBack, departure, arrival, duration }) => {
-  const hours = Math.floor(duration / 60);
-  const minutes = duration % 60;
-  const formattedDuration =
-    (hours ? `${hours}ч` : "") + (minutes ? ` ${minutes}м` : "");
-  const formattedArrival = format(arrival.date, "D MMM YYYY, dd", {
-    locale: ruLocale
-  });
-  const formattedDeparture = format(departure.date, "D MMM YYYY, dd", {
-    locale: ruLocale
-  });
+  const localArrival = getLocalDate(arrival.date, arrival.offset);
+  const localDeparture = getLocalDate(departure.date, departure.offset);
+
+  const formattedDuration = formatDuration(duration);
+  const formattedArrivalDate = formatDate(localArrival);
+  const formattedDepartureDate = formatDate(localDeparture);
+  const formattedArrivalTime = formatTime(localArrival);
+  const formattedDepartureTime = formatTime(localDeparture);
+
   return (
     <Segment>
       <Compact>
         <FromTo>
           <Icon src={wayBack ? plane_from : plane_to} />
-          {departure.time} — {arrival.time}
+          {formattedDepartureTime} — {formattedArrivalTime}
         </FromTo>
         <Length>
           <Icon src={clock} />
@@ -177,10 +196,10 @@ export default ({ wayBack, departure, arrival, duration }) => {
         <Arrival>
           <Time>
             <Icon src={pin} />
-            {arrival.time}
+            {formattedArrivalTime}
           </Time>
           <City>{arrival.city}</City>
-          <Day>{formattedArrival}</Day>
+          <Day>{formattedArrivalDate}</Day>
         </Arrival>
         <Flight>
           <DurationAndIcons>
@@ -199,9 +218,9 @@ export default ({ wayBack, departure, arrival, duration }) => {
           </Airports>
         </Flight>
         <Departure>
-          <Time>{departure.time}</Time>
+          <Time>{formattedDepartureTime}</Time>
           <City>{departure.city}</City>
-          <Day>{formattedDeparture}</Day>
+          <Day>{formattedDepartureDate}</Day>
         </Departure>
       </Full>
     </Segment>

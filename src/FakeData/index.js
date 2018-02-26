@@ -57,14 +57,14 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "2018-02-24",
-            time: "00:05"
+            date: 1520062500,
+            offset: 60
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-02-24",
-            time: "03:05"
+            date: 1520080500,
+            offset: 180
           },
           duration: 300
         },
@@ -73,14 +73,14 @@ export const results = [
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-03-03",
-            time: "10:35"
+            date: 1524573000,
+            offset: 60
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "2018-03-03",
-            time: "17:10"
+            date: 1524601800,
+            offset: 180
           },
           duration: 275
         }
@@ -120,14 +120,14 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "2018-02-28",
-            time: "00:15"
+            date: 1520062500,
+            offset: 180
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-02-28",
-            time: "03:10"
+            date: 1520062500,
+            offset: 60
           },
           duration: 295
         },
@@ -136,14 +136,14 @@ export const results = [
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-03-03",
-            time: "10:45"
+            date: 1524558600,
+            offset: 60
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "2018-03-03",
-            time: "17:15"
+            date: 1524601800,
+            offset: 180
           },
           duration: 270
         }
@@ -189,14 +189,14 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "2018-02-28",
-            time: "00:15"
+            date: 1520062500,
+            offset: 180
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-02-28",
-            time: "03:10"
+            date: 1520062500,
+            offset: 60
           },
           duration: 295
         },
@@ -205,14 +205,14 @@ export const results = [
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-03-03",
-            time: "10:45"
+            date: 1524562200,
+            offset: 60
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "2018-03-03",
-            time: "17:15"
+            date: 1524601800,
+            offset: 180
           },
           duration: 270
         }
@@ -274,14 +274,14 @@ export const results = [
           departure: {
             city: "Москва",
             airport: "VKO",
-            date: "2018-02-28",
-            time: "07:00"
+            date: 1520062500,
+            offset: 180
           },
           arrival: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-02-28",
-            time: "09:30"
+            date: 1520062500,
+            offset: 60
           },
           duration: 270
         },
@@ -290,14 +290,14 @@ export const results = [
           departure: {
             city: "Барселона",
             airport: "BCN",
-            date: "2018-03-03",
-            time: "10:45"
+            date: 1524558600,
+            offset: 60
           },
           arrival: {
             city: "Москва",
             airport: "SVO",
-            date: "2018-03-03",
-            time: "17:15"
+            date: 1524601800,
+            offset: 180
           },
           duration: 270
         }
