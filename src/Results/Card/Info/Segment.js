@@ -218,7 +218,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
           </Airports>
         </Flight>
         <Departure>
-          <Time datetime={localDeparture.toString()>{formattedDepartureTime}</Time>
+          <Time datetime={localDeparture.toString()}>{formattedDepartureTime}</Time>
           <City>{departure.city}</City>
           <Day>{formattedDepartureDate}</Day>
         </Departure>
