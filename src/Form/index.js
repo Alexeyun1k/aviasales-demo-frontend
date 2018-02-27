@@ -117,46 +117,32 @@ const Icon = styled.img`
 class SearchForm extends React.Component {
   state = {
     cityFrom: {
-      id: "cityFrom",
       cityName: "Москва",
       code: "MOW"
     },
     cityTo: {
-      id: "cityTo",
-      cityName: "",
-      code: ""
+      cityName: undefined,
+      code: undefined
     },
-    dateFrom: {
-      id: "dateFrom",
-      date: new Date()
-    },
-    dateTo: {
-      id: "dateTo",
-      date: undefined
-    },
-    options: {
-      id: "options",
-      passanger: 1,
-      class: "эконом"
-    }
+    dateFrom: new Date(),
+    dateTo: undefined,
+    adults: 1,
+    children: 0,
+    babies: 0,
+    isBusiness: false
   };
 
-  handleChanges = elementState => {
-    this.setState({ [elementState.id]: elementState });
+  handleChanges = id => {
+    const self = this;
+    return function(newValue) {
+      self.setState({ [id]: newValue });
+    };
   };
 
   switchCities = () => {
     this.setState(prevState => ({
-      cityFrom: {
-        id: prevState.cityFrom.id,
-        cityName: prevState.cityTo.cityName,
-        code: prevState.cityTo.code
-      },
-      cityTo: {
-        id: prevState.cityTo.id,
-        cityName: prevState.cityFrom.cityName,
-        code: prevState.cityFrom.code
-      }
+      cityFrom: prevState.cityTo,
+      cityTo: prevState.cityFrom
     }));
   };
 
@@ -165,31 +151,41 @@ class SearchForm extends React.Component {
       <Form compact={this.props.compact}>
         <CityPicker compact={this.props.compact}>
           <CityFrom
-            data={this.state.cityFrom}
+            data={this.state}
             switchCities={this.switchCities}
-            handleChanges={this.handleChanges}
+            onCityChange={this.handleChanges("cityFrom")}
           />
         </CityPicker>
 
         <CityPicker compact={this.props.compact}>
-          <CityTo data={this.state.cityTo} handleChanges={this.handleChanges} />
+          <CityTo
+            data={this.state}
+            onCityChange={this.handleChanges("cityTo")}
+          />
         </CityPicker>
 
         <DatePicker compact={this.props.compact}>
           <DateFrom
-            data={this.state.dateFrom}
-            handleChanges={this.handleChanges}
+            data={this.state}
+            onDateChange={this.handleChanges("dateFrom")}
           />
         </DatePicker>
 
         <DatePicker>
-          <DateTo data={this.state.dateTo} handleChanges={this.handleChanges} />
+          <DateTo
+            data={this.state}
+            onDateChange={this.handleChanges("dateTo")}
+          />
         </DatePicker>
 
         <OptionsPicker compact={this.props.compact}>
           <Passangers
-            data={this.state.options}
-            handleChanges={this.handleChanges}
+            compact={this.props.compact}
+            data={this.state}
+            onAdultsChange={this.handleChanges("adults")}
+            onBabiesChange={this.handleChanges("babies")}
+            onChildrenChange={this.handleChanges("children")}
+            onBusinessChange={this.handleChanges("business")}
           />
         </OptionsPicker>
 

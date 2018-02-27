@@ -126,14 +126,15 @@ export default class extends React.Component {
   handleDateClick = (date, { disabled }) => {
     if (!disabled) {
       this.toggleClose();
-      this.props.handleChanges({ ...this.props.data, ...{ date: date } });
+      this.props.onDateChange(new Date(date));
     }
   };
 
   render() {
-    const isSet = !!this.props.data.date;
-    const buttonText = this.props.data.date
-      ? format(this.props.data.date, "D MMMM, dd", { locale: ru })
+    const { dateFrom, dateTo } = this.props.data;
+    const isSet = !!dateFrom;
+    const buttonText = dateFrom
+      ? format(dateFrom, "D MMMM, dd", { locale: ru })
       : "Туда";
 
     return (
@@ -151,9 +152,9 @@ export default class extends React.Component {
               firstDayOfWeek={1}
               disabledDays={{ before: new Date() }}
               fromMonth={new Date()}
-              selectedDays={this.props.data.date}
+              selectedDays={dateFrom}
               renderDay={renderDay}
-              initialMonth={this.props.data.date || this.state.today}
+              initialMonth={dateFrom || new Date()}
               onDayClick={this.handleDateClick}
             />
             <Switch title="Показать цены в одну сторону" />

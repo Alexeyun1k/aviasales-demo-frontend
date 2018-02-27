@@ -60,8 +60,8 @@ const SwitchCities = styled.button`
 export default props => {
   return (
     <CityFrom>
-      <Input placeholder="Город вылета" value={props.data.cityName} />
-      <Name>{props.data.code}</Name>
+      <Input placeholder="Город вылета" value={props.data.cityFrom.cityName} />
+      <Name>{props.data.cityFrom.code}</Name>
       <SwitchCities onClick={props.switchCities} type="button">
         <img src={arrows} alt="Поменять города местами" />
       </SwitchCities>
