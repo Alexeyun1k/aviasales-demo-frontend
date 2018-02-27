@@ -68,7 +68,7 @@ export default class extends React.Component {
           <Price>
             <FormattedNumber
               value={this.props.price}
-              style="currency"
+              style={`currency`}
               currency="rub"
               minimumFractionDigits={0}
               maximumFractionDigits={2}

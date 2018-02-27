@@ -265,7 +265,7 @@ export const results = [
         {
           name: "Red wings",
           logo: red_wings_full,
-          shortLogo: ""
+          shortLogo: red_wings_short
         }
       ],
       segments: [

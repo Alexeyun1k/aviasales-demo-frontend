@@ -51,7 +51,7 @@ export default ({ prices }) => {
           <Price>
             <FormattedNumber
               value={offer.price}
-              style="currency"
+              style={`currency`}
               currency="rub"
               minimumFractionDigits={0}
               maximumFractionDigits={2}

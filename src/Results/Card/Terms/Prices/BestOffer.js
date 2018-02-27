@@ -38,7 +38,7 @@ export default ({ company, price }) => {
         <br />за&nbsp;
         <FormattedNumber
           value={price}
-          style="currency"
+          style={`currency`}
           currency="rub"
           minimumFractionDigits={0}
           maximumFractionDigits={2}
