@@ -53,11 +53,6 @@ export default class extends React.Component {
     }));
   };
 
-  componentDidMount() {
-    const { checked } = this.props;
-    this.setState({ checked: checked });
-  }
-
   render() {
     return (
       <Label>

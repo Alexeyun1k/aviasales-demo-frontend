@@ -57,14 +57,14 @@ const Reset = styled.button`
 export default () => {
   return (
     <Filter>
-      <Accordion title="ПЕРЕСАДКИ" expanded>
-        <Checkbox title="Все" price="21034" checked />
+      <Accordion title="ПЕРЕСАДКИ">
+        <Checkbox title="Все" price="21034" />
         <Checkbox title="Без пересадок" price="7034" />
         <Checkbox title="1 пересадка" price="11457" />
         <Checkbox title="2 пересадки" price="21034" />
         <Checkbox title="3 пересадки" price="16030" />
       </Accordion>
-      <Accordion title="ВРЕМЯ ВЫЛЕТА И ПРИБЫТИЯ" expanded>
+      <Accordion title="ВРЕМЯ ВЫЛЕТА И ПРИБЫТИЯ">
         <SubTitle>
           Москва<Plane src={plane} />Барселона
         </SubTitle>
@@ -94,27 +94,27 @@ export default () => {
       </Accordion>
       <Accordion title="Багаж" />
       <Accordion title="Время в пути" />
-      <Accordion title="Авиакомпании" num="32" expanded changed>
+      <Accordion title="Авиакомпании" num="32" changed>
         <Checkbox title="Несколько авиакомпаний" />
         <Text>
           Показывать билеты с перелетами, выполняемыми несколькими
           авиакомпаниями, включая выбранную
         </Text>
         <SubTitle>Альянсы</SubTitle>
-        <Checkbox title="Все" checked />
-        <Checkbox title="Star Alliance" checked />
-        <Checkbox title="OneWorld" checked />
+        <Checkbox title="Все" />
+        <Checkbox title="Star Alliance" />
+        <Checkbox title="OneWorld" />
         <Checkbox title="SkyTeam" />
         <SubTitle>Авиакомпании</SubTitle>
-        <Checkbox title="Все" checked />
-        <Checkbox title="Aegean Airlines" checked />
-        <Checkbox title="Air Algerie" checked />
-        <Checkbox title="OneWorld" checked />
-        <Checkbox title="SkyTeam" checked />
-        <Checkbox title="Aegean Airlines" checked />
-        <Checkbox title="Air Algerie" checked />
-        <Checkbox title="OneWorld" checked />
-        <Checkbox title="SkyTeam" checked />
+        <Checkbox title="Все" />
+        <Checkbox title="Aegean Airlines" />
+        <Checkbox title="Air Algerie" />
+        <Checkbox title="OneWorld" />
+        <Checkbox title="SkyTeam" />
+        <Checkbox title="Aegean Airlines" />
+        <Checkbox title="Air Algerie" />
+        <Checkbox title="OneWorld" />
+        <Checkbox title="SkyTeam" />
       </Accordion>
       <Reset>СБРОСИТЬ ВСЕ ФИЛЬТРЫ</Reset>
     </Filter>

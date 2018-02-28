@@ -64,14 +64,6 @@ export default class extends React.Component {
     }));
   };
 
-  componentDidMount() {
-    const { expanded, changed } = this.props;
-    this.setState({
-      expanded: expanded,
-      changed: changed
-    });
-  }
-
   render() {
     return (
       <Accordion>
