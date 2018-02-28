@@ -17,11 +17,7 @@ const Main = styled.main`
 const Cards = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
-
-  ${media.md`
-    margin-top: 16px;
-  `};
+  margin-top: 0;
 
   ${media.lg`
     margin-top: 40px;
