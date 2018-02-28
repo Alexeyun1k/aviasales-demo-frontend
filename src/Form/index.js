@@ -47,7 +47,7 @@ const DatePicker = Column.extend`
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "15%" : "16%")};
+    flex-basis: ${props => (props.compact ? "14%" : "16%")};
   }
 `;
 
@@ -68,6 +68,7 @@ const ButtonSize = Column.extend`
 
   @media (min-width: ${queries.xl}px) {
     flex-basis: ${props => (props.compact ? "16%" : "100%")};
+    flex-grow: 1;
     padding-left: ${props => (props.compact ? "8px" : "")};
   }
 `;

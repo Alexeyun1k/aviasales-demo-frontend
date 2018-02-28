@@ -55,8 +55,11 @@ const DropdownContent = styled.div`
 const DropdownContentWithOutside = onClickOutside(DropdownContent);
 
 const Button = styled.button`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   width: 100%;
-  padding: 18px 0 18px 16px;
+  padding: 18px 40px 18px 16px;
   text-align: left;
   line-height: 20px;
   font-size: 16px;
