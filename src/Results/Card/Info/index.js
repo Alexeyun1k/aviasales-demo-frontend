@@ -37,9 +37,9 @@ const Price = styled.h2`
 const Logo = styled.img`
   height: 36px;
   margin-left: 12px;
-  border: ${props => (props.shortLogos ? "1px solid #dddddd" : "none")};
-  border-radius: ${props => (props.shortLogos ? "4px" : "0")};
-  padding: ${props => (props.shortLogos ? "3px" : "0")};
+  border: ${props => (props.isSquare ? "1px solid #dddddd" : "none")};
+  border-radius: ${props => (props.isSquare ? "4px" : "0")};
+  padding: ${props => (props.isSquare ? "3px" : "0")};
 
   :first-child {
     margin-left: 0;
@@ -73,7 +73,7 @@ const Share = styled.button`
 `;
 
 export default ({ charter, airlines, segments, bestPrice }) => {
-  const shortLogos = airlines.length > 1;
+  const isSquare = airlines.length > 1;
 
   return (
     <Info>
@@ -90,8 +90,8 @@ export default ({ charter, airlines, segments, bestPrice }) => {
         <div>
           {airlines.map(airline => (
             <Logo
-              shortLogos={shortLogos}
-              src={shortLogos ? airline.shortLogo : airline.logo}
+              isSquare={isSquare}
+              src={isSquare ? airline.shortLogo : airline.logo}
               alt={airline.name}
             />
           ))}
