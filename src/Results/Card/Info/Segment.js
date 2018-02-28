@@ -204,7 +204,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
         <Flight>
           <DurationAndIcons>
             <img src={take_off} alt="Взлёт" />
-            <Duration>{formattedDuration}</Duration>
+            <Duration>Всего: {formattedDuration}</Duration>
             <img src={landing} alt="Посадка" />
           </DurationAndIcons>
           <Scheme>
@@ -218,7 +218,9 @@ export default ({ wayBack, departure, arrival, duration }) => {
           </Airports>
         </Flight>
         <Departure>
-          <Time datetime={localDeparture.toString()}>{formattedDepartureTime}</Time>
+          <Time datetime={localDeparture.toString()}>
+            {formattedDepartureTime}
+          </Time>
           <City>{departure.city}</City>
           <Day>{formattedDepartureDate}</Day>
         </Departure>
