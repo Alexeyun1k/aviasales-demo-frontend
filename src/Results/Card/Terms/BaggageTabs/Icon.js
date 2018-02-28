@@ -22,7 +22,7 @@ const Weight = styled.figure`
   margin: 0;
   left: 0;
   right: 0;
-  top: 8px;
+  top: ${props => (props.type === "baggage" ? "8px" : "9px")};
   font-weight: bold;
   line-height: normal;
   text-align: center;
@@ -52,7 +52,9 @@ export default ({ weight, type }) => {
   return (
     <Baggage>
       <Img src={icon} inactive={inactive} />
-      {weight > 0 && <Weight>{weight === -1 ? "?" : weight}</Weight>}
+      {weight > 0 && (
+        <Weight type={type}>{weight === -1 ? "?" : weight}</Weight>
+      )}
     </Baggage>
   );
 };

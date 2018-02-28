@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BaggageIcon from "./BaggageIcon";
+import Icon from "./Icon";
 
 const BaggageTabs = styled.div`
   padding-top: 12px;
@@ -11,8 +11,8 @@ const BaggageTabs = styled.div`
 export default ({ terms }) => {
   return (
     <BaggageTabs>
-      <BaggageIcon weight={terms[0].handbag} type="handbag" />
-      <BaggageIcon weight={terms[0].baggage} type="baggage" />
+      <Icon weight={terms[0].handbag} type="handbag" />
+      <Icon weight={terms[0].baggage} type="baggage" />
     </BaggageTabs>
   );
 };
