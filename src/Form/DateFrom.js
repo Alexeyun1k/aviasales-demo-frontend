@@ -3,42 +3,14 @@ import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 import { format } from "date-fns";
 import ru from "date-fns/locale/ru";
-import DayPicker from "react-day-picker";
-import "./calendar.css";
 import Switch from "./Switch";
 import calendar from "./img/calendar.svg";
 import queries from "../queries";
+import DayPicker from "./DayPicker";
 
 const DatePicker = styled.div`
   position: relative;
 `;
-
-const MONTHS = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноябрь",
-  "Декабрь"
-];
-
-const WEEKDAYS_LONG = [
-  "Воскресенье",
-  "Понедельник",
-  "Вторник",
-  "Среда",
-  "Четверг",
-  "Пятница",
-  "Суббота"
-];
-
-const WEEKDAYS_SHORT = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
 const DropdownContent = styled.div`
   position: absolute;
@@ -87,32 +59,6 @@ const prices = {
   28: "3 975"
 };
 
-const Cell = styled.div`
-  padding: 8px 0 0;
-  width: 48px;
-  min-height: 40px;
-`;
-
-const Price = styled.span`
-  font-weight: 500;
-  line-height: 20px;
-  font-size: 10px;
-  text-align: center;
-  color: #00c455;
-`;
-
-function renderDay(day, mod) {
-  const date = day.getDate();
-
-  return (
-    <Cell>
-      {date}
-      <br />
-      {prices[date] && <Price>{prices[date]}</Price>}
-    </Cell>
-  );
-}
-
 export default class extends React.Component {
   state = {
     isOpen: false
@@ -126,11 +72,9 @@ export default class extends React.Component {
     this.setState({ isOpen: false });
   };
 
-  handleDateClick = (date, { disabled }) => {
-    if (!disabled) {
-      this.toggleClose();
-      this.props.onDateChange(new Date(date));
-    }
+  handleDateClick = date => {
+    this.toggleClose();
+    this.props.onDateChange(date);
   };
 
   render() {
@@ -140,6 +84,11 @@ export default class extends React.Component {
       ? format(dateFrom, "D MMMM, dd", { locale: ru })
       : "Туда";
 
+    const calendarSettings = {
+      dateFrom: dateFrom,
+      dateTo: dateTo
+    };
+
     return (
       <DatePicker>
         <Button onClick={this.toggleOpen} type="button" isSet={isSet}>
@@ -148,16 +97,7 @@ export default class extends React.Component {
         {this.state.isOpen && (
           <DropdownContentWithOutside handleClickOutside={this.toggleClose}>
             <DayPicker
-              locale="ru"
-              months={MONTHS}
-              weekdaysLong={WEEKDAYS_LONG}
-              weekdaysShort={WEEKDAYS_SHORT}
-              firstDayOfWeek={1}
-              disabledDays={{ before: new Date() }}
-              fromMonth={new Date()}
-              selectedDays={dateFrom}
-              renderDay={renderDay}
-              initialMonth={dateFrom || new Date()}
+              data={calendarSettings}
               onDayClick={this.handleDateClick}
             />
             <Switch title="Показать цены в одну сторону" />
