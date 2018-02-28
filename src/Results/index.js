@@ -24,7 +24,7 @@ const Cards = styled.section`
   `};
 
   ${media.lg`
-    margin-top: 56px;
+    margin-top: 40px;
   `};
 `;
 

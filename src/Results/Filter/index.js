@@ -8,7 +8,7 @@ import clear from "./clear.svg";
 import plane from "./plane.svg";
 
 const Filter = styled.section`
-  margin-top: 56px;
+  margin-top: 40px;
   border-radius: 4px;
   background: #ffffff;
 `;
