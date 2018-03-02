@@ -127,11 +127,8 @@ class SearchForm extends React.Component {
     isBusiness: false
   };
 
-  handleChanges = id => {
-    const self = this;
-    return function(newValue) {
-      self.setState({ [id]: newValue });
-    };
+  handleChanges = id => newValue => {
+    this.setState({ [id]: newValue });
   };
 
   switchCities = () => {
