@@ -52,7 +52,7 @@ export default ({ weight, type }) => {
   return (
     <Baggage>
       <Img src={icon} inactive={inactive} />
-      {weight > 0 && (
+      {weight !== 0 && (
         <Weight type={type}>{weight === -1 ? "?" : weight}</Weight>
       )}
     </Baggage>
