@@ -55,13 +55,11 @@ export const results = [
         {
           wayBack: false,
           departure: {
-            city: "Москва",
             airport: "VKO",
             date: 1520062500,
             offset: 60
           },
           arrival: {
-            city: "Барселона",
             airport: "BCN",
             date: 1520080500,
             offset: 180
@@ -71,13 +69,11 @@ export const results = [
         {
           wayBack: true,
           departure: {
-            city: "Барселона",
             airport: "BCN",
             date: 1524573000,
             offset: 60
           },
           arrival: {
-            city: "Москва",
             airport: "SVO",
             date: 1524601800,
             offset: 180
@@ -118,13 +114,11 @@ export const results = [
         {
           wayBack: false,
           departure: {
-            city: "Москва",
             airport: "VKO",
             date: 1520062500,
             offset: 180
           },
           arrival: {
-            city: "Барселона",
             airport: "BCN",
             date: 1520062500,
             offset: 60
@@ -134,13 +128,11 @@ export const results = [
         {
           wayBack: true,
           departure: {
-            city: "Барселона",
             airport: "BCN",
             date: 1524558600,
             offset: 60
           },
           arrival: {
-            city: "Москва",
             airport: "SVO",
             date: 1524601800,
             offset: 180
@@ -187,13 +179,11 @@ export const results = [
         {
           wayBack: false,
           departure: {
-            city: "Москва",
             airport: "VKO",
             date: 1520062500,
             offset: 180
           },
           arrival: {
-            city: "Барселона",
             airport: "BCN",
             date: 1520062500,
             offset: 60
@@ -203,13 +193,11 @@ export const results = [
         {
           wayBack: true,
           departure: {
-            city: "Барселона",
             airport: "BCN",
             date: 1524562200,
             offset: 60
           },
           arrival: {
-            city: "Москва",
             airport: "SVO",
             date: 1524601800,
             offset: 180
@@ -272,13 +260,11 @@ export const results = [
         {
           wayBack: false,
           departure: {
-            city: "Москва",
             airport: "VKO",
             date: 1520062500,
             offset: 180
           },
           arrival: {
-            city: "Барселона",
             airport: "BCN",
             date: 1520062500,
             offset: 60
@@ -288,13 +274,11 @@ export const results = [
         {
           wayBack: true,
           departure: {
-            city: "Барселона",
             airport: "BCN",
             date: 1524558600,
             offset: 60
           },
           arrival: {
-            city: "Москва",
             airport: "SVO",
             date: 1524601800,
             offset: 180
@@ -305,3 +289,42 @@ export const results = [
     }
   }
 ];
+
+export const airports = {
+  LED: {
+    name: "Пулково",
+    time_zone: "Europe/Moscow",
+    country: "Россия",
+    rates: "259",
+    city: "Санкт-Петербург"
+  },
+  DME: {
+    name: "Домодедово",
+    time_zone: "Europe/Moscow",
+    country: "Россия",
+    rates: "392",
+    city: "Москва"
+  },
+  SVO: {
+    rates: "307",
+    country: "Россия",
+    name: "Шереметьево",
+    average_rate: "3.63",
+    city: "Москва",
+    time_zone: "Europe/Moscow"
+  },
+  VKO: {
+    name: "Внуково",
+    time_zone: "Europe/Moscow",
+    country: "Россия",
+    rates: "211",
+    city: "Москва"
+  },
+  BCN: {
+    name: "Аэропорт в Испании",
+    time_zone: "Europe/Moscow",
+    country: "Испания",
+    rates: "211",
+    city: "Барселона"
+  }
+};

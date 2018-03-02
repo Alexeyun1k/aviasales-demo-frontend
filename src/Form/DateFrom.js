@@ -54,11 +54,6 @@ const Button = styled.button`
   }
 `;
 
-const prices = {
-  26: "23 908",
-  28: "3 975"
-};
-
 export default class extends React.Component {
   state = {
     isOpen: false
@@ -78,7 +73,7 @@ export default class extends React.Component {
   };
 
   render() {
-    const { dateFrom, dateTo } = this.props.data;
+    const { dateFrom, dateTo } = this.props;
     const isSet = !!dateFrom;
     const buttonText = dateFrom
       ? format(dateFrom, "D MMMM, dd", { locale: ru })

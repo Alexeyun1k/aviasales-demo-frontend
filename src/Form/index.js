@@ -117,19 +117,13 @@ const Icon = styled.img`
 
 class SearchForm extends React.Component {
   state = {
-    cityFrom: {
-      cityName: "Москва",
-      code: "MOW"
-    },
-    cityTo: {
-      cityName: undefined,
-      code: undefined
-    },
+    origin: "LED",
+    destination: undefined,
     dateFrom: new Date(),
     dateTo: undefined,
     adults: 1,
     children: 0,
-    babies: 0,
+    infants: 0,
     isBusiness: false
   };
 
@@ -142,8 +136,8 @@ class SearchForm extends React.Component {
 
   switchCities = () => {
     this.setState(prevState => ({
-      cityFrom: prevState.cityTo,
-      cityTo: prevState.cityFrom
+      origin: prevState.destination,
+      destination: prevState.origin
     }));
   };
 
@@ -152,29 +146,31 @@ class SearchForm extends React.Component {
       <Form compact={this.props.compact}>
         <CityPicker compact={this.props.compact}>
           <CityFrom
-            data={this.state}
+            city={this.state.origin}
             switchCities={this.switchCities}
-            onCityChange={this.handleChanges("cityFrom")}
+            onCityChange={this.handleChanges("origin")}
           />
         </CityPicker>
 
         <CityPicker compact={this.props.compact}>
           <CityTo
-            data={this.state}
-            onCityChange={this.handleChanges("cityTo")}
+            city={this.state.destination}
+            onCityChange={this.handleChanges("destination")}
           />
         </CityPicker>
 
         <DatePicker compact={this.props.compact}>
           <DateFrom
-            data={this.state}
+            dateFrom={this.state.dateFrom}
+            dateTo={this.state.dateTo}
             onDateChange={this.handleChanges("dateFrom")}
           />
         </DatePicker>
 
         <DatePicker>
           <DateTo
-            data={this.state}
+            dateFrom={this.state.dateFrom}
+            dateTo={this.state.dateTo}
             onDateChange={this.handleChanges("dateTo")}
           />
         </DatePicker>
@@ -184,7 +180,7 @@ class SearchForm extends React.Component {
             compact={this.props.compact}
             data={this.state}
             onAdultsChange={this.handleChanges("adults")}
-            onBabiesChange={this.handleChanges("babies")}
+            onBabiesChange={this.handleChanges("infants")}
             onChildrenChange={this.handleChanges("children")}
             onBusinessChange={this.handleChanges("business")}
           />

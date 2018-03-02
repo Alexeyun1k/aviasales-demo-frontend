@@ -11,6 +11,8 @@ import take_off from "./img/take-off.svg";
 import landing from "./img/landing.svg";
 import pin from "./img/pin.svg";
 
+import { airports } from "../../../FakeData";
+
 const Segment = styled.div`
   border-bottom: none;
   padding-bottom: 0;
@@ -178,6 +180,13 @@ export default ({ wayBack, departure, arrival, duration }) => {
   const formattedArrivalTime = formatTime(localArrival);
   const formattedDepartureTime = formatTime(localDeparture);
 
+  const arrivalCity = airports[arrival.airport]
+    ? airports[arrival.airport].city
+    : "";
+  const departureCity = airports[departure.airport]
+    ? airports[departure.airport].city
+    : "";
+
   return (
     <Segment>
       <Compact>
@@ -198,7 +207,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
             <Icon src={pin} />
             {formattedArrivalTime}
           </Time>
-          <City>{arrival.city}</City>
+          <City>{arrivalCity}</City>
           <Day>{formattedArrivalDate}</Day>
         </Arrival>
         <Flight>
@@ -221,7 +230,7 @@ export default ({ wayBack, departure, arrival, duration }) => {
           <Time datetime={localDeparture.toString()}>
             {formattedDepartureTime}
           </Time>
-          <City>{departure.city}</City>
+          <City>{departureCity}</City>
           <Day>{formattedDepartureDate}</Day>
         </Departure>
       </Full>

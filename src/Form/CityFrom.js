@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import queries from "../queries";
-
 import arrows from "./img/arrows.svg";
+import { cities } from "../FakeData/cities";
 
 const CityFrom = styled.div`
   display: flex;
@@ -23,7 +23,10 @@ const Input = styled.input`
   flex-grow: 1;
   background-color: transparent;
   border: none;
-  padding: 18px 0 18px 16px;
+  padding: 18px 76px 18px 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 20px;
   font-size: 16px;
   color: #4a4a4a;
@@ -38,7 +41,7 @@ const Input = styled.input`
   }
 `;
 
-const Name = styled.div`
+const Code = styled.div`
   position: absolute;
   right: 44px;
   padding: 18px 0;
@@ -57,12 +60,15 @@ const SwitchCities = styled.button`
   border: none;
 `;
 
-export default props => {
+export default ({ city, switchCities }) => {
+  const cityName = cities[city] ? cities[city].city_name : "";
+  const cityCode = cities[city] ? cities[city].city_code : "";
+
   return (
     <CityFrom>
-      <Input placeholder="Город вылета" value={props.data.cityFrom.cityName} />
-      <Name>{props.data.cityFrom.code}</Name>
-      <SwitchCities onClick={props.switchCities} type="button">
+      <Input placeholder="Город вылета" value={cityName} />
+      <Code>{cityCode}</Code>
+      <SwitchCities onClick={switchCities} type="button">
         <img src={arrows} alt="Поменять города местами" />
       </SwitchCities>
     </CityFrom>
