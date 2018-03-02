@@ -47,7 +47,7 @@ const DatePicker = Column.extend`
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "14%" : "16%")};
+    flex-basis: ${props => (props.compact ? "15%" : "16%")};
   }
 `;
 
@@ -164,7 +164,7 @@ class SearchForm extends React.Component {
           />
         </DatePicker>
 
-        <DatePicker>
+        <DatePicker compact={this.props.compact}>
           <DateTo
             dateFrom={this.state.dateFrom}
             dateTo={this.state.dateTo}
