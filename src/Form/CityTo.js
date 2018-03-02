@@ -49,14 +49,30 @@ const Name = styled.div`
   color: #a0b0b9;
 `;
 
-export default ({ city }) => {
-  const cityName = cities[city] ? cities[city].city_name : "";
-  const cityCode = cities[city] ? cities[city].city_code : "";
+export default class extends React.Component {
+  restoreDefault = e => {
+    e.target.value = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+  };
 
-  return (
-    <CityTo>
-      <Input placeholder="Город прибытия" value={cityName} />
-      <Name>{cityCode}</Name>
-    </CityTo>
-  );
-};
+  render() {
+    const cityName = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+    const cityCode = cities[this.props.city]
+      ? cities[this.props.city].city_code
+      : "";
+
+    return (
+      <CityTo>
+        <Input
+          placeholder="Город прибытия"
+          defaultValue={cityName}
+          onBlur={this.restoreDefault}
+        />
+        <Name>{cityCode}</Name>
+      </CityTo>
+    );
+  }
+}

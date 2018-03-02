@@ -60,17 +60,33 @@ const SwitchCities = styled.button`
   border: none;
 `;
 
-export default ({ city, switchCities }) => {
-  const cityName = cities[city] ? cities[city].city_name : "";
-  const cityCode = cities[city] ? cities[city].city_code : "";
+export default class extends React.Component {
+  restoreDefault = e => {
+    e.target.value = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+  };
 
-  return (
-    <CityFrom>
-      <Input placeholder="Город вылета" value={cityName} />
-      <Code>{cityCode}</Code>
-      <SwitchCities onClick={switchCities} type="button">
-        <img src={arrows} alt="Поменять города местами" />
-      </SwitchCities>
-    </CityFrom>
-  );
-};
+  render() {
+    const cityName = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+    const cityCode = cities[this.props.city]
+      ? cities[this.props.city].city_code
+      : "";
+
+    return (
+      <CityFrom>
+        <Input
+          placeholder="Город вылета"
+          defaultValue={cityName}
+          onBlur={this.restoreDefault}
+        />
+        <Code>{cityCode}</Code>
+        <SwitchCities onClick={this.props.switchCities} type="button">
+          <img src={arrows} alt="Поменять города местами" />
+        </SwitchCities>
+      </CityFrom>
+    );
+  }
+}
