@@ -169,7 +169,7 @@
   background: #f4f4f4;
 }
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside)
-  > .day:before {
+  > div:before {
   content: url("./chosen.svg");
   position: absolute;
   z-index: 9;
@@ -183,7 +183,7 @@
 
 .DayPicker:not(.DayPicker--interactionDisabled)
   .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover
-  > .day:before {
+  > div:before {
   content: url("./chosen.svg");
   position: absolute;
   z-index: 9;
@@ -207,24 +207,4 @@
   position: absolute;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.day {
-  width: 48px;
-  min-height: 48px;
-}
-
-.day--date {
-  position: relative;
-  z-index: 10;
-  padding: 8px 0 0;
-}
-.day--price {
-  position: relative;
-  z-index: 100;
-  font-weight: 500;
-  line-height: 20px;
-  font-size: 10px;
-  text-align: center;
-  color: #00c455;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DayPicker from "react-day-picker";
+import { FormattedNumber } from "react-intl";
 import "./calendar.css";
 
 const MONTHS = [
@@ -30,19 +31,48 @@ const WEEKDAYS_LONG = [
 
 const WEEKDAYS_SHORT = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
+const Day = styled.div`
+  min-width: 48px;
+  min-height: 48px;
+`;
+
+const DateCell = styled.div`
+  position: relative;
+  z-index: 10;
+  padding: 8px 0 0;
+`;
+
+const Price = styled.aside`
+  position: relative;
+  z-index: 100;
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 10px;
+  text-align: center;
+  color: #00c455;
+`;
+
 const prices = {
-  26: "23 908",
-  28: "3 975"
+  26: 23908,
+  28: 3975
 };
 
 function renderDay(day, mod) {
   const date = day.getDate();
 
   return (
-    <div className="day">
-      <div className="day--date">{day.getDate()}</div>
-      {prices[date] && <aside className="day--price">{prices[date]}</aside>}
-    </div>
+    <Day>
+      <DateCell>{day.getDate()}</DateCell>
+      {prices[date] && (
+        <Price>
+          <FormattedNumber
+            value={prices[date]}
+            minimumFractionDigits={0}
+            maximumFractionDigits={2}
+          />
+        </Price>
+      )}
+    </Day>
   );
 }
 
