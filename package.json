@@ -6,6 +6,7 @@
     "date-fns": "^1.29.0",
     "flexboxgrid2": "^7.1.0",
     "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.1",
     "rc-slider": "^8.6.0",
     "react": "^16.2.0",
     "react-day-picker": "^7.0.7",
@@ -21,5 +22,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   }
 }
