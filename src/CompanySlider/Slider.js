@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import aeroflot from "./img/aeroflot.png";
-import elivaline from "./img/elivaline.png";
-import koreanAir from "./img/korean-air.png";
-import oneTwoTrip from "./img/one-two-trip.png";
-import s7 from "./img/s7.png";
-import arrowLeft from "./img/arrow-left.svg";
-import arrowRight from "./img/arrow-right.svg";
+import aeroflot from './img/aeroflot.png';
+import elivaline from './img/elivaline.png';
+import koreanAir from './img/korean-air.png';
+import oneTwoTrip from './img/one-two-trip.png';
+import s7 from './img/s7.png';
+import arrowLeft from './img/arrow-left.svg';
+import arrowRight from './img/arrow-right.svg';
 
 const Slider = styled.div`
   display: flex;
@@ -44,33 +44,31 @@ const Indicator = styled.button`
   padding: 0;
   border: 1px solid #818181;
   border-radius: 50%;
-  background: ${props => (props.active ? "#818181" : "white")};
+  background: ${props => (props.active ? '#818181' : 'white')};
   margin: 0 4px;
 `;
 
-export default props => {
-  return (
-    <div>
-      <Slider>
-        <Button>
-          <img src={arrowLeft} alt="Назад" />
-        </Button>
-        <Content>
-          <Logo src={aeroflot} />
-          <Logo src={elivaline} />
-          <Logo src={koreanAir} />
-          <Logo src={oneTwoTrip} />
-          <Logo src={s7} />
-        </Content>
-        <Button>
-          <img src={arrowRight} alt="Вперёд" />
-        </Button>
-      </Slider>
-      <Pagination>
-        <Indicator active />
-        <Indicator />
-        <Indicator />
-      </Pagination>
-    </div>
-  );
-};
+export default () => (
+  <div>
+    <Slider>
+      <Button>
+        <img src={arrowLeft} alt="Назад" />
+      </Button>
+      <Content>
+        <Logo src={aeroflot} />
+        <Logo src={elivaline} />
+        <Logo src={koreanAir} />
+        <Logo src={oneTwoTrip} />
+        <Logo src={s7} />
+      </Content>
+      <Button>
+        <img src={arrowRight} alt="Вперёд" />
+      </Button>
+    </Slider>
+    <Pagination>
+      <Indicator active />
+      <Indicator />
+      <Indicator />
+    </Pagination>
+  </div>
+);

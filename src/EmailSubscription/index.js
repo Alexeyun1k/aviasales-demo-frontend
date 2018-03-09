@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import divider from "./img/divider.png";
-import fb from "./img/fb.svg";
-import vk from "./img/vk.svg";
-import twitter from "./img/twitter.svg";
-import rss from "./img/rss.svg";
+import divider from './img/divider.png';
+import fb from './img/fb.svg';
+import vk from './img/vk.svg';
+import twitter from './img/twitter.svg';
+import rss from './img/rss.svg';
 
-import queries from "../queries";
+import queries from '../queries';
 
 const Section = styled.section`
   padding-top: 0;
@@ -131,43 +131,40 @@ const Button = styled.button`
   padding: 8px 16px;
 `;
 
-export default () => {
-  return (
-    <Section>
-      <Divider />
-      <div className="container">
-        <div className="row ">
-          <div className="col-md-6 col-md-offset-3 col-xl-4 col-xl-offset-1">
-            <Head>Хотите знать всё о скидках на авиабилеты?</Head>
-            <Paragraph>
-              Вы можете подписаться на нашу рассылку через соцсети или по
-              электронной почте.
-            </Paragraph>
-          </div>
-          <div className="col-md-6 col-md-offset-3 col-xl-5 col-xl-offset-1">
-            <SocialsAndForm>
-              <Socials>
-                <Social href="#">
-                  <img src={twitter} alt="Твиттер" />
-                </Social>
-                <Social href="#">
-                  <img src={fb} alt="Фейсбук" />
-                </Social>
-                <Social href="#">
-                  <img src={vk} alt="Вконтакте" />
-                </Social>
-                <Social href="#">
-                  <img src={rss} alt="РСС" />
-                </Social>
-              </Socials>
-              <Form>
-                <Input placeholder="Ваш email" />
-                <Button>Подписаться</Button>
-              </Form>
-            </SocialsAndForm>
-          </div>
+export default () => (
+  <Section>
+    <Divider />
+    <div className="container">
+      <div className="row ">
+        <div className="col-md-6 col-md-offset-3 col-xl-4 col-xl-offset-1">
+          <Head>Хотите знать всё о скидках на авиабилеты?</Head>
+          <Paragraph>
+            Вы можете подписаться на нашу рассылку через соцсети или по электронной почте.
+          </Paragraph>
+        </div>
+        <div className="col-md-6 col-md-offset-3 col-xl-5 col-xl-offset-1">
+          <SocialsAndForm>
+            <Socials>
+              <Social href="#">
+                <img src={twitter} alt="Твиттер" />
+              </Social>
+              <Social href="#">
+                <img src={fb} alt="Фейсбук" />
+              </Social>
+              <Social href="#">
+                <img src={vk} alt="Вконтакте" />
+              </Social>
+              <Social href="#">
+                <img src={rss} alt="РСС" />
+              </Social>
+            </Socials>
+            <Form>
+              <Input placeholder="Ваш email" />
+              <Button>Подписаться</Button>
+            </Form>
+          </SocialsAndForm>
         </div>
       </div>
-    </Section>
-  );
-};
+    </div>
+  </Section>
+);

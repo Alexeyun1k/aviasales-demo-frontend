@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Slider from "./Slider";
+import React from 'react';
+import styled from 'styled-components';
+import Slider from './Slider';
 
 const Head = styled.h2`
   margin-top: 24px;
@@ -12,15 +12,13 @@ const Head = styled.h2`
   color: #5c5c5c;
 `;
 
-export default () => {
-  return (
-    <section className="container">
-      <div className="row center-md">
-        <div className="col-md-10">
-          <Head>Дешевые авиабилеты от крупнейших авиакомпаний и агентств</Head>
-          <Slider />
-        </div>
+export default () => (
+  <section className="container">
+    <div className="row center-md">
+      <div className="col-md-10">
+        <Head>Дешевые авиабилеты от крупнейших авиакомпаний и агентств</Head>
+        <Slider />
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

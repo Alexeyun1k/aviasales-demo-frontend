@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
+import React from 'react';
+import styled from 'styled-components';
+import queries from '../queries';
 
-import android from "./img/android.svg";
-import windowsPhone from "./img/windows-phone.svg";
-import apple from "./img/apple.svg";
-import stars from "./img/rating.svg";
-import phone_xs from "./img/phone-xs.png";
+import android from './img/android.svg';
+import windowsPhone from './img/windows-phone.svg';
+import apple from './img/apple.svg';
+import stars from './img/rating.svg';
+import phoneXs from './img/phone-xs.png';
 
 const Section = styled.section`
   background: linear-gradient(137.4deg, #00b0de 4.18%, #196ebd 104.18%);
@@ -104,35 +104,33 @@ const Platform = styled.img`
   vertical-align: middle;
 `;
 
-export default () => {
-  return (
-    <Section>
-      <div className="container">
-        <Promo>
-          <Phone src={phone_xs} />
-          <div className="row">
-            <div className="col-xs-12 col-md-offset-4 col-md-8">
-              <Head>Скачай мобильное приложение Aviasales.ru</Head>
-              <Rating>
-                <Stars src={stars} />Более 103 000 оценок
-              </Rating>
-            </div>
-            <div className="col-xs-offset-6 col-xs-6 col-md-offset-4 col-md-8">
-              <Links>
-                <AppLink href="#">
-                  <Platform src={apple} />iPhone или iPad
-                </AppLink>
-                <AppLink href="#">
-                  <Platform src={android} />Android
-                </AppLink>
-                <AppLink href="#">
-                  <Platform src={windowsPhone} />Windows Phone
-                </AppLink>
-              </Links>
-            </div>
+export default () => (
+  <Section>
+    <div className="container">
+      <Promo>
+        <Phone src={phoneXs} />
+        <div className="row">
+          <div className="col-xs-12 col-md-offset-4 col-md-8">
+            <Head>Скачай мобильное приложение Aviasales.ru</Head>
+            <Rating>
+              <Stars src={stars} />Более 103 000 оценок
+            </Rating>
           </div>
-        </Promo>
-      </div>
-    </Section>
-  );
-};
+          <div className="col-xs-offset-6 col-xs-6 col-md-offset-4 col-md-8">
+            <Links>
+              <AppLink href="#">
+                <Platform src={apple} />iPhone или iPad
+              </AppLink>
+              <AppLink href="#">
+                <Platform src={android} />Android
+              </AppLink>
+              <AppLink href="#">
+                <Platform src={windowsPhone} />Windows Phone
+              </AppLink>
+            </Links>
+          </div>
+        </div>
+      </Promo>
+    </div>
+  </Section>
+);
