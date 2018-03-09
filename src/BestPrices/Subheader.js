@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const City = styled.h3`
   margin: 0;
@@ -30,18 +31,26 @@ const Flag = styled.img`
   box-shadow: 0px 0px 8px rgba(38, 38, 38, 0.1);
 `;
 
-const SubHeader = styled.div`
+const Header = styled.div`
   display: flex;
 `;
 
-export default props => {
-  return (
-    <SubHeader>
-      <Flag src={props.data.flag} />
-      <div>
-        <City>{props.data.city}</City>
-        <Direction>{props.data.direction}</Direction>
-      </div>
-    </SubHeader>
-  );
+const SubHeader = ({ data }) => (
+  <Header>
+    <Flag src={data.flag} />
+    <div>
+      <City>{data.city}</City>
+      <Direction>{data.direction}</Direction>
+    </div>
+  </Header>
+);
+
+SubHeader.propTypes = {
+  data: PropTypes.shape({
+    flag: PropTypes.string,
+    city: PropTypes.string,
+    direction: PropTypes.string,
+  }).isRequired,
 };
+
+export default SubHeader;

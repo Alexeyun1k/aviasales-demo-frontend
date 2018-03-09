@@ -1,7 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { FormattedNumber } from 'react-intl';
 
-const Prices = styled.div`
+const PriceList = styled.div`
   margin-top: 16px;
 `;
 
@@ -50,33 +52,31 @@ const Price = styled.p`
   }
 `;
 
-export default props => {
-  return (
-    <Prices>
-      <Line href="#">
-        <From>{props.data[0].from}</From>
-        <Price>{props.data[0].price}</Price>
+const Prices = ({ data }) => (
+  <PriceList>
+    {data.map(({ from, price }) => (
+      <Line href="#" key={from}>
+        <From>{from}</From>
+        <Price>
+          от&nbsp;
+          <FormattedNumber
+            value={price}
+            style={String('currency')}
+            currency="rub"
+            minimumFractionDigits={0}
+            maximumFractionDigits={2}
+          />
+        </Price>
       </Line>
+    ))}
+  </PriceList>
+);
 
-      <Line href="#">
-        <From>{props.data[1].from}</From>
-        <Price>{props.data[1].price}</Price>
-      </Line>
-
-      <Line href="#">
-        <From>{props.data[2].from}</From>
-        <Price>{props.data[2].price}</Price>
-      </Line>
-
-      <Line href="#">
-        <From>{props.data[3].from}</From>
-        <Price>{props.data[3].price}</Price>
-      </Line>
-
-      <Line href="#">
-        <From>{props.data[4].from}</From>
-        <Price>{props.data[4].price}</Price>
-      </Line>
-    </Prices>
-  );
+Prices.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    from: PropTypes.string,
+    price: PropTypes.number,
+  })).isRequired,
 };
+
+export default Prices;

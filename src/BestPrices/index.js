@@ -1,101 +1,101 @@
-import React from "react";
-import styled from "styled-components";
-import PriceSection from "./PriceSection";
+import React from 'react';
+import styled from 'styled-components';
+import PriceSection from './PriceSection';
 
-import ru from "./Flags/ru.png";
-import am from "./Flags/am.png";
-import es from "./Flags/es.png";
-import calendar from "./calendar.svg";
-import queries from "../queries";
+import ru from './Flags/ru.png';
+import am from './Flags/am.png';
+import es from './Flags/es.png';
+import calendar from './calendar.svg';
+import queries from '../queries';
 
 const prices = [
   {
     head: {
       flag: ru,
-      city: "Симферополь (Крым)",
-      direction: "КРЫМ"
+      city: 'Симферополь (Крым)',
+      direction: 'КРЫМ',
     },
     prices: [
       {
-        from: "Из Москвы",
-        price: "от 4 813 ₽"
+        from: 'Из Москвы',
+        price: 4813,
       },
       {
-        from: "Из Санкт-Петербурга",
-        price: "от 7 857 ₽"
+        from: 'Из Санкт-Петербурга',
+        price: 7857,
       },
       {
-        from: "Из Новосибирска",
-        price: "от 4 813 ₽"
+        from: 'Из Новосибирска',
+        price: 4813,
       },
       {
-        from: "Из Екатеринбурга",
-        price: "от 4 813 ₽"
+        from: 'Из Екатеринбурга',
+        price: 4813,
       },
       {
-        from: "Из Челябинска",
-        price: "от 9 148 ₽"
-      }
-    ]
+        from: 'Из Челябинска',
+        price: 9148,
+      },
+    ],
   },
   {
     head: {
       flag: am,
-      city: "Ереван",
-      direction: "АРМЕНИЯ"
+      city: 'Ереван',
+      direction: 'АРМЕНИЯ',
     },
     prices: [
       {
-        from: "Из Москвы",
-        price: "от 4 813 ₽"
+        from: 'Из Москвы',
+        price: 4813,
       },
       {
-        from: "Из Санкт-Петербурга",
-        price: "от 7 857 ₽"
+        from: 'Из Санкт-Петербурга',
+        price: 7857,
       },
       {
-        from: "Из Новосибирска",
-        price: "от 4 813 ₽"
+        from: 'Из Новосибирска',
+        price: 4813,
       },
       {
-        from: "Из Екатеринбурга",
-        price: "от 4 813 ₽"
+        from: 'Из Екатеринбурга',
+        price: 4813,
       },
       {
-        from: "Из Челябинска",
-        price: "от 9 148 ₽"
-      }
-    ]
+        from: 'Из Челябинска',
+        price: 9148,
+      },
+    ],
   },
   {
     head: {
       flag: es,
-      city: "Кишинёв",
-      direction: "МОЛДАВИЯ"
+      city: 'Кишинёв',
+      direction: 'МОЛДАВИЯ',
     },
     prices: [
       {
-        from: "Из Москвы",
-        price: "от 4 813 ₽"
+        from: 'Из Москвы',
+        price: 4813,
       },
       {
-        from: "Из Санкт-Петербурга",
-        price: "от 7 857 ₽"
+        from: 'Из Санкт-Петербурга',
+        price: 7857,
       },
       {
-        from: "Из Новосибирска",
-        price: "от 4 813 ₽"
+        from: 'Из Новосибирска',
+        price: 4813,
       },
       {
-        from: "Из Екатеринбурга",
-        price: "от 4 813 ₽"
+        from: 'Из Екатеринбурга',
+        price: 4813,
       },
       {
-        from: "Из Челябинска",
-        price: "от 9 148 ₽"
-      }
-    ]
-  }
+        from: 'Из Челябинска',
+        price: 9148,
+      },
+    ],
+  },
 ];
 
 const Section = styled.section`
@@ -159,45 +159,41 @@ const SecondaryInfo = styled.p`
   color: #a0b0b9;
 `;
 
-export default () => {
-  return (
-    <Section>
-      <div className="container">
-        <Icon src={calendar} />
-        <Head>Лучшие цены на авиабилеты за последний месяц</Head>
+export default () => (
+  <Section>
+    <div className="container">
+      <Icon src={calendar} />
+      <Head>Лучшие цены на авиабилеты за последний месяц</Head>
 
-        <div className="row center-xs">
-          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
-          <div className="col-xs-12 col-md-10 col-xl-3">
-            <PriceSection data={prices[0]} />
-          </div>
-          <div className="col-xs-12 col-md-10 col-xl">
-            <Divider />
-          </div>
-          <div className="col-xs-12 col-md-10 col-xl-3">
-            <PriceSection data={prices[1]} />
-          </div>
-          <div className="col-xs-12 col-md-10 col-xl">
-            <Divider />
-          </div>
-          <div className="col-xs-12 col-md-10 col-xl-3">
-            <PriceSection data={prices[2]} />
-          </div>
-          <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+      <div className="row center-xs">
+        <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
+        <div className="col-xs-12 col-md-10 col-xl-3">
+          <PriceSection data={prices[0]} />
+        </div>
+        <div className="col-xs-12 col-md-10 col-xl">
+          <Divider />
+        </div>
+        <div className="col-xs-12 col-md-10 col-xl-3">
+          <PriceSection data={prices[1]} />
+        </div>
+        <div className="col-xs-12 col-md-10 col-xl">
+          <Divider />
+        </div>
+        <div className="col-xs-12 col-md-10 col-xl-3">
+          <PriceSection data={prices[2]} />
+        </div>
+        <div className="hidden-xs hidden-sm hidden-md hidden-lg col-xl-1" />
 
-          <div className="col-xs-12 col-md-10 col-xl-6">
-            <Info>
-              Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220
-              стран мира. Поиск и сравнение цен на авиабилеты среди 100 агентств
-              и 728 авиакомпаний.
-            </Info>
-            <SecondaryInfo>
-              Цены, найденные пользователями за последние 48 часов, не являются
-              офертой.
-            </SecondaryInfo>
-          </div>
+        <div className="col-xs-12 col-md-10 col-xl-6">
+          <Info>
+            Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220 стран мира. Поиск и
+            сравнение цен на авиабилеты среди 100 агентств и 728 авиакомпаний.
+          </Info>
+          <SecondaryInfo>
+            Цены, найденные пользователями за последние 48 часов, не являются офертой.
+          </SecondaryInfo>
         </div>
       </div>
-    </Section>
-  );
-};
+    </div>
+  </Section>
+);
