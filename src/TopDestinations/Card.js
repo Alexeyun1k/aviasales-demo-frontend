@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import queries from '../queries';
 
-const Card = styled.a`
+const Destination = styled.a`
   display: block;
   margin-top: 12px;
   background-color: #fff;
@@ -133,21 +134,32 @@ const Flag = styled.img`
   }
 `;
 
-export default props => {
-  return (
-    <Card href="#">
-      <CityImg src={props.card.img} />
-      <Info>
-        <Flag src={props.card.flag} />
-        <Place>
-          <City>{props.card.city}</City>
-          <Country>{props.card.country}</Country>
-        </Place>
-        <PriceAndDate>
-          <Price>{props.card.price}</Price>
-          <Departure>{props.card.departure}</Departure>
-        </PriceAndDate>
-      </Info>
-    </Card>
-  );
+const Card = ({ data }) => (
+  <Destination href="#">
+    <CityImg src={data.img} />
+    <Info>
+      <Flag src={data.flag} />
+      <Place>
+        <City>{data.city}</City>
+        <Country>{data.country}</Country>
+      </Place>
+      <PriceAndDate>
+        <Price>{data.price}</Price>
+        <Departure>{data.departure}</Departure>
+      </PriceAndDate>
+    </Info>
+  </Destination>
+);
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    img: PropTypes.string,
+    flag: PropTypes.string,
+    city: PropTypes.string,
+    country: PropTypes.string,
+    price: PropTypes.string,
+    departure: PropTypes.string,
+  }).isRequired,
 };
+
+export default Card;

@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Button = styled.button`
   width: 100%;
@@ -31,13 +32,18 @@ const Circle = styled.div`
   box-shadow: 0px 2px 4px rgba(74, 74, 74, 0.1);
 `;
 
-export default props => {
-  return (
-    <Button>
-      <Circle>
-        <img src={props.img} alt="Иконка" />
-      </Circle>
-      {props.children}
-    </Button>
-  );
+const Tab = props => (
+  <Button>
+    <Circle>
+      <img src={props.img} alt="Иконка" />
+    </Circle>
+    {props.children}
+  </Button>
+);
+
+Tab.propTypes = {
+  img: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
+
+export default Tab;

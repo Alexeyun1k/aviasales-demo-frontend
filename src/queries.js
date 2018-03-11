@@ -1,10 +1,10 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const sizes = {
   sm: 576,
   md: 768,
   lg: 992,
-  xl: 1200
+  xl: 1200,
 };
 
 export default sizes;
