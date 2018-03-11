@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const HiddenCheck = styled.input`
   opacity: 0;
@@ -20,12 +21,12 @@ const Checkbox = styled.div`
   margin-right: 16px;
   width: 40px;
   height: 24px;
-  background: ${props => (props.checked ? "#ff9241" : "#bccdd6")};
+  background: ${props => (props.checked ? '#ff9241' : '#bccdd6')};
   border-radius: 100px;
   transition: 0.3s ease-in-out;
 
   :after {
-    content: "";
+    content: '';
     position: absolute;
     left: 2px;
     top: 2px;
@@ -33,7 +34,7 @@ const Checkbox = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    transform: translateX(${props => (props.checked ? "16px" : "0")});
+    transform: translateX(${props => (props.checked ? '16px' : '0')});
     transition: 0.3s ease-in-out;
   }
 `;
@@ -47,14 +48,14 @@ const Title = styled.p`
   color: #4a4a4a;
 `;
 
-export default class extends React.Component {
+export default class Switch extends React.Component {
   state = {
-    checked: false
+    checked: false,
   };
 
-  toggleState = e => {
+  toggleState = () => {
     this.setState(prevState => ({
-      checked: !prevState.checked
+      checked: !prevState.checked,
     }));
   };
 
@@ -68,3 +69,7 @@ export default class extends React.Component {
     );
   }
 }
+
+Switch.propTypes = {
+  title: PropTypes.string.isRequired,
+};

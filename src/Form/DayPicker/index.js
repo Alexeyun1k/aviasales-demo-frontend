@@ -1,35 +1,36 @@
-import React from "react";
-import styled from "styled-components";
-import DayPicker from "react-day-picker";
-import { FormattedNumber } from "react-intl";
-import "./calendar.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Calendar from 'react-day-picker';
+import { FormattedNumber } from 'react-intl';
+import './calendar.css';
 
 const MONTHS = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноябрь",
-  "Декабрь"
+  'Январь',
+  'Февраль',
+  'Март',
+  'Апрель',
+  'Май',
+  'Июнь',
+  'Июль',
+  'Август',
+  'Сентябрь',
+  'Октябрь',
+  'Ноябрь',
+  'Декабрь',
 ];
 
 const WEEKDAYS_LONG = [
-  "Воскресенье",
-  "Понедельник",
-  "Вторник",
-  "Среда",
-  "Четверг",
-  "Пятница",
-  "Суббота"
+  'Воскресенье',
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота',
 ];
 
-const WEEKDAYS_SHORT = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+const WEEKDAYS_SHORT = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 
 const Day = styled.div`
   min-width: 48px;
@@ -54,10 +55,10 @@ const Price = styled.aside`
 
 const prices = {
   26: 23908,
-  28: 3975
+  28: 3975,
 };
 
-function renderDay(day, mod) {
+function renderDay(day) {
   const date = day.getDate();
 
   return (
@@ -76,7 +77,7 @@ function renderDay(day, mod) {
   );
 }
 
-export default class extends React.Component {
+class DayPicker extends React.Component {
   handleDateClick = (date, { disabled }) => {
     if (!disabled) {
       this.props.onDayClick(new Date(date));
@@ -84,10 +85,10 @@ export default class extends React.Component {
   };
 
   render() {
-    const { dateFrom, dateTo } = this.props.data;
+    const { dateFrom } = this.props.data;
 
     return (
-      <DayPicker
+      <Calendar
         locale="ru"
         months={MONTHS}
         weekdaysLong={WEEKDAYS_LONG}
@@ -103,3 +104,13 @@ export default class extends React.Component {
     );
   }
 }
+
+DayPicker.propTypes = {
+  data: PropTypes.shape({
+    dateFrom: PropTypes.instanceOf(Date),
+    dateTo: PropTypes.instanceOf(Date),
+  }).isRequired,
+  onDayClick: PropTypes.func.isRequired,
+};
+
+export default DayPicker;

@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Offer = styled.article`
+const Card = styled.article`
   margin-top: 12px;
 `;
 
@@ -109,26 +110,37 @@ const Link = styled.a`
   }
 `;
 
-export default props => {
-  return (
-    <Offer>
-      <MainInfo>
-        <Head>{props.data.head}</Head>
-        <HeadLogo src={props.data.headLogo} />
-      </MainInfo>
-      <Details>
-        <PriceAndLogo>
-          <Logo src={props.data.airLogo} />
-          <PriceAndDays>
-            <Price>
-              <Small>от</Small> {props.data.price}
-            </Price>
-            <DaysLeft>{props.data.daysLeft}</DaysLeft>
-          </PriceAndDays>
-        </PriceAndLogo>
-        <Info>{props.data.info}</Info>
-        <Link href="#">Узнать подробности</Link>
-      </Details>
-    </Offer>
-  );
+const Offer = props => (
+  <Card>
+    <MainInfo>
+      <Head>{props.data.head}</Head>
+      <HeadLogo src={props.data.headLogo} />
+    </MainInfo>
+    <Details>
+      <PriceAndLogo>
+        <Logo src={props.data.airLogo} />
+        <PriceAndDays>
+          <Price>
+            <Small>от</Small> {props.data.price}
+          </Price>
+          <DaysLeft>{props.data.daysLeft}</DaysLeft>
+        </PriceAndDays>
+      </PriceAndLogo>
+      <Info>{props.data.info}</Info>
+      <Link href="/#">Узнать подробности</Link>
+    </Details>
+  </Card>
+);
+
+Offer.propTypes = {
+  data: PropTypes.shape({
+    head: PropTypes.string,
+    headLogo: PropTypes.string,
+    airLogo: PropTypes.string,
+    price: PropTypes.string,
+    daysLeft: PropTypes.string,
+    info: PropTypes.string,
+  }).isRequired,
 };
+
+export default Offer;

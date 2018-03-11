@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
-import arrows from "./img/arrows.svg";
-import { cities } from "../FakeData/cities";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import queries from '../queries';
+import arrows from './img/arrows.svg';
+import { cities } from '../FakeData/cities';
 
-const CityFrom = styled.div`
+const City = styled.div`
   display: flex;
   background: #ffffff;
   border-radius: 4px 4px 0 0;
@@ -60,33 +61,34 @@ const SwitchCities = styled.button`
   border: none;
 `;
 
-export default class extends React.Component {
-  restoreDefault = e => {
-    e.target.value = cities[this.props.city]
-      ? cities[this.props.city].city_name
-      : "";
+class CityFrom extends React.Component {
+  restoreDefault = (e) => {
+    e.target.value = cities[this.props.city] ? cities[this.props.city].city_name : '';
   };
 
   render() {
-    const cityName = cities[this.props.city]
-      ? cities[this.props.city].city_name
-      : "";
-    const cityCode = cities[this.props.city]
-      ? cities[this.props.city].city_code
-      : "";
+    const cityName = cities[this.props.city] ? cities[this.props.city].city_name : '';
+    const cityCode = cities[this.props.city] ? cities[this.props.city].city_code : '';
 
     return (
-      <CityFrom>
-        <Input
-          placeholder="Город вылета"
-          defaultValue={cityName}
-          onBlur={this.restoreDefault}
-        />
+      <City>
+        <Input placeholder="Город вылета" defaultValue={cityName} onBlur={this.restoreDefault} />
         <Code>{cityCode}</Code>
         <SwitchCities onClick={this.props.switchCities} type="button">
           <img src={arrows} alt="Поменять города местами" />
         </SwitchCities>
-      </CityFrom>
+      </City>
     );
   }
 }
+
+CityFrom.propTypes = {
+  city: PropTypes.string,
+  switchCities: PropTypes.func.isRequired,
+};
+
+CityFrom.defaultProps = {
+  city: '',
+};
+
+export default CityFrom;

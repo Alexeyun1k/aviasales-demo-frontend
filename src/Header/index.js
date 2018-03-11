@@ -1,12 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import queries from '../queries';
 
-import NavBar from "./NavBar/index";
-import Form from "../Form/";
+import NavBar from './NavBar/index';
+import Form from '../Form/';
 
-const Header = styled.header`
-  min-height: ${props => (props.compact ? "0" : "100vh")};
+const Background = styled.header`
+  min-height: ${props => (props.compact ? '0' : '100vh')};
   background: linear-gradient(
     148.48deg,
     #00b0de 22.46%,
@@ -19,11 +20,11 @@ const Header = styled.header`
 `;
 
 const FormAndHeadings = styled.div`
-  min-height: ${props => (props.compact ? "0" : "100vh")};
-  display: ${props => (props.compact ? "none" : "flex")};
+  min-height: ${props => (props.compact ? '0' : '100vh')};
+  display: ${props => (props.compact ? 'none' : 'flex')};
   flex-direction: column;
   justify-content: center;
-  padding: ${props => (props.compact ? "32px 0" : "24px 0 88px")};
+  padding: ${props => (props.compact ? '32px 0' : '24px 0 88px')};
 
   @media (min-width: ${queries.md}px) {
     display: flex;
@@ -69,26 +70,34 @@ const Paragraph = styled.p`
   }
 `;
 
-export default ({ compact }) => {
-  return (
-    <Header compact={compact}>
-      <div className="container">
-        <NavBar compact={compact} />
-        <FormAndHeadings compact={compact}>
-          {!compact && (
-            <div>
-              <Head>Поиск дешевых авиабилетов</Head>
-              <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
-            </div>
-          )}
-
-          <div className="row center-md">
-            <div className={compact ? "col-xs-12" : "col-xs-12 col-md-10"}>
-              <Form compact={compact} />
-            </div>
+const Header = ({ compact }) => (
+  <Background compact={compact}>
+    <div className="container">
+      <NavBar compact={compact} />
+      <FormAndHeadings compact={compact}>
+        {!compact && (
+          <div>
+            <Head>Поиск дешевых авиабилетов</Head>
+            <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
           </div>
-        </FormAndHeadings>
-      </div>
-    </Header>
-  );
+        )}
+
+        <div className="row center-md">
+          <div className={compact ? 'col-xs-12' : 'col-xs-12 col-md-10'}>
+            <Form compact={compact} />
+          </div>
+        </div>
+      </FormAndHeadings>
+    </div>
+  </Background>
+);
+
+Header.propTypes = {
+  compact: PropTypes.bool,
 };
+
+Header.defaultProps = {
+  compact: false,
+};
+
+export default Header;

@@ -1,17 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import CityFrom from "./CityFrom";
-import CityTo from "./CityTo";
-import DateFrom from "./DateFrom";
-import DateTo from "./DateTo";
-import Passangers from "./Passangers";
-import queries from "../queries";
-import plane from "./img/plane.svg";
+import CityFrom from './CityFrom';
+import CityTo from './CityTo';
+import DateFrom from './DateFrom';
+import DateTo from './DateTo';
+import Passangers from './Passangers';
+import queries from '../queries';
+import plane from './img/plane.svg';
 
 const Form = styled.form`
-  display: ${props => (props.compact ? "none" : "flex")};
+  display: ${props => (props.compact ? 'none' : 'flex')};
   flex-wrap: wrap;
   justify-content: center;
   margin-left: -1px;
@@ -35,7 +36,7 @@ const CityPicker = Column.extend`
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "18%" : "24%")};
+    flex-basis: ${props => (props.compact ? '18%' : '24%')};
   }
 `;
 
@@ -47,29 +48,29 @@ const DatePicker = Column.extend`
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "15%" : "16%")};
+    flex-basis: ${props => (props.compact ? '15%' : '16%')};
   }
 `;
 
 const OptionsPicker = Column.extend`
   @media (min-width: ${queries.md}px) {
-    flex-basis: ${props => (props.compact ? "25%" : "50%")};
+    flex-basis: ${props => (props.compact ? '25%' : '50%')};
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "17%" : "20%")};
+    flex-basis: ${props => (props.compact ? '17%' : '20%')};
   }
 `;
 
 const ButtonSize = Column.extend`
   @media (min-width: ${queries.md}px) {
-    flex-basis: ${props => (props.compact ? "25%" : "100%")};
+    flex-basis: ${props => (props.compact ? '25%' : '100%')};
   }
 
   @media (min-width: ${queries.xl}px) {
-    flex-basis: ${props => (props.compact ? "16%" : "100%")};
+    flex-basis: ${props => (props.compact ? '16%' : '100%')};
     flex-grow: 1;
-    padding-left: ${props => (props.compact ? "8px" : "")};
+    padding-left: ${props => (props.compact ? '8px' : '')};
   }
 `;
 
@@ -92,19 +93,19 @@ const Button = styled(Link)`
   text-align: center;
 
   @media (min-width: ${queries.md}px) {
-    width: ${props => (props.compact ? "100%" : "fit-content")};
+    width: ${props => (props.compact ? '100%' : 'fit-content')};
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: ${props => (props.compact ? "16px" : "48px")};
-    padding-right: ${props => (props.compact ? "16px" : "48px")};
+    padding-left: ${props => (props.compact ? '16px' : '48px')};
+    padding-right: ${props => (props.compact ? '16px' : '48px')};
     font-weight: 900;
-    font-size: ${props => (props.compact ? "20px" : "28px")};
-    margin-top: ${props => (props.compact ? "0" : "32px")};
-    border-radius: ${props => (props.compact ? "0 0 4px 0" : "4px")};
+    font-size: ${props => (props.compact ? '20px' : '28px')};
+    margin-top: ${props => (props.compact ? '0' : '32px')};
+    border-radius: ${props => (props.compact ? '0 0 4px 0' : '4px')};
   }
 
   @media (min-width: ${queries.xl}px) {
-    margin-top: ${props => (props.compact ? "0" : "48px")};
+    margin-top: ${props => (props.compact ? '0' : '48px')};
     border-radius: 4px;
   }
 `;
@@ -117,24 +118,24 @@ const Icon = styled.img`
 
 class SearchForm extends React.Component {
   state = {
-    origin: "LED",
+    origin: 'LED',
     destination: undefined,
     dateFrom: new Date(),
     dateTo: undefined,
-    adults: 1,
-    children: 0,
-    infants: 0,
-    isBusiness: false
+    // adults: 1,
+    // children: 0,
+    // infants: 0,
+    // isBusiness: false,
   };
 
-  handleChanges = id => newValue => {
+  handleChanges = id => (newValue) => {
     this.setState({ [id]: newValue });
   };
 
   switchCities = () => {
     this.setState(prevState => ({
       origin: prevState.destination,
-      destination: prevState.origin
+      destination: prevState.origin,
     }));
   };
 
@@ -145,22 +146,19 @@ class SearchForm extends React.Component {
           <CityFrom
             city={this.state.origin}
             switchCities={this.switchCities}
-            onCityChange={this.handleChanges("origin")}
+            onCityChange={this.handleChanges('origin')}
           />
         </CityPicker>
 
         <CityPicker compact={this.props.compact}>
-          <CityTo
-            city={this.state.destination}
-            onCityChange={this.handleChanges("destination")}
-          />
+          <CityTo city={this.state.destination} onCityChange={this.handleChanges('destination')} />
         </CityPicker>
 
         <DatePicker compact={this.props.compact}>
           <DateFrom
             dateFrom={this.state.dateFrom}
             dateTo={this.state.dateTo}
-            onDateChange={this.handleChanges("dateFrom")}
+            onDateChange={this.handleChanges('dateFrom')}
           />
         </DatePicker>
 
@@ -168,7 +166,7 @@ class SearchForm extends React.Component {
           <DateTo
             dateFrom={this.state.dateFrom}
             dateTo={this.state.dateTo}
-            onDateChange={this.handleChanges("dateTo")}
+            onDateChange={this.handleChanges('dateTo')}
           />
         </DatePicker>
 
@@ -176,15 +174,15 @@ class SearchForm extends React.Component {
           <Passangers
             compact={this.props.compact}
             data={this.state}
-            onAdultsChange={this.handleChanges("adults")}
-            onBabiesChange={this.handleChanges("infants")}
-            onChildrenChange={this.handleChanges("children")}
-            onBusinessChange={this.handleChanges("business")}
+            onAdultsChange={this.handleChanges('adults')}
+            onBabiesChange={this.handleChanges('infants')}
+            onChildrenChange={this.handleChanges('children')}
+            onBusinessChange={this.handleChanges('business')}
           />
         </OptionsPicker>
 
         <ButtonSize compact={this.props.compact}>
-          <Button to="/results" compact={this.props.compact}>
+          <Button to="/results" compact={this.props.compact ? 1 : 0}>
             Найти билеты
             {!this.props.compact && <Icon src={plane} />}
           </Button>
@@ -193,5 +191,13 @@ class SearchForm extends React.Component {
     );
   }
 }
+
+SearchForm.propTypes = {
+  compact: PropTypes.bool,
+};
+
+SearchForm.defaultProps = {
+  compact: false,
+};
 
 export default SearchForm;

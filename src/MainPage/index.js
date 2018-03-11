@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import Header from "../Header/";
-import TopDestinations from "../TopDestinations/";
-import BestPrices from "../BestPrices/";
-import Offers from "../Offers/";
-import Articles from "../Articles/";
-import AppPromo from "../AppPromo/";
-import CompanySlider from "../CompanySlider/";
-import EmailSubscription from "../EmailSubscription/";
+import Header from '../Header/';
+import TopDestinations from '../TopDestinations/';
+import BestPrices from '../BestPrices/';
+import Offers from '../Offers/';
+import Articles from '../Articles/';
+import AppPromo from '../AppPromo/';
+import CompanySlider from '../CompanySlider/';
+import EmailSubscription from '../EmailSubscription/';
 
 const MainPage = () => (
   <div>

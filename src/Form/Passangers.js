@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import queries from '../queries';
 
-import dropdown from "./img/dropdown.svg";
+import dropdown from './img/dropdown.svg';
 
 const Button = styled.button`
   padding: 18px 32px 18px 16px;
@@ -25,7 +26,7 @@ const Button = styled.button`
   }
 
   @media (min-width: ${queries.md}px) {
-    border-radius: ${props => (props.compact ? "0" : "0 0 4px 0")};
+    border-radius: ${props => (props.compact ? '0' : '0 0 4px 0')};
   }
 
   @media (min-width: ${queries.xl}px) {
@@ -37,10 +38,18 @@ const Additional = styled.span`
   color: #a0b0b9;
 `;
 
-export default ({ compact }) => {
-  return (
-    <Button compact={compact}>
-      1 пассажир, <Additional>эконом</Additional>
-    </Button>
-  );
+const Passangers = ({ compact }) => (
+  <Button compact={compact}>
+    1 пассажир, <Additional>эконом</Additional>
+  </Button>
+);
+
+Passangers.propTypes = {
+  compact: PropTypes.bool,
 };
+
+Passangers.defaultProps = {
+  compact: false,
+};
+
+export default Passangers;

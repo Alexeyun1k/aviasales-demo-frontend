@@ -1,9 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import queries from "../queries";
-import { cities } from "../FakeData/cities";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import queries from '../queries';
+import { cities } from '../FakeData/cities';
 
-const CityTo = styled.div`
+const City = styled.div`
   display: flex;
   background: #ffffff;
   position: relative;
@@ -49,30 +50,28 @@ const Name = styled.div`
   color: #a0b0b9;
 `;
 
-export default class extends React.Component {
-  restoreDefault = e => {
-    e.target.value = cities[this.props.city]
-      ? cities[this.props.city].city_name
-      : "";
+export default class CityTo extends React.Component {
+  restoreDefault = (e) => {
+    e.target.value = cities[this.props.city] ? cities[this.props.city].city_name : '';
   };
 
   render() {
-    const cityName = cities[this.props.city]
-      ? cities[this.props.city].city_name
-      : "";
-    const cityCode = cities[this.props.city]
-      ? cities[this.props.city].city_code
-      : "";
+    const cityName = cities[this.props.city] ? cities[this.props.city].city_name : '';
+    const cityCode = cities[this.props.city] ? cities[this.props.city].city_code : '';
 
     return (
-      <CityTo>
-        <Input
-          placeholder="Город прибытия"
-          defaultValue={cityName}
-          onBlur={this.restoreDefault}
-        />
+      <City>
+        <Input placeholder="Город прибытия" defaultValue={cityName} onBlur={this.restoreDefault} />
         <Name>{cityCode}</Name>
-      </CityTo>
+      </City>
     );
   }
 }
+
+CityTo.propTypes = {
+  city: PropTypes.string,
+};
+
+CityTo.defaultProps = {
+  city: '',
+};

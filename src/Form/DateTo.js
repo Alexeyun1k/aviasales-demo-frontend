@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import calendar from "./img/calendar.svg";
+import calendar from './img/calendar.svg';
 
 const DatePicker = styled.button`
   white-space: nowrap;
@@ -23,6 +23,4 @@ const DatePicker = styled.button`
   }
 `;
 
-export default props => {
-  return <DatePicker>Обратно</DatePicker>;
-};
+export default () => <DatePicker>Обратно</DatePicker>;

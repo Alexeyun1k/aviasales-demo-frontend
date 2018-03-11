@@ -1,12 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import onClickOutside from "react-onclickoutside";
-import { format } from "date-fns";
-import ru from "date-fns/locale/ru";
-import Switch from "./Switch";
-import calendar from "./img/calendar.svg";
-import queries from "../queries";
-import DayPicker from "./DayPicker";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import onClickOutside from 'react-onclickoutside';
+import { format } from 'date-fns';
+import ru from 'date-fns/locale/ru';
+import Switch from './Switch';
+import calendar from './img/calendar.svg';
+import queries from '../queries';
+import DayPicker from './DayPicker';
 
 const DatePicker = styled.div`
   position: relative;
@@ -19,8 +20,7 @@ const DropdownContent = styled.div`
   background: #ffffff;
   padding: 16px 24px;
   z-index: 100;
-  box-shadow: 0px 0px 8px rgba(74, 74, 74, 0.2),
-    0px 2px 4px rgba(74, 74, 74, 0.2);
+  box-shadow: 0px 0px 8px rgba(74, 74, 74, 0.2), 0px 2px 4px rgba(74, 74, 74, 0.2);
   border-radius: 2px;
 `;
 
@@ -35,7 +35,7 @@ const Button = styled.button`
   text-align: left;
   line-height: 20px;
   font-size: 16px;
-  color: ${props => (props.isSet ? "#4a4a4a" : "#a0b0b9")};
+  color: ${props => (props.isSet ? '#4a4a4a' : '#a0b0b9')};
   border: none;
   background: url(${calendar}) no-repeat center right 16px;
   background-color: #ffffff;
@@ -54,9 +54,9 @@ const Button = styled.button`
   }
 `;
 
-export default class extends React.Component {
+export default class DateFrom extends React.Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   toggleOpen = () => {
@@ -67,7 +67,7 @@ export default class extends React.Component {
     this.setState({ isOpen: false });
   };
 
-  handleDateClick = date => {
+  handleDateClick = (date) => {
     this.toggleClose();
     this.props.onDateChange(date);
   };
@@ -75,13 +75,11 @@ export default class extends React.Component {
   render() {
     const { dateFrom, dateTo } = this.props;
     const isSet = !!dateFrom;
-    const buttonText = dateFrom
-      ? format(dateFrom, "D MMMM, dd", { locale: ru })
-      : "Туда";
+    const buttonText = dateFrom ? format(dateFrom, 'D MMMM, dd', { locale: ru }) : 'Туда';
 
     const calendarSettings = {
-      dateFrom: dateFrom,
-      dateTo: dateTo
+      dateFrom,
+      dateTo,
     };
 
     return (
@@ -91,10 +89,7 @@ export default class extends React.Component {
         </Button>
         {this.state.isOpen && (
           <DropdownContentWithOutside handleClickOutside={this.toggleClose}>
-            <DayPicker
-              data={calendarSettings}
-              onDayClick={this.handleDateClick}
-            />
+            <DayPicker data={calendarSettings} onDayClick={this.handleDateClick} />
             <Switch title="Показать цены в одну сторону" />
           </DropdownContentWithOutside>
         )}
@@ -102,3 +97,14 @@ export default class extends React.Component {
     );
   }
 }
+
+DateFrom.propTypes = {
+  dateFrom: PropTypes.instanceOf(Date),
+  dateTo: PropTypes.instanceOf(Date),
+  onDateChange: PropTypes.func.isRequired,
+};
+
+DateFrom.defaultProps = {
+  dateFrom: undefined,
+  dateTo: undefined,
+};
