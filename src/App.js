@@ -1,30 +1,28 @@
 import React, { Component } from "react";
-import Header from "./Header/";
-import TopDestinations from "./TopDestinations/";
-import BestPrices from "./BestPrices/";
-import Offers from "./Offers/";
-import Articles from "./Articles/";
-import AppPromo from "./AppPromo/";
+import { BrowserRouter, Route } from "react-router-dom";
+
+import { IntlProvider, addLocaleData } from "react-intl";
+import ru from "react-intl/locale-data/ru";
+
+import Results from "./Results/";
+import MainPage from "./MainPage/";
 import Footer from "./Footer/";
-import CompanySlider from "./CompanySlider/";
-import EmailSubscription from "./EmailSubscription/";
+
+addLocaleData(ru);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <TopDestinations />
-        <BestPrices />
-        <div className="hidden-xs hidden-sm">
-          <CompanySlider />
-          <EmailSubscription />
-        </div>
-        <Offers />
-        <Articles />
-        <AppPromo />
-        <Footer />
-      </div>
+      <IntlProvider locale="ru">
+        <BrowserRouter>
+          <div className="App">
+            <Route path="/" exact component={MainPage} />
+            <Route path="/results" component={Results} />
+
+            <Footer />
+          </div>
+        </BrowserRouter>
+      </IntlProvider>
     );
   }
 }

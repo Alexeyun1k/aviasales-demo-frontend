@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import queries from "../queries";
 
-import aviasales from "./img/aviasales.svg";
-import SearchForm from "./SearchForm";
+import NavBar from "./NavBar/index";
+import Form from "../Form/";
 
-const Container = styled.header`
-  min-height: 100vh;
+const Header = styled.header`
+  min-height: ${props => (props.compact ? "0" : "100vh")};
   background: linear-gradient(
     148.48deg,
     #00b0de 22.46%,
@@ -19,33 +19,14 @@ const Container = styled.header`
 `;
 
 const FormAndHeadings = styled.div`
-  min-height: 100vh;
-  display: flex;
+  min-height: ${props => (props.compact ? "0" : "100vh")};
+  display: ${props => (props.compact ? "none" : "flex")};
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 88px 0;
-`;
-
-const Aviasales = styled.a`
-  position: absolute;
-  top: 12px;
-  display: block;
-  line-height: 24px;
-  font-size: 20px;
-  color: #ffffff;
-`;
-
-const Logo = styled.img`
-  margin-right: 12px;
-  vertical-align: -8px;
-`;
-
-const Name = styled.span`
-  display: none;
+  padding: ${props => (props.compact ? "32px 0" : "24px 0 88px")};
 
   @media (min-width: ${queries.md}px) {
-    display: inline;
+    display: flex;
   }
 `;
 
@@ -88,24 +69,26 @@ const Paragraph = styled.p`
   }
 `;
 
-export default () => {
+export default ({ compact }) => {
   return (
-    <Container>
+    <Header compact={compact}>
       <div className="container">
-        <Aviasales>
-          <Logo src={aviasales} />
-          <Name>aviasales</Name>
-        </Aviasales>
-        <FormAndHeadings>
-          <div className="row center-md middle-xs">
-            <div className="col-xs-12 col-md-10">
+        <NavBar compact={compact} />
+        <FormAndHeadings compact={compact}>
+          {!compact && (
+            <div>
               <Head>Поиск дешевых авиабилетов</Head>
               <Paragraph>Лучший способ купить авиабилеты дешево</Paragraph>
-              <SearchForm />
+            </div>
+          )}
+
+          <div className="row center-md">
+            <div className={compact ? "col-xs-12" : "col-xs-12 col-md-10"}>
+              <Form compact={compact} />
             </div>
           </div>
         </FormAndHeadings>
       </div>
-    </Container>
+    </Header>
   );
 };

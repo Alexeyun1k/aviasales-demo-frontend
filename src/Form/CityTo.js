@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import queries from "../queries";
+import { cities } from "../FakeData/cities";
 
 const CityTo = styled.div`
   display: flex;
@@ -20,7 +21,10 @@ const Input = styled.input`
   flex-grow: 1;
   background-color: transparent;
   border: none;
-  padding: 18px 0 18px 16px;
+  padding: 18px 48px 18px 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 20px;
   font-size: 16px;
   color: #4a4a4a;
@@ -45,11 +49,30 @@ const Name = styled.div`
   color: #a0b0b9;
 `;
 
-export default props => {
-  return (
-    <CityTo>
-      <Input placeholder="Город прибытия" />
-      <Name />
-    </CityTo>
-  );
-};
+export default class extends React.Component {
+  restoreDefault = e => {
+    e.target.value = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+  };
+
+  render() {
+    const cityName = cities[this.props.city]
+      ? cities[this.props.city].city_name
+      : "";
+    const cityCode = cities[this.props.city]
+      ? cities[this.props.city].city_code
+      : "";
+
+    return (
+      <CityTo>
+        <Input
+          placeholder="Город прибытия"
+          defaultValue={cityName}
+          onBlur={this.restoreDefault}
+        />
+        <Name>{cityCode}</Name>
+      </CityTo>
+    );
+  }
+}

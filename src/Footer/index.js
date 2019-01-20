@@ -149,7 +149,7 @@ export default () => {
     <Footer>
       <div className="container">
         <div className="row">
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>СТРАНЫ</Head>
             <Link href="#">Россия</Link>
             <Link href="#">Таиланд</Link>
@@ -159,7 +159,7 @@ export default () => {
             <Link href="#">Грузия</Link>
             <LinkMore href="#">Все страны</LinkMore>
           </div>
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>ГОРОДА</Head>
             <Link href="#">Москва</Link>
             <Link href="#">Санкт-Петербург</Link>
@@ -169,7 +169,7 @@ export default () => {
             <Link href="#">Лондон</Link>
             <LinkMore>Все города</LinkMore>
           </div>
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>АВИАКОМПАНИИ</Head>
             <Link href="#">Air Berlin</Link>
             <Link href="#">Air France</Link>
@@ -179,7 +179,7 @@ export default () => {
             <Link href="#">KLM</Link>
             <LinkMore href="#">Все авиакомпании</LinkMore>
           </div>
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>АЭРОПОРТЫ</Head>
             <Link href="#">Шереметьево</Link>
             <Link href="#">Курумоч</Link>
@@ -189,7 +189,7 @@ export default () => {
             <Link href="#">Гамбург</Link>
             <LinkMore href="#">Все аэропорты</LinkMore>
           </div>
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>НАПРАВЛЕНИЯ</Head>
             <Link href="#">MOW – SIP</Link>
             <Link href="#">MOW – AER</Link>
@@ -198,7 +198,7 @@ export default () => {
             <Link href="#">LED – MOW</Link>
             <Link href="#">MOW – BKK</Link>
           </div>
-          <div class="col-xs-6 col-md-3 col-lg-2">
+          <div className="col-xs-6 col-md-3 col-lg-2">
             <Head>СЕРВИСЫ</Head>
             <Link href="#">Горящие авиабилеты</Link>
             <Link href="#">Календарь низких цен</Link>
